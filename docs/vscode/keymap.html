@@ -1,0 +1,492 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>keymap</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <link rel="stylesheet" href="../theme/rust-syntax-bg-highlight.css">
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../ai/nn.html"><strong aria-hidden="true">1.</strong> ai</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ai/nn.html"><strong aria-hidden="true">1.1.</strong> nn</a></li></ol></li><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">2.</strong> algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../algorithm/algorithm.html"><strong aria-hidden="true">2.1.</strong> algorithm</a></li></ol></li><li class="chapter-item expanded "><a href="../c/gcc.html"><strong aria-hidden="true">3.</strong> c</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c/gcc.html"><strong aria-hidden="true">3.1.</strong> gcc</a></li><li class="chapter-item expanded "><a href="../c/cmake.html"><strong aria-hidden="true">3.2.</strong> cmake</a></li></ol></li><li class="chapter-item expanded "><a href="../cmake/cmake.html"><strong aria-hidden="true">4.</strong> cmake</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cmake/cmake.html"><strong aria-hidden="true">4.1.</strong> cmake</a></li></ol></li><li class="chapter-item expanded "><a href="../crypto/openssl.html"><strong aria-hidden="true">5.</strong> crypto</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../crypto/openssl.html"><strong aria-hidden="true">5.1.</strong> openssl</a></li><li class="chapter-item expanded "><a href="../crypto/rsa.html"><strong aria-hidden="true">5.2.</strong> rsa</a></li></ol></li><li class="chapter-item expanded "><a href="../csharp/vscode.html"><strong aria-hidden="true">6.</strong> csharp</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../csharp/vscode.html"><strong aria-hidden="true">6.1.</strong> vscode</a></li></ol></li><li class="chapter-item expanded "><a href="../cxx/cxx.html"><strong aria-hidden="true">7.</strong> cxx</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cxx/cxx.html"><strong aria-hidden="true">7.1.</strong> cxx</a></li></ol></li><li class="chapter-item expanded "><a href="../db/explain.html"><strong aria-hidden="true">8.</strong> db</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../db/explain.html"><strong aria-hidden="true">8.1.</strong> explain</a></li><li class="chapter-item expanded "><a href="../db/mysql.html"><strong aria-hidden="true">8.2.</strong> mysql</a></li><li class="chapter-item expanded "><a href="../db/pg_function.html"><strong aria-hidden="true">8.3.</strong> pg_function</a></li><li class="chapter-item expanded "><a href="../db/pg_locks.html"><strong aria-hidden="true">8.4.</strong> pg_locks</a></li><li class="chapter-item expanded "><a href="../db/pg_size.html"><strong aria-hidden="true">8.5.</strong> pg_size</a></li><li class="chapter-item expanded "><a href="../db/postgres.html"><strong aria-hidden="true">8.6.</strong> postgres</a></li><li class="chapter-item expanded "><a href="../db/recursive.html"><strong aria-hidden="true">8.7.</strong> recursive</a></li><li class="chapter-item expanded "><a href="../db/uuid.html"><strong aria-hidden="true">8.8.</strong> uuid</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/copy&add.html"><strong aria-hidden="true">9.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/es/elk.html"><strong aria-hidden="true">9.1.</strong> es</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/es/elk.html"><strong aria-hidden="true">9.1.1.</strong> elk</a></li><li class="chapter-item expanded "><a href="../docker/es/elk_docker.html"><strong aria-hidden="true">9.1.2.</strong> elk_docker</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/copy&add.html"><strong aria-hidden="true">9.2.</strong> copy&add</a></li><li class="chapter-item expanded "><a href="../docker/d-bus.html"><strong aria-hidden="true">9.3.</strong> d-bus</a></li><li class="chapter-item expanded "><a href="../docker/debian.html"><strong aria-hidden="true">9.4.</strong> debian</a></li><li class="chapter-item expanded "><a href="../docker/docker.html"><strong aria-hidden="true">9.5.</strong> docker</a></li><li class="chapter-item expanded "><a href="../docker/golang.html"><strong aria-hidden="true">9.6.</strong> golang</a></li><li class="chapter-item expanded "><a href="../docker/manifest.html"><strong aria-hidden="true">9.7.</strong> manifest</a></li><li class="chapter-item expanded "><a href="../docker/mysql.html"><strong aria-hidden="true">9.8.</strong> mysql</a></li><li class="chapter-item expanded "><a href="../docker/other.html"><strong aria-hidden="true">9.9.</strong> other</a></li><li class="chapter-item expanded "><a href="../docker/qemu.html"><strong aria-hidden="true">9.10.</strong> qemu</a></li><li class="chapter-item expanded "><a href="../docker/recover.html"><strong aria-hidden="true">9.11.</strong> recover</a></li><li class="chapter-item expanded "><a href="../docker/redis.html"><strong aria-hidden="true">9.12.</strong> redis</a></li><li class="chapter-item expanded "><a href="../docker/rootfs.html"><strong aria-hidden="true">9.13.</strong> rootfs</a></li><li class="chapter-item expanded "><a href="../docker/run.html"><strong aria-hidden="true">9.14.</strong> run</a></li><li class="chapter-item expanded "><a href="../docker/scratch.html"><strong aria-hidden="true">9.15.</strong> scratch</a></li><li class="chapter-item expanded "><a href="../docker/vlmcsd.html"><strong aria-hidden="true">9.16.</strong> vlmcsd</a></li></ol></li><li class="chapter-item expanded "><a href="../error/linux.html"><strong aria-hidden="true">10.</strong> error</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../error/linux.html"><strong aria-hidden="true">10.1.</strong> linux</a></li></ol></li><li class="chapter-item expanded "><a href="../git/hooks.html"><strong aria-hidden="true">11.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/hooks.html"><strong aria-hidden="true">11.1.</strong> hooks</a></li><li class="chapter-item expanded "><a href="../git/reset.html"><strong aria-hidden="true">11.2.</strong> reset</a></li><li class="chapter-item expanded "><a href="../git/status.html"><strong aria-hidden="true">11.3.</strong> status</a></li></ol></li><li class="chapter-item expanded "><a href="../go/install.html"><strong aria-hidden="true">12.</strong> go</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../go/install.html"><strong aria-hidden="true">12.1.</strong> install</a></li><li class="chapter-item expanded "><a href="../go/json.html"><strong aria-hidden="true">12.2.</strong> json</a></li><li class="chapter-item expanded "><a href="../go/micro.html"><strong aria-hidden="true">12.3.</strong> micro</a></li><li class="chapter-item expanded "><a href="../go/mod.html"><strong aria-hidden="true">12.4.</strong> mod</a></li><li class="chapter-item expanded "><a href="../go/pkg.html"><strong aria-hidden="true">12.5.</strong> pkg</a></li><li class="chapter-item expanded "><a href="../go/printf.html"><strong aria-hidden="true">12.6.</strong> printf</a></li><li class="chapter-item expanded "><a href="../go/type.html"><strong aria-hidden="true">12.7.</strong> type</a></li><li class="chapter-item expanded "><a href="../go/vscode.html"><strong aria-hidden="true">12.8.</strong> vscode</a></li></ol></li><li class="chapter-item expanded "><a href="../install/alpine.html"><strong aria-hidden="true">13.</strong> install</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../install/alpine.html"><strong aria-hidden="true">13.1.</strong> alpine</a></li><li class="chapter-item expanded "><a href="../install/lang.html"><strong aria-hidden="true">13.2.</strong> lang</a></li><li class="chapter-item expanded "><a href="../install/linux.html"><strong aria-hidden="true">13.3.</strong> linux</a></li><li class="chapter-item expanded "><a href="../install/opencv.html"><strong aria-hidden="true">13.4.</strong> opencv</a></li><li class="chapter-item expanded "><a href="../install/wxWidgets.html"><strong aria-hidden="true">13.5.</strong> wxWidgets</a></li></ol></li><li class="chapter-item expanded "><a href="../java/jvm.html"><strong aria-hidden="true">14.</strong> java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/maven/maven.html"><strong aria-hidden="true">14.1.</strong> maven</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/maven/maven.html"><strong aria-hidden="true">14.1.1.</strong> maven</a></li></ol></li><li class="chapter-item expanded "><a href="../java/springboot/logback.html"><strong aria-hidden="true">14.2.</strong> springboot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/springboot/logback.html"><strong aria-hidden="true">14.2.1.</strong> logback</a></li><li class="chapter-item expanded "><a href="../java/springboot/logback-define.html"><strong aria-hidden="true">14.2.2.</strong> logback-define</a></li></ol></li><li class="chapter-item expanded "><a href="../java/command.html"><strong aria-hidden="true">14.3.</strong> command</a></li><li class="chapter-item expanded "><a href="../java/docker.html"><strong aria-hidden="true">14.4.</strong> docker</a></li></ol></li><li class="chapter-item expanded "><a href="../linux/base.html"><strong aria-hidden="true">15.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/alpine/alpine.html"><strong aria-hidden="true">15.1.</strong> alpine</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/alpine/alpine.html"><strong aria-hidden="true">15.1.1.</strong> alpine</a></li><li class="chapter-item expanded "><a href="../linux/alpine/docker.html"><strong aria-hidden="true">15.1.2.</strong> docker</a></li></ol></li><li class="chapter-item expanded "><a href="../linux/tools/tar.html"><strong aria-hidden="true">15.2.</strong> tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/tools/tar.html"><strong aria-hidden="true">15.2.1.</strong> tar</a></li></ol></li><li class="chapter-item expanded "><a href="../linux/base.html"><strong aria-hidden="true">15.3.</strong> base</a></li><li class="chapter-item expanded "><a href="../linux/centos.html"><strong aria-hidden="true">15.4.</strong> centos</a></li><li class="chapter-item expanded "><a href="../linux/curl.html"><strong aria-hidden="true">15.5.</strong> curl</a></li><li class="chapter-item expanded "><a href="../linux/debian.html"><strong aria-hidden="true">15.6.</strong> debian</a></li><li class="chapter-item expanded "><a href="../linux/lang.html"><strong aria-hidden="true">15.7.</strong> lang</a></li><li class="chapter-item expanded "><a href="../linux/replace.html"><strong aria-hidden="true">15.8.</strong> replace</a></li><li class="chapter-item expanded "><a href="../linux/source.html"><strong aria-hidden="true">15.9.</strong> source</a></li><li class="chapter-item expanded "><a href="../linux/ssh.html"><strong aria-hidden="true">15.10.</strong> ssh</a></li><li class="chapter-item expanded "><a href="../linux/sshd.html"><strong aria-hidden="true">15.11.</strong> sshd</a></li><li class="chapter-item expanded "><a href="../linux/ubuntu.html"><strong aria-hidden="true">15.12.</strong> ubuntu</a></li></ol></li><li class="chapter-item expanded "><a href="../mac/brew.html"><strong aria-hidden="true">16.</strong> mac</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mac/brew.html"><strong aria-hidden="true">16.1.</strong> brew</a></li><li class="chapter-item expanded "><a href="../mac/homebrew.html"><strong aria-hidden="true">16.2.</strong> homebrew</a></li><li class="chapter-item expanded "><a href="../mac/launchpad.html"><strong aria-hidden="true">16.3.</strong> launchpad</a></li></ol></li><li class="chapter-item expanded "><a href="../net/net.html"><strong aria-hidden="true">17.</strong> net</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../net/net.html"><strong aria-hidden="true">17.1.</strong> net</a></li></ol></li><li class="chapter-item expanded "><a href="../other/elk/elk.html"><strong aria-hidden="true">18.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/elk/elk.html"><strong aria-hidden="true">18.1.</strong> elk</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/elk/elk.html"><strong aria-hidden="true">18.1.1.</strong> elk</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../python/conda.html"><strong aria-hidden="true">19.</strong> python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../python/conda.html"><strong aria-hidden="true">19.1.</strong> conda</a></li><li class="chapter-item expanded "><a href="../python/definition.html"><strong aria-hidden="true">19.2.</strong> definition</a></li><li class="chapter-item expanded "><a href="../python/import.html"><strong aria-hidden="true">19.3.</strong> import</a></li><li class="chapter-item expanded "><a href="../python/jupyter.html"><strong aria-hidden="true">19.4.</strong> jupyter</a></li><li class="chapter-item expanded "><a href="../python/other.html"><strong aria-hidden="true">19.5.</strong> other</a></li><li class="chapter-item expanded "><a href="../python/pip.html"><strong aria-hidden="true">19.6.</strong> pip</a></li></ol></li><li class="chapter-item expanded "><a href="../react/env.html"><strong aria-hidden="true">20.</strong> react</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../react/env.html"><strong aria-hidden="true">20.1.</strong> env</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/proxy.html"><strong aria-hidden="true">21.</strong> rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rust/rsproxy.html"><strong aria-hidden="true">21.1.</strong> rsproxy</a></li><li class="chapter-item expanded "><a href="../rust/env.html"><strong aria-hidden="true">21.2.</strong> env</a></li><li class="chapter-item expanded "><a href="../rust/build.html"><strong aria-hidden="true">21.3.</strong> build</a></li></ol></li><li class="chapter-item expanded "><a href="../server/ca.html"><strong aria-hidden="true">22.</strong> server</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/ca.html"><strong aria-hidden="true">22.1.</strong> ca</a></li><li class="chapter-item expanded "><a href="../server/caddy.html"><strong aria-hidden="true">22.2.</strong> caddy</a></li><li class="chapter-item expanded "><a href="../server/nginx.html"><strong aria-hidden="true">22.3.</strong> nginx</a></li><li class="chapter-item expanded "><a href="../server/pem.html"><strong aria-hidden="true">22.4.</strong> pem</a></li></ol></li><li class="chapter-item expanded "><a href="../ssh/ssh.html"><strong aria-hidden="true">23.</strong> ssh</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ssh/ssh.html"><strong aria-hidden="true">23.1.</strong> ssh</a></li></ol></li><li class="chapter-item expanded "><a href="../vi/vi.html"><strong aria-hidden="true">24.</strong> vi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vi/vi.html"><strong aria-hidden="true">24.1.</strong> vi</a></li></ol></li><li class="chapter-item expanded "><a href="../vscode/edit.html"><strong aria-hidden="true">25.</strong> vscode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vscode/edit.html"><strong aria-hidden="true">25.1.</strong> edit</a></li><li class="chapter-item expanded "><a href="../vscode/go.html"><strong aria-hidden="true">25.2.</strong> go</a></li><li class="chapter-item expanded "><a href="../vscode/java.html"><strong aria-hidden="true">25.3.</strong> java</a></li><li class="chapter-item expanded "><a href="../vscode/keymap.html" class="active"><strong aria-hidden="true">25.4.</strong> keymap</a></li><li class="chapter-item expanded "><a href="../vscode/mvn.html"><strong aria-hidden="true">25.5.</strong> mvn</a></li><li class="chapter-item expanded "><a href="../vscode/svn.html"><strong aria-hidden="true">25.6.</strong> svn</a></li></ol></li><li class="chapter-item expanded "><a href="../vue/vue.html"><strong aria-hidden="true">26.</strong> vue</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vue/vue.html"><strong aria-hidden="true">26.1.</strong> vue</a></li><li class="chapter-item expanded "><a href="../vue/deploy.html"><strong aria-hidden="true">26.2.</strong> deploy</a></li><li class="chapter-item expanded "><a href="../vue/svg.html"><strong aria-hidden="true">26.3.</strong> svg</a></li></ol></li><li class="chapter-item expanded "><a href="../windows/install.html"><strong aria-hidden="true">27.</strong> windows</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../windows/install.html"><strong aria-hidden="true">27.1.</strong> install</a></li></ol></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">28.</strong> Readme</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="vs-code-keymap"><a class="header" href="#vs-code-keymap">vs code keymap</a></h1>
+<h2 id="一主命令框"><a class="header" href="#一主命令框">一、主命令框</a></h2>
+<p>F1 或 Ctrl+Shift+P（俗称万能键）  ：打开命令面板。在打开的输入框内，可以输入任何命令,如下图(图片较大，如果查看不清晰，可以在图片上右键 “在新的标签页中打开图片”，查看原图，下同)：</p>
+<p><img src="../static/img/vs/vs1.png" alt="" /></p>
+<blockquote>
+<p>按一下 Backspace 会进入到 Ctrl+P 模式</p>
+</blockquote>
+<blockquote>
+<p>在 Ctrl+P 下输入 &gt; 可以进入 Ctrl+Shift+P 模式</p>
+</blockquote>
+<blockquote>
+<p>在 Ctrl+P 窗口下还可以直接输入文件名，跳转到该文件</p>
+</blockquote>
+<blockquote>
+<p>在 Ctrl+P 模式下输入 “?” 会弹出下拉菜单，如下图所示：</p>
+</blockquote>
+<p><img src="../static/img/vs/vs2.png" alt="" /></p>
+<blockquote>
+<p>?   列出当前可执行的动作</p>
+</blockquote>
+<blockquote>
+<p>!   显示 Errors或 Warnings，也可以 Ctrl+Shift+M</p>
+</blockquote>
+<blockquote>
+<p>:   跳转到行数，也可以 Ctrl+G 直接进入</p>
+</blockquote>
+<blockquote>
+<p>@    跳转到 symbol（搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入</p>
+</blockquote>
+<blockquote>
+<p>@    根据分类跳转 symbol，查找属性或函数，也可以 Ctrl+Shift+O 后输入&quot; : &quot;进入</p>
+</blockquote>
+<blockquote>
+<p>#   根据名字查找 symbol，也可以 Ctrl+T</p>
+</blockquote>
+<h2 id="二常用快捷键"><a class="header" href="#二常用快捷键">二、常用快捷键</a></h2>
+<h3 id="1编辑器与窗口管理"><a class="header" href="#1编辑器与窗口管理">1、编辑器与窗口管理</a></h3>
+<pre><code>新建文件:   Ctrl+N
+
+文件之间切换:   Ctrl+Tab
+
+打开一个新的VS Code编辑器:    Ctrl+Shift+N
+
+关闭当前窗口:   Ctrl+W
+
+关闭当前的VS Code编辑器:   Ctrl+Shift+W
+
+切出一个新的编辑器窗口（最多3个):   Ctrl+\
+
+切换左中右3个编辑器窗口的快捷键:   Ctrl+1  Ctrl+2  Ctrl+3
+</code></pre>
+<h3 id="2代码编辑"><a class="header" href="#2代码编辑">2、代码编辑</a></h3>
+<p>(1) 格式调整</p>
+<pre><code>
+代码行向左或向右缩进:   Ctrl+[ 、 Ctrl+]
+
+复制或剪切当前行/当前选中内容:   Ctrl+C 、 Ctrl+V
+
+代码格式化:   Shift+Alt+F
+
+向上或向下移动一行:   Alt+Up 或 Alt+Down
+
+向上或向下复制一行:   Shift+Alt+Up 或 Shift+Alt+Down
+
+在当前行下方插入一行:   Ctrl+Enter
+
+在当前行上方插入一行:   Ctrl+Shift+Enter
+</code></pre>
+<p>(2) 光标相关</p>
+<pre><code>移动到行首:   Home
+
+移动到行尾:   End
+
+移动到文件结尾:   Ctrl+End
+
+移动到文件开头:   Ctrl+Home
+
+移动到定义处:   F12
+
+查看定义处缩略图(只看一眼而不跳转过去):    Alt+F12
+
+选择从光标到行尾的内容:   Shift+End
+
+选择从光标到行首的内容： Shift+Home
+
+删除光标右侧的所有内容(当前行):   Ctrl+Delete
+
+扩展/缩小选取范围： Shift+Alt+Right 和 Shift+Alt+Left
+
+多行编辑(列编辑):   Alt+Shift+鼠标左键 或 Ctrl+Alt+Down/Up
+
+同时选中所有匹配编辑(与当前行或选定内容匹配):   Ctrl+Shift+L
+
+下一个匹配的也被选中:   Ctrl+D
+
+回退上一个光标操作:   Ctrl+U
+
+撤销上一步操作: Ctrl+Z
+
+手动保存:   Ctrl+S
+</code></pre>
+<p>(3) 重构代码</p>
+<pre><code>找到所有的引用:   Shift+F12
+
+同时修改本文件中所有匹配的:   Ctrl+F2
+
+跳转到下一个 Error 或 Warning:   当有多个错误时可以按 F8 逐个跳转
+</code></pre>
+<p>(4) 查找替换</p>
+<pre><code>查找:   Ctrl+F
+
+查找替换:   Ctrl+H
+</code></pre>
+<p>(5) 显示相关</p>
+<pre><code>
+全屏显示(再次按则恢复):   F11
+
+放大或缩小(以编辑器左上角为基准):   Ctrl +/-
+
+侧边栏显示或隐藏： Ctrl+B
+
+显示资源管理器(光标切到侧边栏中才有效):   Ctrl+Shift+E
+
+显示搜索(光标切到侧边栏中才有效):   Ctrl+Shift+F
+
+显示(光标切到侧边栏中才有效):   Git Ctrl+Shift+G
+
+显示 Debug:    Ctrl+Shift+D
+
+显示 Output:    Ctrl+Shift+U
+</code></pre>
+<p>(6) 其他设置</p>
+<pre><code>自动保存：File -&gt; AutoSave(中文界面下“文件”-&gt;“自动保存”) 或者 Ctrl+Shift+P，输入 auto
+</code></pre>
+<h2 id="三修改默认快捷键"><a class="header" href="#三修改默认快捷键">三、修改默认快捷键</a></h2>
+<p>打开默认键盘快捷方式设置：File -&gt; Preferences -&gt; Keyboard Shortcuts( 中文界面时：“文件”-&gt;&quot;首选项&quot;-&gt;&quot;键盘快捷方式&quot;)，或者：Alt+F -&gt; p -&gt; k -&gt; Enter，进入后如下图一所示。</p>
+<p>修改快捷键绑定方法一：直接在对应命令那一行点击，出现笔状图标，点击进入修改，如下图一所示：</p>
+<p><img src="../static/img/vs/vs3.png" alt="" /></p>
+<p>修改快捷键绑定方法二：点击搜索栏下侧的“ keybindings.json ”，进入编辑界面，如下图所示：</p>
+<p><img src="../static/img/vs/vs4.png" alt="" /></p>
+<p>编写对应规则有一定的方法，如下所示：</p>
+<pre><code>// 将键绑定放入此文件中以覆盖默认值
+[{
+    &quot;key&quot;: &quot;f8&quot;,
+    &quot;command&quot;: &quot;workbench.action.tasks.runTask&quot;,
+    &quot;args&quot;: &quot;build&quot;,
+    &quot;when&quot;: &quot;editorTextFocus&quot;
+}
+]
+
+key    表示绑定的键
+
+command    表示执行的命令
+
+args    命令的参数，这里我们是build编译任务
+
+when    快捷键在何时生效，这里指的是编辑区
+
+保存完，你尝试按下F8，任务便顺利运行了。
+</code></pre>
+<p>自己的&quot; keybindings.json &quot;文件参考如下(谨慎使用)：</p>
+<pre><code>// Place your key bindings in this file to overwrite the defaults
+[
+    // ctrl+space 被切换输入法快捷键占用
+    {
+        &quot;key&quot;: &quot;ctrl+alt+space&quot;,
+        &quot;command&quot;: &quot;editor.action.triggerSuggest&quot;,
+        &quot;when&quot;: &quot;editorTextFocus&quot;
+    },
+    // ctrl+d 删除一行
+    {
+        &quot;key&quot;: &quot;ctrl+d&quot;,
+        &quot;command&quot;: &quot;editor.action.deleteLines&quot;,
+        &quot;when&quot;: &quot;editorTextFocus&quot;
+    },
+    // 与删除一行的快捷键互换
+    {
+        &quot;key&quot;: &quot;ctrl+shift+k&quot;,
+        &quot;command&quot;: &quot;editor.action.addSelectionToNextFindMatch&quot;,
+        &quot;when&quot;: &quot;editorFocus&quot;
+    },
+    // ctrl+shift+/多行注释
+    {
+        &quot;key&quot;:&quot;ctrl+shift+/&quot;,
+        &quot;command&quot;: &quot;editor.action.blockComment&quot;,
+        &quot;when&quot;: &quot;editorTextFocus&quot;
+    },
+    // 定制与 sublime 相同的大小写转换快捷键
+    editor.action.transformToLowercase
+    editor.action.transformToUppercase
+    {
+        &quot;key&quot;: &quot;ctrl+k ctrl+u&quot;,
+        &quot;command&quot;: &quot;editor.action.transformToUppercase&quot;
+        &quot;when&quot;: &quot;editorTextFocus&quot;
+    },
+    {
+        &quot;key&quot;: &quot;ctrl+k ctrl+l&quot;,
+        &quot;command&quot;: &quot;editor.action.transformToLowercase&quot;
+        &quot;when&quot;: &quot;editorTextFocus&quot;
+    }
+]
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../vscode/java.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../vscode/mvn.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../vscode/java.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../vscode/mvn.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>
