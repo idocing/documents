@@ -322,11 +322,11 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="algorithm"><a class="header" href="#algorithm">algorithm</a></h1>
 <h2 id="flat_to_nest"><a class="header" href="#flat_to_nest">flat_to_nest</a></h2>
 <pre><code>const test_data = [
-    { pid: 0, id: 1, name: &quot;aaa&quot; },
-    { pid: 0, id: 2, name: &quot;bbb&quot; },
-    { pid: 1, id: 3, name: &quot;ccc&quot; },
-    { pid: 2, id: 4, name: &quot;ddd&quot; },
-    { pid: 3, id: 5, name: &quot;eee&quot; },
+    { pid: 0, id: 1, name: "aaa" },
+    { pid: 0, id: 2, name: "bbb" },
+    { pid: 1, id: 3, name: "ccc" },
+    { pid: 2, id: 4, name: "ddd" },
+    { pid: 3, id: 5, name: "eee" },
 ]
 export const flat_to_nest = function (data) {
     if (!data) {
@@ -349,11 +349,11 @@ export const flat_to_nest = function (data) {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="algorithm-1"><a class="header" href="#algorithm-1">algorithm</a></h1>
 <h2 id="flat_to_nest-1"><a class="header" href="#flat_to_nest-1">flat_to_nest</a></h2>
 <pre><code>const test_data = [
-    { pid: 0, id: 1, name: &quot;aaa&quot; },
-    { pid: 0, id: 2, name: &quot;bbb&quot; },
-    { pid: 1, id: 3, name: &quot;ccc&quot; },
-    { pid: 2, id: 4, name: &quot;ddd&quot; },
-    { pid: 3, id: 5, name: &quot;eee&quot; },
+    { pid: 0, id: 1, name: "aaa" },
+    { pid: 0, id: 2, name: "bbb" },
+    { pid: 1, id: 3, name: "ccc" },
+    { pid: 2, id: 4, name: "ddd" },
+    { pid: 3, id: 5, name: "eee" },
 ]
 export const flat_to_nest = function (data) {
     if (!data) {
@@ -545,7 +545,7 @@ gcc -o test -L. -lxxx test.c
 <h2 id="var"><a class="header" href="#var">var</a></h2>
 <pre><code>set(FOO abc)
 command(${FOO}) //command(abc)
-command(&quot;${FOO}&quot;) //command(&quot;abc&quot;)
+command("${FOO}") //command("abc")
 </code></pre>
 <h2 id="flow-control"><a class="header" href="#flow-control">flow control</a></h2>
 <pre><code>if()...else()/elseif()...endif()
@@ -553,19 +553,19 @@ while()...endwhile()
 foreach()...endforeach()
 </code></pre>
 <h2 id="command-list"><a class="header" href="#command-list">command list</a></h2>
-<pre><code>include_directories(&quot;dir1&quot; &quot;dir2&quot; ...) //-Idir1 -Idir2
-link_directories(&quot;dir1&quot; &quot;dir2&quot;)
-aux_source_directory(&quot;source-dir&quot; variable)
+<pre><code>include_directories("dir1" "dir2" ...) //-Idir1 -Idir2
+link_directories("dir1" "dir2")
+aux_source_directory("source-dir" variable)
 add_executable()
 add_library()
 add_custom_target()
 add_dependencies(target1 t2 t3)
-add_definitions(&quot;-Wall -ansi&quot;)
+add_definitions("-Wall -ansi")
 target_link_libraries(target-name lib1 lib2 ...)
 link_libraries(lib1 lib2 ...)
 set_target_properties(...)
 message(...)
-install(files &quot;f1&quot; &quot;f2&quot; destination)
+install(files "f1" "f2" destination)
 set(variable value)
 list(append|insert|length|get|remove_item|remove_at|sort ...)
 string(toupper|tolower|length|substring|replace|regex ...)
@@ -577,7 +577,7 @@ find_library()
 find_program()
 find_package()
 exec_program(bin [work_dir] args &lt;..&gt; [output_variable var] [return_value var])
-option(option_var &quot;description&quot; [initial value])
+option(option_var "description" [initial value])
 </code></pre>
 <h2 id="variable"><a class="header" href="#variable">variable</a></h2>
 <h3 id="project-path"><a class="header" href="#project-path">project path</a></h3>
@@ -623,22 +623,22 @@ add_executable(c_demo ${SRC})
 <h1 id="cmake-1"><a class="header" href="#cmake-1">cmake</a></h1>
 <h2 id="include_directories添加头文件目录"><a class="header" href="#include_directories添加头文件目录">INCLUDE_DIRECTORIES（添加头文件目录）</a></h2>
 <p>它相当于g++选项中的-I参数的作用，也相当于环境变量中增加路径到CPLUS_INCLUDE_PATH变量的作用。</p>
-<pre><code>include_directories(&quot;/opt/MATLAB/R2012a/extern/include&quot;)
+<pre><code>include_directories("/opt/MATLAB/R2012a/extern/include")
 export CPLUS_INCLUDE_PATH=CPLUS_INCLUDE_PATH:$MATLAB/extern/include
 </code></pre>
 <h2 id="link_directories添加需要链接的库文件目录"><a class="header" href="#link_directories添加需要链接的库文件目录">LINK_DIRECTORIES（添加需要链接的库文件目录）</a></h2>
 <pre><code>link_directories(directory1 directory2 ...)
 </code></pre>
 <p>它相当于g++命令的-L选项的作用，也相当于环境变量中增加LD_LIBRARY_PATH的路径的作用。</p>
-<pre><code>LINK_DIRECTORIES(&quot;/opt/MATLAB/R2012a/bin/glnxa64&quot;)
+<pre><code>LINK_DIRECTORIES("/opt/MATLAB/R2012a/bin/glnxa64")
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MATLAB/bin/glnxa64
 </code></pre>
 <h2 id="link_libraries添加需要链接的库文件路径注意这里是全路径"><a class="header" href="#link_libraries添加需要链接的库文件路径注意这里是全路径">LINK_LIBRARIES（添加需要链接的库文件路径，注意这里是全路径）</a></h2>
-<pre><code>LINK_LIBRARIES(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libeng.so&quot;)
-LINK_LIBRARIES(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libmx.so&quot;)
+<pre><code>LINK_LIBRARIES("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so")
+LINK_LIBRARIES("/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
 </code></pre>
 <p>or</p>
-<pre><code>LINK_LIBRARIES(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libeng.so&quot;　&quot;/opt/MATLAB/R2012a/bin/glnxa64/libmx.so&quot;)
+<pre><code>LINK_LIBRARIES("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so"　"/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
 </code></pre>
 <h2 id="target_link_libraries设置要链接的库文件的名称"><a class="header" href="#target_link_libraries设置要链接的库文件的名称">TARGET_LINK_LIBRARIES（设置要链接的库文件的名称）</a></h2>
 <pre><code>TARGET_LINK_LIBRARIES(targetlibrary1 &lt;debug | optimized&gt; library2 ..)
@@ -655,22 +655,22 @@ TARGET_LINK_LIBRARIES(myProject -leng)
 <h2 id="example"><a class="header" href="#example">example</a></h2>
 <pre><code>cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
  
-include_directories(&quot;/opt/MATLAB/R2012a/extern/include&quot;)
+include_directories("/opt/MATLAB/R2012a/extern/include")
  
 #directly link to the libraries.
-link_libraries(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libeng.so&quot;)
-link_libraries(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libmx.so&quot;)
+link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so")
+link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
  
 #equals to below
-#link_libraries(&quot;/opt/MATLAB/R2012a/bin/glnxa64/libeng.so&quot; &quot;/opt/MATLAB/R2012a/bin/glnxa64/libmx.so&quot;)
+#link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so" "/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
  
 add_executable(myProject main.cpp) 
 </code></pre>
 <pre><code>cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
  
-include_directories(&quot;/opt/MATLAB/R2012a/extern/include&quot;)
+include_directories("/opt/MATLAB/R2012a/extern/include")
 
-link_directories(&quot;/opt/MATLAB/R2012a/bin/glnxa64&quot;)
+link_directories("/opt/MATLAB/R2012a/bin/glnxa64")
  
 add_executable(myProject main.cpp)
  
@@ -785,27 +785,27 @@ openssl asn1parse -i -in public.pem -strparse 16
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vscode-csharp"><a class="header" href="#vscode-csharp">vscode csharp</a></h1>
 <h2 id="vscode-extension"><a class="header" href="#vscode-extension">vscode extension</a></h2>
 <h3 id="net-runtime-install-tool"><a class="header" href="#net-runtime-install-tool">.NET Runtime Install Tool</a></h3>
-<pre><code>&quot;dotnetAcquisitionExtension.existingDotnetPath&quot;: [
+<pre><code>"dotnetAcquisitionExtension.existingDotnetPath": [
     {
-        &quot;extensionId&quot;: &quot;ms-dotnettools.csharp&quot;,
-        &quot;path&quot;: &quot;/path/dotnet/dotnet&quot;,
+        "extensionId": "ms-dotnettools.csharp",
+        "path": "/path/dotnet/dotnet",
     }
 ],
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vscode-csharp-1"><a class="header" href="#vscode-csharp-1">vscode csharp</a></h1>
 <h2 id="vscode-extension-1"><a class="header" href="#vscode-extension-1">vscode extension</a></h2>
 <h3 id="net-runtime-install-tool-1"><a class="header" href="#net-runtime-install-tool-1">.NET Runtime Install Tool</a></h3>
-<pre><code>&quot;dotnetAcquisitionExtension.existingDotnetPath&quot;: [
+<pre><code>"dotnetAcquisitionExtension.existingDotnetPath": [
     {
-        &quot;extensionId&quot;: &quot;ms-dotnettools.csharp&quot;,
-        &quot;path&quot;: &quot;/path/dotnet/dotnet&quot;,
+        "extensionId": "ms-dotnettools.csharp",
+        "path": "/path/dotnet/dotnet",
     }
 ],
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cxx"><a class="header" href="#cxx">cxx</a></h1>
 <h2 id="build-import-librarydll--lib"><a class="header" href="#build-import-librarydll--lib">build import library(dll &amp; lib)</a></h2>
 <h3 id="export-function"><a class="header" href="#export-function">export function</a></h3>
-<pre><code>extern &quot;C&quot; __declspec(dllexport) void xxx();
+<pre><code>extern "C" __declspec(dllexport) void xxx();
 </code></pre>
 <h3 id="export-class"><a class="header" href="#export-class">export class</a></h3>
 <pre><code>class __declspec(dllexport) XXX {
@@ -820,7 +820,7 @@ openssl asn1parse -i -in public.pem -strparse 16
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cxx-1"><a class="header" href="#cxx-1">cxx</a></h1>
 <h2 id="build-import-librarydll--lib-1"><a class="header" href="#build-import-librarydll--lib-1">build import library(dll &amp; lib)</a></h2>
 <h3 id="export-function-1"><a class="header" href="#export-function-1">export function</a></h3>
-<pre><code>extern &quot;C&quot; __declspec(dllexport) void xxx();
+<pre><code>extern "C" __declspec(dllexport) void xxx();
 </code></pre>
 <h3 id="export-class-1"><a class="header" href="#export-class-1">export class</a></h3>
 <pre><code>class __declspec(dllexport) XXX {
@@ -936,7 +936,7 @@ mysqldump -u dbuser -p -d --add-drop-table dbname tbname &gt; dbname_tb.db
 <ul>
 <li>export query</li>
 </ul>
-<pre><code>mysql -u dbuser -p --default-character-set=gbk -e &quot;select * from tbname&quot; dbname &gt; tbname.db
+<pre><code>mysql -u dbuser -p --default-character-set=gbk -e "select * from tbname" dbname &gt; tbname.db
 </code></pre>
 <ul>
 <li>import data</li>
@@ -1185,7 +1185,7 @@ from
 	from
 		(
 		select
-			('&quot;' || table_schema || '&quot;.&quot;' || table_name || '&quot;') as table_name
+			('"' || table_schema || '"."' || table_name || '"') as table_name
 		from
 			information_schema.tables
 ) as all_tables
@@ -1356,7 +1356,7 @@ select id, pid, name, level from dd;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="uuid"><a class="header" href="#uuid">uuid</a></h1>
 <h2 id="postgres-uuid"><a class="header" href="#postgres-uuid">postgres uuid</a></h2>
-<pre><code>CREATE EXTENSION &quot;uuid-ossp&quot;;
+<pre><code>CREATE EXTENSION "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS user_info (
     id uuid DEFAULT uuid_generate_v4(),
@@ -1416,7 +1416,7 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=0 /go/src/github.com/sparkdevo/href-counter/app .
-CMD [&quot;./app&quot;]
+CMD ["./app"]
 </code></pre>
 <p>这段代码引用自《Dockerfile 中的 multi-stage》一文，其中的 COPY 命令通过指定 --from=0 参数，把前一阶段构建的产物拷贝到了当前的镜像中。</p>
 <h2 id="add-命令还可以干其它事情"><a class="header" href="#add-命令还可以干其它事情">ADD 命令还可以干其它事情</a></h2>
@@ -1479,7 +1479,7 @@ COPY check* ./
 <pre><code>docker network create somenetwork
 </code></pre>
 <p>Run Elasticsearch:</p>
-<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elastic/elasticsearch:7.0.0
+<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elastic/elasticsearch:7.0.0
 </code></pre>
 <ul>
 <li>Running in Production Mode</li>
@@ -1496,8 +1496,8 @@ COPY check* ./
 <p>Every file in the host directory ~/pipeline/ will then be parsed by Logstash as pipeline configuration.</p>
 <p>If you don’t provide configuration to Logstash, it will run with a minimal config that listens for messages from the Beats input plugin and echoes any that are received to stdout. In this case, the startup logs will be similar to the following:</p>
 <pre><code>Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties.
-[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;&quot;0.0.0.0:5044&quot;}
-[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {&quot;id&quot;=&gt;&quot;main&quot;, &quot;pipeline.workers&quot;=&gt;4, &quot;pipeline.batch.size&quot;=&gt;125, &quot;pipeline.batch.delay&quot;=&gt;5, &quot;pipeline.max_inflight&quot;=&gt;500}
+[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;"0.0.0.0:5044"}
+[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {"id"=&gt;"main", "pipeline.workers"=&gt;4, "pipeline.batch.size"=&gt;125, "pipeline.batch.delay"=&gt;5, "pipeline.max_inflight"=&gt;500}
 [2016-10-26T05:11:35,078][INFO ][org.logstash.beats.Server] Starting server on port: 5044
 [2016-10-26T05:11:35,078][INFO ][logstash.pipeline        ] Pipeline main started
 [2016-10-26T05:11:35,105][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=&gt;9600}
@@ -1553,7 +1553,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <ul>
 <li>IMPORTANT</li>
 </ul>
-<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be &quot;masked&quot; by the new file.</p>
+<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be "masked" by the new file.</p>
 <ul>
 <li>Logging Configuration</li>
 </ul>
@@ -1594,7 +1594,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <pre><code>docker run \
 elastic/filebeat:7.0.0 \
 setup -E setup.kibana.host=kibana:5601 \
--E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+-E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Kibana and Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using this syntax:</p>
@@ -1618,11 +1618,11 @@ setup -E setup.kibana.host=kibana:5601 \
 <pre><code>docker run -d \
   --name=filebeat \
   --user=root \
-  --volume=&quot;$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro&quot; \
-  --volume=&quot;/var/lib/docker/containers:/var/lib/docker/containers:ro&quot; \
-  --volume=&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot; \
+  --volume="$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro" \
+  --volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
+  --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
   docker.elastic.co/beats/filebeat:7.0.0 filebeat -e -strict.perms=false \
-  -E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+  -E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using the syntax shown earlier.</p>
@@ -1666,7 +1666,7 @@ USER filebeat
 <pre><code>docker network create somenetwork
 </code></pre>
 <p>Run Elasticsearch:</p>
-<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elastic/elasticsearch:7.0.0
+<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elastic/elasticsearch:7.0.0
 </code></pre>
 <ul>
 <li>Running in Production Mode</li>
@@ -1683,8 +1683,8 @@ USER filebeat
 <p>Every file in the host directory ~/pipeline/ will then be parsed by Logstash as pipeline configuration.</p>
 <p>If you don’t provide configuration to Logstash, it will run with a minimal config that listens for messages from the Beats input plugin and echoes any that are received to stdout. In this case, the startup logs will be similar to the following:</p>
 <pre><code>Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties.
-[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;&quot;0.0.0.0:5044&quot;}
-[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {&quot;id&quot;=&gt;&quot;main&quot;, &quot;pipeline.workers&quot;=&gt;4, &quot;pipeline.batch.size&quot;=&gt;125, &quot;pipeline.batch.delay&quot;=&gt;5, &quot;pipeline.max_inflight&quot;=&gt;500}
+[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;"0.0.0.0:5044"}
+[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {"id"=&gt;"main", "pipeline.workers"=&gt;4, "pipeline.batch.size"=&gt;125, "pipeline.batch.delay"=&gt;5, "pipeline.max_inflight"=&gt;500}
 [2016-10-26T05:11:35,078][INFO ][org.logstash.beats.Server] Starting server on port: 5044
 [2016-10-26T05:11:35,078][INFO ][logstash.pipeline        ] Pipeline main started
 [2016-10-26T05:11:35,105][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=&gt;9600}
@@ -1740,7 +1740,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <ul>
 <li>IMPORTANT</li>
 </ul>
-<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be &quot;masked&quot; by the new file.</p>
+<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be "masked" by the new file.</p>
 <ul>
 <li>Logging Configuration</li>
 </ul>
@@ -1781,7 +1781,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <pre><code>docker run \
 elastic/filebeat:7.0.0 \
 setup -E setup.kibana.host=kibana:5601 \
--E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+-E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Kibana and Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using this syntax:</p>
@@ -1805,11 +1805,11 @@ setup -E setup.kibana.host=kibana:5601 \
 <pre><code>docker run -d \
   --name=filebeat \
   --user=root \
-  --volume=&quot;$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro&quot; \
-  --volume=&quot;/var/lib/docker/containers:/var/lib/docker/containers:ro&quot; \
-  --volume=&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot; \
+  --volume="$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro" \
+  --volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
+  --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
   docker.elastic.co/beats/filebeat:7.0.0 filebeat -e -strict.perms=false \
-  -E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+  -E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using the syntax shown earlier.</p>
@@ -1846,7 +1846,7 @@ USER filebeat
 <pre><code>docker network create elk
 </code></pre>
 <ul>
-<li>run elasticsearch </li>
+<li>run elasticsearch</li>
 </ul>
 <pre><code>docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e discovery.type=single-node elastic/elasticsearch:7.0.0
 </code></pre>
@@ -1863,27 +1863,27 @@ USER filebeat
 </ul>
 <pre><code>input {
     file {
-        path =&gt; &quot;/mnt/logs/sys*.log&quot;
-        type =&gt; &quot;system&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/mnt/logs/sys*.log"
+        type =&gt; "system"
+        start_position =&gt; "beginning"
     }
     file {
-        path =&gt; &quot;/mnt/logs/error*.log&quot;
-        type =&gt; &quot;error&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/mnt/logs/error*.log"
+        type =&gt; "error"
+        start_position =&gt; "beginning"
     }
 }
 output {
-    if [type] == &quot;system&quot; {
+    if [type] == "system" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "system-%{+YYYY.MM.dd}"
         }
     }
-    if [type] == &quot;error&quot; {
+    if [type] == "error" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "error-%{+YYYY.MM.dd}"
         }
     }
 }
@@ -1904,7 +1904,7 @@ output {
 <li>vi pipelines.yml</li>
 </ul>
 <pre><code>- pipeline.id: logstash-one
-  path.config: &quot;/usr/share/logstash/config/*.conf&quot;
+  path.config: "/usr/share/logstash/config/*.conf"
   pipeline.workers: 3
 </code></pre>
 <ul>
@@ -1912,27 +1912,27 @@ output {
 </ul>
 <pre><code>input {
     file {
-        path =&gt; &quot;/var/logs/sys*.log&quot;
-        type =&gt; &quot;system&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/var/logs/sys*.log"
+        type =&gt; "system"
+        start_position =&gt; "beginning"
     }
     file {
-        path =&gt; &quot;/var/logs/error*.log&quot;
-        type =&gt; &quot;error&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/var/logs/error*.log"
+        type =&gt; "error"
+        start_position =&gt; "beginning"
     }
 }
 output {
-    if [type] == &quot;system&quot; {
+    if [type] == "system" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "system-%{+YYYY.MM.dd}"
         }
     }
-    if [type] == &quot;error&quot; {
+    if [type] == "error" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "error-%{+YYYY.MM.dd}"
         }
     }
 }
@@ -1955,27 +1955,27 @@ docker load -i kibana.tar
 </ul>
 <pre><code>input {
     file {
-        path =&gt; &quot;/mnt/logs/sys*.log&quot;
-        type =&gt; &quot;system&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/mnt/logs/sys*.log"
+        type =&gt; "system"
+        start_position =&gt; "beginning"
     }
     file {
-        path =&gt; &quot;/mnt/logs/error*.log&quot;
-        type =&gt; &quot;error&quot;
-        start_position =&gt; &quot;beginning&quot;
+        path =&gt; "/mnt/logs/error*.log"
+        type =&gt; "error"
+        start_position =&gt; "beginning"
     }
 }
 output {
-    if [type] == &quot;system&quot; {
+    if [type] == "system" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "system-%{+YYYY.MM.dd}"
         }
     }
-    if [type] == &quot;error&quot; {
+    if [type] == "error" {
         elasticsearch {
-            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
-            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
+            hosts =&gt; ["http://elasticsearch:9200"]
+            index =&gt; "error-%{+YYYY.MM.dd}"
         }
     }
 }
@@ -1983,7 +1983,7 @@ output {
 <h2 id="43-run-docker"><a class="header" href="#43-run-docker">4.3 run docker</a></h2>
 <pre><code>docker network create elk
 
-docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elastic/elasticsearch:7.0.0
+docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elastic/elasticsearch:7.0.0
 
 docker run --name kibana -dit --net elk --link elasticsearch:elasticsearch -p 5601:5601 elastic/kibana:7.0.0
 
@@ -2053,7 +2053,7 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=0 /go/src/github.com/sparkdevo/href-counter/app .
-CMD [&quot;./app&quot;]
+CMD ["./app"]
 </code></pre>
 <p>这段代码引用自《Dockerfile 中的 multi-stage》一文，其中的 COPY 命令通过指定 --from=0 参数，把前一阶段构建的产物拷贝到了当前的镜像中。</p>
 <h2 id="add-命令还可以干其它事情-1"><a class="header" href="#add-命令还可以干其它事情-1">ADD 命令还可以干其它事情</a></h2>
@@ -2121,7 +2121,7 @@ RUN apt update -y \
 &amp;&amp; apt autoclean \
 &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dockerfile"><a class="header" href="#dockerfile">Dockerfile</a></h1>
 <pre><code># This my first nginx Dockerfile
@@ -2150,13 +2150,13 @@ WORKDIR /usr/local/nginx
 
 RUN ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_ssl_module --with-pcre &amp;&amp; make &amp;&amp; make install
 
-RUN echo &quot;daemon off;&quot; &gt;&gt; /etc/nginx.conf
+RUN echo "daemon off;" &gt;&gt; /etc/nginx.conf
 
 #EXPOSE 映射端口
 EXPOSE 80
 
 #CMD 运行以下命令
-CMD [&quot;nginx&quot;]
+CMD ["nginx"]
 </code></pre>
 <h1 id="base-image"><a class="header" href="#base-image">base image</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>镜像名称</th><th>大小</th><th>使用场景</th></tr></thead><tbody>
@@ -2214,7 +2214,7 @@ scratch                 latest              775bfce21429        9 minutes ago   
 <p>则可以用docker build --build-arg<name>=<value>来指定参数值。</p>
 <h2 id="run在镜像中要执行的命令"><a class="header" href="#run在镜像中要执行的命令">RUN：在镜像中要执行的命令</a></h2>
 <blockquote>
-<p>格式为 RUN <command> 或 RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</p>
+<p>格式为 RUN <command> 或 RUN ["executable", "param1", "param2"]</p>
 </blockquote>
 <p>前者默认将在 shell 终端中运行命令，即 /bin/bash -c ；后者则使用 exec 执行。指定使用其它终端可以通过第二种方式实现，例如 RUN [“/bin/bash”, “-c”,”echo hello”] 。</p>
 <p>每条RUN指令将在当前镜像的基础上执行指定命令，并提交为新的镜像。当命令较长时可以使用\换行。例如：</p>
@@ -2261,7 +2261,7 @@ RUN pwd
 </code></pre>
 <h2 id="volume挂载目录"><a class="header" href="#volume挂载目录">VOLUME：挂载目录</a></h2>
 <blockquote>
-<p>格式为VOLUME [&quot;/data&quot;]</p>
+<p>格式为VOLUME ["/data"]</p>
 </blockquote>
 <p>创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。</p>
 <h2 id="user"><a class="header" href="#user">USER</a></h2>
@@ -2274,22 +2274,22 @@ RUN pwd
 <blockquote>
 <p>格式为：LABEL <key>=<value> <key>=<value> <key>=<value> ...</p>
 </blockquote>
-<pre><code>LABEL version=&quot;1.0&quot;
-LABEL description=&quot;This text illustrates \ that label-values can span multiple lines.&quot;
+<pre><code>LABEL version="1.0"
+LABEL description="This text illustrates \ that label-values can span multiple lines."
 </code></pre>
 <h2 id="entrypoint"><a class="header" href="#entrypoint">ENTRYPOINT</a></h2>
 <p>指定镜像的默认入口命令，该入口命令会在启动容器时作为根命令执行，所有传入值作为该命令的参数。</p>
 <p>两种格式：</p>
-<pre><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
+<pre><code>ENTRYPOINT ["executable", "param1", "param2"]
  
 ENTRYPOINT command param1 param2 （shell 中执行）
 </code></pre>
 <p>此时，CMD指令指定值将作为根命令的参数。每个Dockerfile中只能有一个ENTRYPOINT，当指定多个时，只有最后一个有效。在运行时可以被--entrypoint参数覆盖掉，如docker run --entrypoint。</p>
 <h2 id="cmd"><a class="header" href="#cmd">CMD</a></h2>
 <p>支持三种格式</p>
-<pre><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 使用 exec 执行，推荐方式；
+<pre><code>CMD ["executable","param1","param2"] 使用 exec 执行，推荐方式；
 CMD command param1 param2 在 /bin/bash 中执行，提供给需要交互的应用；
-CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数；
+CMD ["param1","param2"] 提供给 ENTRYPOINT 的默认参数；
 </code></pre>
 <p>指定启动容器时执行的命令，每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。</p>
 <h2 id="onbuild在构建本镜像时不生效在基于此镜像构建镜像时生效"><a class="header" href="#onbuild在构建本镜像时不生效在基于此镜像构建镜像时生效">ONBUILD：在构建本镜像时不生效，在基于此镜像构建镜像时生效</a></h2>
@@ -2317,9 +2317,9 @@ CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数
 <h2 id="shell"><a class="header" href="#shell">SHELL</a></h2>
 <p>指定其他命令使用shell时的默认shell类型。</p>
 <blockquote>
-<p>格式为： SHELL [&quot;executable&quot;,&quot;parameters&quot;]</p>
+<p>格式为： SHELL ["executable","parameters"]</p>
 </blockquote>
-<p>默认值为 [&quot;bin/sh&quot;,&quot;-c&quot;]</p>
+<p>默认值为 ["bin/sh","-c"]</p>
 <p>注意：
 对于Windows系统，建议在Dockerfile开头添加# escape=`来指定转移信息。</p>
 <p>ENTRYPOINT 和 CMD 的区别：ENTRYPOINT 指定了该镜像启动时的入口，CMD 则指定了容器启动时的命令，当两者共用时，完整的启动命令像是 ENTRYPOINT + CMD 这样。使用 ENTRYPOINT 的好处是在我们启动镜像就像是启动了一个可执行程序，在 CMD 上仅需要指定参数；另外在我们需要自定义 CMD 时不容易出错。</p>
@@ -2327,13 +2327,13 @@ CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数
 <pre><code>[root@sta2 test]# cat Dockerfile 
 FROM mysql
 
-CMD [&quot;echo&quot;,&quot;test&quot;]
+CMD ["echo","test"]
 </code></pre>
 <p>使用 ENTRYPOINT 的 Dockerfile：</p>
 <pre><code>[root@sta2 entrypoint]#  cat  Dockerfile 
 FROM mysql
  
-ENTRYPOINT [&quot;echo&quot;,&quot;test&quot;]
+ENTRYPOINT ["echo","test"]
 </code></pre>
 <p>结论：ENTRYPOINT 不能覆盖掉执行时的参数，CMD 可以掉覆盖默认的参数。</p>
 <p>可以使用以下命令覆盖默认的参数，方便调试 Dockerfile 中的 bug：</p>
@@ -2351,7 +2351,7 @@ RUN apk add --no-cache tzdata &amp;&amp; \
     apk del tzdata
 
 RUN apk add --no-cache libc6-compat ca-certificates &amp;&amp; \
-    echo &quot;hosts: files dns&quot; &gt; /etc/nsswitch.conf
+    echo "hosts: files dns" &gt; /etc/nsswitch.conf
     
 ADD go1.16.10.linux-amd64.tar.gz /usr/local
 
@@ -2485,9 +2485,9 @@ ENTRYPOINT指令给出容器启动后的默认行为，一般难以在启动容�
 <pre><code>#给出容器入口的后续命令参数
 docker run --entrypoint /bin/bash ...
 #给出容器的新Shell
-docker run --entrypoint=&quot;/bin/bash ...&quot; ...
+docker run --entrypoint="/bin/bash ..." ...
 #重置容器入口
-docker run -it --entrypoint=&quot;&quot; mysql bash
+docker run -it --entrypoint="" mysql bash
 </code></pre>
 <h2 id="2覆盖cmd指令"><a class="header" href="#2覆盖cmd指令">2、覆盖CMD指令</a></h2>
 <p>Dockerfile文件中的CMD指令，给出容器启动后默认执行的指令。</p>
@@ -2498,11 +2498,11 @@ docker run ... &lt;new_command&gt;
 <p>如果Dockerfile文件中还声明了ENTRYPOINT指令，则上述指令都将作为参数追加到ENTRYPOINT指令。</p>
 <h2 id="3覆盖expose指令"><a class="header" href="#3覆盖expose指令">3、覆盖EXPOSE指令</a></h2>
 <p>用以向容器所在主机保留端口。显然这是运行时容器的一个特性，所以docker run可以方便地覆盖该指令。示例如下：</p>
-<pre><code>docker run --expose=&quot;port_number:port_number&quot;
+<pre><code>docker run --expose="port_number:port_number"
 #打开指定范围的端口
 docker run -p port_number:port_number/tcp
 #链接到其他容器
-docker run --link=&quot;another_container_id&quot;
+docker run --link="another_container_id"
 #打开所有端口
 docker run -P
 </code></pre>
@@ -2516,18 +2516,18 @@ docker run -P
 </ul>
 <p>docker run可以方便地覆盖该指令。示例如下：</p>
 <pre><code>#设置新的环境变量key
-docker run -e &quot;key=value&quot; ...
+docker run -e "key=value" ...
 #覆盖HOSTNAME
 docker run -h ...
 docker run ubuntu /bin/bash -c export
 </code></pre>
-<pre><code>declare -x HOME=&quot;/&quot;
-declare -x HOSTNAME=&quot;85bc26a0e200&quot;
+<pre><code>declare -x HOME="/"
+declare -x HOSTNAME="85bc26a0e200"
 declare -x OLDPWD
-declare -x PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
-declare -x PWD=&quot;/&quot;
-declare -x SHLVL=&quot;1&quot;
-declare -x deep=&quot;purple&quot;
+declare -x PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+declare -x PWD="/"
+declare -x SHLVL="1"
+declare -x deep="purple"
 </code></pre>
 <p>通过脚本，设置或覆盖环境变量</p>
 <h2 id="5覆盖volume指令"><a class="header" href="#5覆盖volume指令">5、覆盖VOLUME指令</a></h2>
@@ -2538,8 +2538,8 @@ docker run -volumes-from ...
 <h2 id="6覆盖user指令"><a class="header" href="#6覆盖user指令">6、覆盖USER指令</a></h2>
 <p>容器内部的默认用户是root(uid=0)。
 Dockerfile文件中可以通过USER指定其他用户为容器的默认用户。</p>
-<pre><code>docker run -u=&quot;&quot; ...
-docker run --user=&quot;&quot; ...
+<pre><code>docker run -u="" ...
+docker run --user="" ...
 </code></pre>
 <p>docker run支持-u如下形式：</p>
 <ul>
@@ -2553,8 +2553,8 @@ docker run --user=&quot;&quot; ...
 <h2 id="7覆盖workdir指令"><a class="header" href="#7覆盖workdir指令">7、覆盖WORKDIR指令</a></h2>
 <p>WORKDIR用以为后续指令设置工作目录。如果设置的路径不存在，则创建该路径，即时在后续指令中根本未使用。
 在一个，可以存在多个WORKDIR。对于相对路径，后续指令继承前续指令。在WORKDIR中，可以引用前续已经定义的环境变量。</p>
-<pre><code>docker run -w=&quot;&quot; ...
-docker run --workdir=&quot;&quot; ...
+<pre><code>docker run -w="" ...
+docker run --workdir="" ...
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="redis-docker"><a class="header" href="#redis-docker">redis docker</a></h1>
 <h2 id="start-a-redis-instance"><a class="header" href="#start-a-redis-instance">start a redis instance</a></h2>
@@ -2593,7 +2593,7 @@ config set requirepass 123456
 <h2 id="rootfs-1"><a class="header" href="#rootfs-1">rootfs</a></h2>
 <pre><code>FROM scratch
 ADD rootfs.tar.gz /
-CMD [&quot;/bin/sh&quot;]
+CMD ["/bin/sh"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="docker-run"><a class="header" href="#docker-run">Docker run</a></h1>
 <h2 id="docker-run-options-image-command-arg"><a class="header" href="#docker-run-options-image-command-arg">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</a></h2>
@@ -2603,37 +2603,37 @@ CMD [&quot;/bin/sh&quot;]
 <pre><code>-d, --detach=false， 指定容器运行于前台还是后台，默认为false
 -i, --interactive=false， 打开STDIN，用于控制台交互
 -t, --tty=false， 分配tty设备，该可以支持终端登录，默认为false
--u, --user=&quot;&quot;， 指定容器的用户
+-u, --user=""， 指定容器的用户
 -a, --attach=[]， 登录容器（必须是以docker run -d启动的容器）
--w, --workdir=&quot;&quot;， 指定容器的工作目录
+-w, --workdir=""， 指定容器的工作目录
 -c, --cpu-shares=0， 设置容器CPU权重，在CPU共享场景使用
 -e, --env=[]， 指定环境变量，容器中可以使用该环境变量
--m, --memory=&quot;&quot;， 指定容器的内存上限
+-m, --memory=""， 指定容器的内存上限
 -P, --publish-all=false， 指定容器暴露的端口
 -p, --publish=[]， 指定容器暴露的端口
--h, --hostname=&quot;&quot;， 指定容器的主机名
+-h, --hostname=""， 指定容器的主机名
 -v, --volume=[]， 给容器挂载存储卷，挂载到容器的某个目录
 --volumes-from=[]， 给容器挂载其他容器上的卷，挂载到容器的某个目录
 --cap-add=[]， 添加权限
 --cap-drop=[]， 删除权限
---cidfile=&quot;&quot;， 运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法
---cpuset=&quot;&quot;， 设置容器可以使用哪些CPU，此参数可以用来容器独占CPU
+--cidfile=""， 运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法
+--cpuset=""， 设置容器可以使用哪些CPU，此参数可以用来容器独占CPU
 --device=[]， 添加主机设备给容器，相当于设备直通
 --dns=[]， 指定容器的dns服务器
 --dns-search=[]， 指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件
---entrypoint=&quot;&quot;， 覆盖image的入口点
+--entrypoint=""， 覆盖image的入口点
 --env-file=[]， 指定环境变量文件，文件格式为每行一个环境变量
 --expose=[]， 指定容器暴露的端口，即修改镜像的暴露端口
 --link=[]， 指定容器间的关联，使用其他容器的IP、env等信息
 --lxc-conf=[]， 指定容器的配置文件，只有在指定--exec-driver=lxc时使用
---name=&quot;&quot;， 指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字
---net=&quot;bridge&quot;， 容器网络设置:
+--name=""， 指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字
+--net="bridge"， 容器网络设置:
 bridge 使用docker daemon指定的网桥
 host //容器使用主机的网络
 container:NAME_or_ID &gt;//使用其他容器的网路，共享IP和PORT等网络资源
 none 容器使用自己的网络（类似--net=bridge），但是不进行配置
 --privileged=false， 指定容器是否为特权容器，特权容器拥有所有的capabilities
---restart=&quot;no&quot;， 指定容器停止后的重启策略:
+--restart="no"， 指定容器停止后的重启策略:
 no：容器退出时不重启
 on-failure：容器故障退出（返回值非零）时重启
 always：容器退出时总是重启
@@ -2675,13 +2675,13 @@ always：容器退出时总是重启
 <h2 id="from-scratch"><a class="header" href="#from-scratch">from scratch</a></h2>
 <pre><code>FROM scratch
 ADD hello /
-CMD [&quot;/hello&quot;]
+CMD ["/hello"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="vlmcsd-is-a-replacement-for-microsofts-kms-server"><a class="header" href="#vlmcsd-is-a-replacement-for-microsofts-kms-server">vlmcsd is a replacement for Microsoft's KMS server.</a></h2>
-<p>It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can &quot;charge&quot; a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)
+<p>It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)
 vlmcsd is not a one-click activation or crack tool intended to activate illegal copies of software (Windows, Office, Project, Visio)</p>
 <h2 id="info--about-this-docker"><a class="header" href="#info--about-this-docker">Info / About this docker</a></h2>
-<p>Docker based in Alpine OS with vlmcsd compiled from &quot;source&quot; (vlmcsd GitHub)</p>
+<p>Docker based in Alpine OS with vlmcsd compiled from "source" (vlmcsd GitHub)</p>
 <h2 id="get-image"><a class="header" href="#get-image">Get Image</a></h2>
 <pre><code>docker pull ipacking/vlmcsd:1.0.0
 </code></pre>
@@ -2927,44 +2927,44 @@ source /etc/profile
 <pre><code>package main
  
 import (
-    &quot;encoding/json&quot;
-    &quot;fmt&quot;
-    &quot;os&quot;
+    "encoding/json"
+    "fmt"
+    "os"
 )
  
 type ConfigStruct struct {
-    Host              string   `json:&quot;host&quot;`
-    Port              int      `json:&quot;port&quot;`
-    AnalyticsFile     string   `json:&quot;analytics_file&quot;`
-    StaticFileVersion int      `json:&quot;static_file_version&quot;`
-    StaticDir         string   `json:&quot;static_dir&quot;`
-    TemplatesDir      string   `json:&quot;templates_dir&quot;`
-    SerTcpSocketHost  string   `json:&quot;serTcpSocketHost&quot;`
-    SerTcpSocketPort  int      `json:&quot;serTcpSocketPort&quot;`
-    Fruits            []string `json:&quot;fruits&quot;`
+    Host              string   `json:"host"`
+    Port              int      `json:"port"`
+    AnalyticsFile     string   `json:"analytics_file"`
+    StaticFileVersion int      `json:"static_file_version"`
+    StaticDir         string   `json:"static_dir"`
+    TemplatesDir      string   `json:"templates_dir"`
+    SerTcpSocketHost  string   `json:"serTcpSocketHost"`
+    SerTcpSocketPort  int      `json:"serTcpSocketPort"`
+    Fruits            []string `json:"fruits"`
 }
  
 type Other struct {
-    SerTcpSocketHost string   `json:&quot;serTcpSocketHost&quot;`
-    SerTcpSocketPort int      `json:&quot;serTcpSocketPort&quot;`
-    Fruits           []string `json:&quot;fruits&quot;`
+    SerTcpSocketHost string   `json:"serTcpSocketHost"`
+    SerTcpSocketPort int      `json:"serTcpSocketPort"`
+    Fruits           []string `json:"fruits"`
 }
  
 func main() { 
-    jsonStr := `{&quot;host&quot;: &quot;http://localhost:8080&quot;,&quot;port&quot;: 8080,&quot;analytics_file&quot;: &quot;&quot;,&quot;static_file_version&quot;: 1,&quot;static_dir&quot;: &quot;/opt/Project/goTest/src/&quot;,&quot;templates_dir&quot;: &quot;/opt/Project/goTest/src/templates/&quot;,&quot;serTcpSocketHost&quot;: &quot;:12340&quot;,&quot;serTcpSocketPort&quot;: 12340,&quot;fruits&quot;: [&quot;apple&quot;, &quot;peach&quot;]}`
+    jsonStr := `{"host": "http://localhost:8080","port": 8080,"analytics_file": "","static_file_version": 1,"static_dir": "/opt/Project/goTest/src/","templates_dir": "/opt/Project/goTest/src/templates/","serTcpSocketHost": ":12340","serTcpSocketPort": 12340,"fruits": ["apple", "peach"]}`
  
     //json str &gt;&gt; map
     var dat map[string]interface{}
     if err := json.Unmarshal([]byte(jsonStr), &amp;dat); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; map ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; map ==============")
         fmt.Println(dat)
-        fmt.Println(dat[&quot;host&quot;])
+        fmt.Println(dat["host"])
     }
  
     //json str &gt;&gt; struct
     var config ConfigStruct
     if err := json.Unmarshal([]byte(jsonStr), &amp;config); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; struct ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; struct ==============")
         fmt.Println(config)
         fmt.Println(config.Host)
     }
@@ -2972,34 +2972,34 @@ func main() {
     //json str &gt;&gt; struct
     var part Other
     if err := json.Unmarshal([]byte(jsonStr), &amp;part); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; struct ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; struct ==============")
         fmt.Println(part)
         fmt.Println(part.SerTcpSocketPort)
     }
  
     //struct &gt;&gt; json str
     if b, err := json.Marshal(config); err == nil {
-        fmt.Println(&quot;============== struct &gt;&gt; json str ==============&quot;)
+        fmt.Println("============== struct &gt;&gt; json str ==============")
         fmt.Println(string(b))
     }
  
     //map &gt;&gt; json str
-    fmt.Println(&quot;============== map &gt;&gt; json str ==============&quot;)
+    fmt.Println("============== map &gt;&gt; json str ==============")
     enc := json.NewEncoder(os.Stdout)
     enc.Encode(dat)
  
     //array &gt;&gt; json str
-    arr := []string{&quot;hello&quot;, &quot;apple&quot;, &quot;python&quot;, &quot;golang&quot;, &quot;base&quot;, &quot;peach&quot;, &quot;pear&quot;}
+    arr := []string{"hello", "apple", "python", "golang", "base", "peach", "pear"}
     lang, err := json.Marshal(arr)
     if err == nil {
-        fmt.Println(&quot;============== array &gt;&gt; json str ==============&quot;)
+        fmt.Println("============== array &gt;&gt; json str ==============")
         fmt.Println(string(lang))
     }
  
     //json &gt;&gt; []string
     var wo []string
     if err := json.Unmarshal(lang, &amp;wo); err == nil {
-        fmt.Println(&quot;============== json &gt;&gt; []string ==============&quot;)
+        fmt.Println("============== json &gt;&gt; []string ==============")
         fmt.Println(wo)
     }
 }
@@ -3132,8 +3132,8 @@ replace github.com/article =&gt; ./article
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fmtprintf"><a class="header" href="#fmtprintf">fmt.printf</a></h1>
 <pre><code>package main
 
-import &quot;fmt&quot;
-import &quot;os&quot;
+import "fmt"
+import "os"
 
 type point struct {
 	x, y int
@@ -3142,53 +3142,53 @@ type point struct {
 func main() {
 	p := point{1, 2}
 	//输出结构体的一个实例
-	fmt.Printf(&quot;%v\n&quot;, p) //{1 2}
+	fmt.Printf("%v\n", p) //{1 2}
 	//输出实例将包括字段名
-	fmt.Printf(&quot;%+v\n&quot;, p) //{x:1 y:2}
+	fmt.Printf("%+v\n", p) //{x:1 y:2}
 	//输出实例的语法表示
-	fmt.Printf(&quot;%#v\n&quot;, p) //main.point{x:1, y:2}
+	fmt.Printf("%#v\n", p) //main.point{x:1, y:2}
 	//输出值的类型
-	fmt.Printf(&quot;%T\n&quot;, p) //main.point
+	fmt.Printf("%T\n", p) //main.point
 	//输出布尔值
-	fmt.Printf(&quot;%t\n&quot;, true) //true
+	fmt.Printf("%t\n", true) //true
 	//输出二进制
-	fmt.Printf(&quot;%b\n&quot;, 14) //1110
+	fmt.Printf("%b\n", 14) //1110
     //输出八进制
-	fmt.Printf(&quot;%o\n&quot;, 32) //40
+	fmt.Printf("%o\n", 32) //40
 	//输出十进制
-	fmt.Printf(&quot;%d\n&quot;, 123) //123
+	fmt.Printf("%d\n", 123) //123
 	//输出十六进制
-	fmt.Printf(&quot;%x\n&quot;, 456) //1c8
+	fmt.Printf("%x\n", 456) //1c8
 	//输出字符
-	fmt.Printf(&quot;%c\n&quot;, 33) //!
+	fmt.Printf("%c\n", 33) //!
 	//输出字符串
-	fmt.Printf(&quot;%s\n&quot;, &quot;\&quot;string\&quot;&quot;) //&quot;string&quot;
+	fmt.Printf("%s\n", "\"string\"") //"string"
 	//输出浮点数
-	fmt.Printf(&quot;%f\n&quot;, 78.9) //78.900000
+	fmt.Printf("%f\n", 78.9) //78.900000
 	//输出科学记数法形式
-	fmt.Printf(&quot;%e\n&quot;, 123400000.0) //1.234000e+08
-	fmt.Printf(&quot;%E\n&quot;, 123400000.0) //1.234000E+08
+	fmt.Printf("%e\n", 123400000.0) //1.234000e+08
+	fmt.Printf("%E\n", 123400000.0) //1.234000E+08
 	//输出带双引号形式
-	fmt.Printf(&quot;%q\n&quot;, &quot;\&quot;string\&quot;&quot;) //&quot;\&quot;string\&quot;&quot;
+	fmt.Printf("%q\n", "\"string\"") //"\"string\""
 	//输出十六进制的字符串形式
-	fmt.Printf(&quot;%x\n&quot;, &quot;hex this&quot;) //6865782074686973
+	fmt.Printf("%x\n", "hex this") //6865782074686973
 	//输出指针
-	fmt.Printf(&quot;%p\n&quot;, &amp;p) //0xc000080010
+	fmt.Printf("%p\n", &amp;p) //0xc000080010
 	//输出带宽度的十进制形式
-	fmt.Printf(&quot;|%6d|%6d|\n&quot;, 12, 345) //|    12|   345|
+	fmt.Printf("|%6d|%6d|\n", 12, 345) //|    12|   345|
 	//输出带宽度精度的浮点数形式
-	fmt.Printf(&quot;|%6.2f|%6.2f|\n&quot;, 1.2, 3.45) //|  1.20|  3.45|
+	fmt.Printf("|%6.2f|%6.2f|\n", 1.2, 3.45) //|  1.20|  3.45|
 	//输出带宽度精度左对齐的浮点数形式
-	fmt.Printf(&quot;|%-6.2f|%-6.2f|\n&quot;, 1.2, 3.45) //|1.20  |3.45  |
+	fmt.Printf("|%-6.2f|%-6.2f|\n", 1.2, 3.45) //|1.20  |3.45  |
 	//输出带宽度的字符串形式
-	fmt.Printf(&quot;|%6s|%6s|\n&quot;, &quot;foo&quot;, &quot;b&quot;) //|   foo|     b|
+	fmt.Printf("|%6s|%6s|\n", "foo", "b") //|   foo|     b|
 	//输出带宽度左对齐的字符串形式
-	fmt.Printf(&quot;|%-6s|%-6s|\n&quot;, &quot;foo&quot;, &quot;b&quot;) //|foo   |b     |
+	fmt.Printf("|%-6s|%-6s|\n", "foo", "b") //|foo   |b     |
 	//返回指定形式的值
-	s := fmt.Sprintf(&quot;a %s&quot;, &quot;string&quot;)
+	s := fmt.Sprintf("a %s", "string")
 	fmt.Println(s) //a string
 	//重定向指定形式的值
-	fmt.Fprintf(os.Stderr, &quot;an %s\n&quot;, &quot;error&quot;) //an error
+	fmt.Fprintf(os.Stderr, "an %s\n", "error") //an error
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="type"><a class="header" href="#type">TYPE</a></h1>
@@ -3224,27 +3224,27 @@ func main() {
 </ul>
 <pre><code>package main
 
-import &quot;fmt&quot;
+import "fmt"
 
 func test(test map[string]string) {
     // test:0xc000078150
-	fmt.Printf(&quot;test:%p\n&quot;, test)
+	fmt.Printf("test:%p\n", test)
 	// &amp;test:0xc000098028
-	fmt.Printf(&quot;&amp;test:%p\n&quot;, &amp;test)
+	fmt.Printf("&amp;test:%p\n", &amp;test)
 }
 
 func main() {
 	a := 10
 	// a:%!p(int=10)
-	fmt.Printf(&quot;a:%p\n&quot;, a)
+	fmt.Printf("a:%p\n", a)
 	// &amp;a:0xc000096010
-	fmt.Printf(&quot;&amp;a:%p\n&quot;, &amp;a)
+	fmt.Printf("&amp;a:%p\n", &amp;a)
 
 	b := map[string]string{}
 	// b:0xc000078150
-	fmt.Printf(&quot;b:%p\n&quot;, b)
+	fmt.Printf("b:%p\n", b)
 	// &amp;b:0xc000098020
-	fmt.Printf(&quot;&amp;b:%p\n&quot;, &amp;b)
+	fmt.Printf("&amp;b:%p\n", &amp;b)
 	test(b)
 }
 </code></pre>
@@ -3388,8 +3388,8 @@ make install
 ldconfig
 </code></pre>
 <h2 id="set-env"><a class="header" href="#set-env">set env</a></h2>
-<pre><code>echo &quot;export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig&quot; &gt;&gt; ~/.bashrc
-echo &quot;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/opencv/lib&quot; &gt;&gt; ~/.bashrc
+<pre><code>echo "export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig" &gt;&gt; ~/.bashrc
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/opencv/lib" &gt;&gt; ~/.bashrc
 source ~/.bashrc
 </code></pre>
 <h2 id="make-java-env-jar--so"><a class="header" href="#make-java-env-jar--so">make java env (jar &amp; so)</a></h2>
@@ -3447,6 +3447,9 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;maven.test.skip&gt;true&lt;/maven.test.skip&gt;
 &lt;/properties&gt;
 </code></pre>
+<h4 id="23-build-sub-module"><a class="header" href="#23-build-sub-module">2.3 build sub module</a></h4>
+<pre><code>mvn -am -pl sub1/sub2/sub3 clean package
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="maven-1"><a class="header" href="#maven-1">maven</a></h1>
 <h2 id="deploy-1"><a class="header" href="#deploy-1">deploy</a></h2>
 <h3 id="1-settingsxml-1"><a class="header" href="#1-settingsxml-1">1. settings.xml</a></h3>
@@ -3477,6 +3480,9 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;maven.test.skip&gt;true&lt;/maven.test.skip&gt;
 &lt;/properties&gt;
 </code></pre>
+<h4 id="23-build-sub-module-1"><a class="header" href="#23-build-sub-module-1">2.3 build sub module</a></h4>
+<pre><code>mvn -am -pl sub1/sub2/sub3 clean package
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="springboot-logback"><a class="header" href="#springboot-logback">springboot logback</a></h1>
 <p>springboot默认的日志文件是不会自动按天分割的，所以生产环境的日志文件越来越大，很不利于排错。查了很多资料最终配置如下，可以完美按天按错误等级分割日志文件，配置如下。</p>
 <p>由于springboot采用约定优先于配置的方式，日志文件也是，SpringBoot项目中在官方文档中https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html 说明，默认已经依赖了一些日志框架。而其中推荐使用的就是Logback，说明一下，SpringBoot已经依赖了Logback所以不需要手动添加依赖。</p>
@@ -3487,13 +3493,13 @@ ${SRC_ROOT}/lib/gcc_dll
 <p>logging.config=classpath:logback-spring-dev.xml</p>
 <p>至于logback的xml文件内容如下：</p>
 <p>logback-spring-dev.xml 开发环境下，不需要输出到文件，只需要打印在控制台就行了。</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;!-- ALL &lt; TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; OFF --&gt;
-&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
 
-    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+    &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
         &lt;encoder&gt;
             &lt;pattern&gt;
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n
@@ -3501,46 +3507,46 @@ ${SRC_ROOT}/lib/gcc_dll
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
+    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
+    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
 
-    &lt;root level=&quot;debug&quot;&gt;
-        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
+    &lt;root level="debug"&gt;
+        &lt;appender-ref ref="STDOUT"/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>
 <p>然后是 logback-spring-test.xml 和logback-spring-prod.xml，test环境与prod的只是文件位置不同所以只贴一份了，改下路径就行了，并且测试和生产是不需要控制台输出的，不然catalina.out文件就要爆炸了！</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL --&gt;
 &lt;!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 --&gt;
 &lt;!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 --&gt;
 &lt;!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 
 	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;
-&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
     &lt;!-- 定义日志文件 输入位置 --&gt;
-    &lt;property name=&quot;log_dir&quot; value=&quot;/soft/apache-tomcat-8.5.30-ems/logs&quot;/&gt;
+    &lt;property name="log_dir" value="/soft/apache-tomcat-8.5.30-ems/logs"/&gt;
     &lt;!-- 日志最大的历史 30天 --&gt;
-    &lt;property name=&quot;maxHistory&quot; value=&quot;30&quot;/&gt;
-    &lt;property name=&quot;maxFileSize&quot; value=&quot;10MB&quot;/&gt;
+    &lt;property name="maxHistory" value="30"/&gt;
+    &lt;property name="maxFileSize" value="10MB"/&gt;
     &lt;!-- ERROR级别日志 --&gt;
     &lt;!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 RollingFileAppender --&gt;
-    &lt;appender name=&quot;ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;ERROR&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
         &lt;!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责出发滚动 --&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
 
             &lt;!--日志输出位置 可相对、和绝对路径 --&gt;
             &lt;fileNamePattern&gt;
@@ -3548,20 +3554,20 @@ ${SRC_ROOT}/lib/gcc_dll
             &lt;/fileNamePattern&gt;
             &lt;!-- 可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件假设设置每个月滚动，且&lt;maxHistory&gt;是6， 则只保存最近6个月的文件，删除之前的旧文件。注意，删除旧文件是，那些为了归档而创建的目录也会被删除 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
 
         &lt;/rollingPolicy&gt;
         &lt;!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志。--&gt;
-        &lt;!--&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.FixedWindowRollingPolicy&quot;&gt;
+        &lt;!--&lt;rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"&gt;
             &lt;fileNamePattern&gt;${log_dir}/%d{yyyy-MM-dd}/.log.zip&lt;/fileNamePattern&gt;
             &lt;minIndex&gt;1&lt;/minIndex&gt;
             &lt;maxIndex&gt;3&lt;/maxIndex&gt;
         &lt;/rollingPolicy&gt;--&gt;
         &lt;!-- 查看当前活动文件的大小，如果超过指定大小会告知RollingFileAppender 触发当前活动文件滚动--&gt;
         &lt;!--&lt;triggeringPolicy
-                class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"&gt;
             &lt;maxFileSize&gt;5MB&lt;/maxFileSize&gt;
         &lt;/triggeringPolicy&gt;--&gt;
         &lt;encoder&gt;
@@ -3570,21 +3576,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- WARN级别日志 appender --&gt;
-    &lt;appender name=&quot;WARN&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;WARN&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_warn.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3594,21 +3600,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- INFO级别日志 appender --&gt;
-    &lt;appender name=&quot;INFO&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录INFO级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;INFO&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_info.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3618,21 +3624,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- DEBUG级别日志 appender --&gt;
-    &lt;appender name=&quot;DEBUG&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录DEBUG级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;DEBUG&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_debug.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3642,14 +3648,14 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- TRACE级别日志 appender --&gt;
-    &lt;appender name=&quot;TRACE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录ERROR级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;TRACE&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_trace.%d{yyyy-MM-dd}.%i.log
@@ -3657,7 +3663,7 @@ ${SRC_ROOT}/lib/gcc_dll
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
 
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3666,23 +3672,23 @@ ${SRC_ROOT}/lib/gcc_dll
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
+    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
+    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
 
     &lt;!-- root级别 DEBUG --&gt;
-    &lt;root level=&quot;debug&quot;&gt;
+    &lt;root level="debug"&gt;
         &lt;!-- 文件输出 --&gt;
-        &lt;appender-ref ref=&quot;ERROR&quot;/&gt;
-        &lt;appender-ref ref=&quot;INFO&quot;/&gt;
-        &lt;appender-ref ref=&quot;WARN&quot;/&gt;
-        &lt;appender-ref ref=&quot;DEBUG&quot;/&gt;
-        &lt;appender-ref ref=&quot;TRACE&quot;/&gt;
+        &lt;appender-ref ref="ERROR"/&gt;
+        &lt;appender-ref ref="INFO"/&gt;
+        &lt;appender-ref ref="WARN"/&gt;
+        &lt;appender-ref ref="DEBUG"/&gt;
+        &lt;appender-ref ref="TRACE"/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>
@@ -3697,13 +3703,13 @@ ${SRC_ROOT}/lib/gcc_dll
 <p>logging.config=classpath:logback-spring-dev.xml</p>
 <p>至于logback的xml文件内容如下：</p>
 <p>logback-spring-dev.xml 开发环境下，不需要输出到文件，只需要打印在控制台就行了。</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;!-- ALL &lt; TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; OFF --&gt;
-&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
 
-    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+    &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
         &lt;encoder&gt;
             &lt;pattern&gt;
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n
@@ -3711,46 +3717,46 @@ ${SRC_ROOT}/lib/gcc_dll
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
+    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
+    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
 
-    &lt;root level=&quot;debug&quot;&gt;
-        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
+    &lt;root level="debug"&gt;
+        &lt;appender-ref ref="STDOUT"/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>
 <p>然后是 logback-spring-test.xml 和logback-spring-prod.xml，test环境与prod的只是文件位置不同所以只贴一份了，改下路径就行了，并且测试和生产是不需要控制台输出的，不然catalina.out文件就要爆炸了！</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL --&gt;
 &lt;!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 --&gt;
 &lt;!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 --&gt;
 &lt;!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 
 	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;
-&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
     &lt;!-- 定义日志文件 输入位置 --&gt;
-    &lt;property name=&quot;log_dir&quot; value=&quot;/soft/apache-tomcat-8.5.30-ems/logs&quot;/&gt;
+    &lt;property name="log_dir" value="/soft/apache-tomcat-8.5.30-ems/logs"/&gt;
     &lt;!-- 日志最大的历史 30天 --&gt;
-    &lt;property name=&quot;maxHistory&quot; value=&quot;30&quot;/&gt;
-    &lt;property name=&quot;maxFileSize&quot; value=&quot;10MB&quot;/&gt;
+    &lt;property name="maxHistory" value="30"/&gt;
+    &lt;property name="maxFileSize" value="10MB"/&gt;
     &lt;!-- ERROR级别日志 --&gt;
     &lt;!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 RollingFileAppender --&gt;
-    &lt;appender name=&quot;ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;ERROR&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
         &lt;!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责出发滚动 --&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
 
             &lt;!--日志输出位置 可相对、和绝对路径 --&gt;
             &lt;fileNamePattern&gt;
@@ -3758,20 +3764,20 @@ ${SRC_ROOT}/lib/gcc_dll
             &lt;/fileNamePattern&gt;
             &lt;!-- 可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件假设设置每个月滚动，且&lt;maxHistory&gt;是6， 则只保存最近6个月的文件，删除之前的旧文件。注意，删除旧文件是，那些为了归档而创建的目录也会被删除 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
 
         &lt;/rollingPolicy&gt;
         &lt;!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志。--&gt;
-        &lt;!--&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.FixedWindowRollingPolicy&quot;&gt;
+        &lt;!--&lt;rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"&gt;
             &lt;fileNamePattern&gt;${log_dir}/%d{yyyy-MM-dd}/.log.zip&lt;/fileNamePattern&gt;
             &lt;minIndex&gt;1&lt;/minIndex&gt;
             &lt;maxIndex&gt;3&lt;/maxIndex&gt;
         &lt;/rollingPolicy&gt;--&gt;
         &lt;!-- 查看当前活动文件的大小，如果超过指定大小会告知RollingFileAppender 触发当前活动文件滚动--&gt;
         &lt;!--&lt;triggeringPolicy
-                class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"&gt;
             &lt;maxFileSize&gt;5MB&lt;/maxFileSize&gt;
         &lt;/triggeringPolicy&gt;--&gt;
         &lt;encoder&gt;
@@ -3780,21 +3786,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- WARN级别日志 appender --&gt;
-    &lt;appender name=&quot;WARN&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;WARN&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_warn.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3804,21 +3810,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- INFO级别日志 appender --&gt;
-    &lt;appender name=&quot;INFO&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录INFO级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;INFO&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_info.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3828,21 +3834,21 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- DEBUG级别日志 appender --&gt;
-    &lt;appender name=&quot;DEBUG&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录DEBUG级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;DEBUG&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_debug.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3852,14 +3858,14 @@ ${SRC_ROOT}/lib/gcc_dll
     &lt;/appender&gt;
 
     &lt;!-- TRACE级别日志 appender --&gt;
-    &lt;appender name=&quot;TRACE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;!-- 过滤器，只记录ERROR级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
             &lt;level&gt;TRACE&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_trace.%d{yyyy-MM-dd}.%i.log
@@ -3867,7 +3873,7 @@ ${SRC_ROOT}/lib/gcc_dll
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
 
-            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -3876,23 +3882,23 @@ ${SRC_ROOT}/lib/gcc_dll
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
-    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
+    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
+    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
+    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
+    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
 
     &lt;!-- root级别 DEBUG --&gt;
-    &lt;root level=&quot;debug&quot;&gt;
+    &lt;root level="debug"&gt;
         &lt;!-- 文件输出 --&gt;
-        &lt;appender-ref ref=&quot;ERROR&quot;/&gt;
-        &lt;appender-ref ref=&quot;INFO&quot;/&gt;
-        &lt;appender-ref ref=&quot;WARN&quot;/&gt;
-        &lt;appender-ref ref=&quot;DEBUG&quot;/&gt;
-        &lt;appender-ref ref=&quot;TRACE&quot;/&gt;
+        &lt;appender-ref ref="ERROR"/&gt;
+        &lt;appender-ref ref="INFO"/&gt;
+        &lt;appender-ref ref="WARN"/&gt;
+        &lt;appender-ref ref="DEBUG"/&gt;
+        &lt;appender-ref ref="TRACE"/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>
@@ -3930,11 +3936,11 @@ public class IPLogDefiner extends PropertyDefinerBase {
         try {
             localIp = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
-            LOG.error(&quot;fail to get ip...&quot;, e);
+            LOG.error("fail to get ip...", e);
         }
-        String uniqName = UUID.randomUUID().toString().replace(&quot;-&quot;, &quot;&quot;);
+        String uniqName = UUID.randomUUID().toString().replace("-", "");
         if (localIp != null) {
-            uniqName = localIp + &quot;-&quot; + uniqName;
+            uniqName = localIp + "-" + uniqName;
         }
         return uniqName;
     }
@@ -3948,11 +3954,11 @@ public class IPLogDefiner extends PropertyDefinerBase {
 </code></pre>
 <p>然后在logback.xml中，添加 <define> 配置，指定属性名（本例中为localIP）及获取属性值的实现类，这样就可以在配置中通过 ${localIP}来引用该属性值了。在实现方法 getPropertyValue 中返回你需要生成的值，本例中是返回 本地IP-UUID 的形式。</p>
 <pre><code>&lt;configuration&gt;
-    &lt;define name=&quot;localIP&quot; class=&quot;cn.jboost.common.IPLogDefiner&quot;/&gt;
-    &lt;appender name=&quot;interfaceLogFile&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;define name="localIP" class="cn.jboost.common.IPLogDefiner"/&gt;
+    &lt;appender name="interfaceLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;encoding&gt;UTF-8&lt;/encoding&gt;
         &lt;File&gt;D:\\logs\\elk\\interface-${localIP}.log&lt;/File&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.ThresholdFilter"&gt;
             &lt;level&gt;INFO&lt;/level&gt;
     # 省略了其它配置
 </code></pre>
@@ -3986,7 +3992,7 @@ public class LoggerStartupListener extends ContextAwareBase
             return;
         }
         Context context = getContext();
-        context.putProperty(&quot;localIP&quot;, getUniqName());
+        context.putProperty("localIP", getUniqName());
         started = true;
     }
 
@@ -3995,27 +4001,27 @@ public class LoggerStartupListener extends ContextAwareBase
         try {
             localIp = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
-            //LOG.error(&quot;fail to get ip...&quot;, e);
+            //LOG.error("fail to get ip...", e);
         }
-        String uniqName = UUID.randomUUID().toString().replace(&quot;-&quot;, &quot;&quot;);
+        String uniqName = UUID.randomUUID().toString().replace("-", "");
         if (localIp != null) {
-            uniqName = localIp + &quot;-&quot; + uniqName;
+            uniqName = localIp + "-" + uniqName;
         }
         return uniqName;
     }
 //省略了其它函数
 </code></pre>
-<p>然后在logback.xml中，配置如上监听器类，这样就可以通过 ${localIP} 获取到上面 context.putProperty(&quot;localIP&quot;, getUniqName()); 设置的值了。</p>
+<p>然后在logback.xml中，配置如上监听器类，这样就可以通过 ${localIP} 获取到上面 context.putProperty("localIP", getUniqName()); 设置的值了。</p>
 <pre><code>&lt;configuration&gt;
 
-    &lt;!--&lt;define name=&quot;localIP&quot; class=&quot;com.cnbot.common.IPLogDefiner&quot;/&gt;--&gt;
-    &lt;contextListener class=&quot;cn.jboost.common.LoggerStartupListener&quot;/&gt;
-    &lt;define name=&quot;localIP&quot; class=&quot;com.cnbot.common.IPLogDefiner&quot;/&gt;
-    &lt;appender name=&quot;interfaceLogFile&quot;
-              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+    &lt;!--&lt;define name="localIP" class="com.cnbot.common.IPLogDefiner"/&gt;--&gt;
+    &lt;contextListener class="cn.jboost.common.LoggerStartupListener"/&gt;
+    &lt;define name="localIP" class="com.cnbot.common.IPLogDefiner"/&gt;
+    &lt;appender name="interfaceLogFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
         &lt;encoding&gt;UTF-8&lt;/encoding&gt;
         &lt;File&gt;D:\\logs\\elk\\interface-${localIP}.log&lt;/File&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;&gt;
+        &lt;filter class="ch.qos.logback.classic.filter.ThresholdFilter"&gt;
             &lt;level&gt;INFO&lt;/level&gt;
         &lt;/filter&gt;
 # 省略了其它配置
@@ -4095,7 +4101,7 @@ ENV PATH=${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${GRADLE_HOME}/bin
 
 ADD debian-rootfs.tar.xz /
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="debian-base"><a class="header" href="#debian-base">debian base</a></h2>
 <pre><code>FROM irepoing/debian:10
@@ -4104,7 +4110,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="ubuntu-base"><a class="header" href="#ubuntu-base">ubuntu base</a></h2>
 <pre><code>FROM irepoing/ubuntu:20
@@ -4115,7 +4121,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="alpine-2"><a class="header" href="#alpine-2">alpine</a></h1>
 <h2 id="cmd-1"><a class="header" href="#cmd-1">cmd</a></h2>
@@ -4171,9 +4177,9 @@ apk search -v xxx
 <h3 id="set-service-etcinitdxxx"><a class="header" href="#set-service-etcinitdxxx">set service (/etc/init.d/xxx)</a></h3>
 <pre><code>#!/sbin/openrc-run
  
-name=&quot;actc&quot;
-command=&quot;/path/to/${name}&quot;
-#command_background=&quot;yes&quot;
+name="actc"
+command="/path/to/${name}"
+#command_background="yes"
  
 depend() {
 	after sshd
@@ -4199,7 +4205,7 @@ ln -s /lib/libc.musl-aarch64.so.1 /lib/ld-linux-aarch64.so.1
 ADD arm.tar.gz /
 ADD go.xxx.tar.gz /usr/local
 ENV PATH $PATH:/usr/local/go/bin
-CMD [&quot;/bin/sh&quot;]
+CMD ["/bin/sh"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="alpine-3"><a class="header" href="#alpine-3">alpine</a></h1>
 <h2 id="cmd-2"><a class="header" href="#cmd-2">cmd</a></h2>
@@ -4255,9 +4261,9 @@ apk search -v xxx
 <h3 id="set-service-etcinitdxxx-1"><a class="header" href="#set-service-etcinitdxxx-1">set service (/etc/init.d/xxx)</a></h3>
 <pre><code>#!/sbin/openrc-run
  
-name=&quot;actc&quot;
-command=&quot;/path/to/${name}&quot;
-#command_background=&quot;yes&quot;
+name="actc"
+command="/path/to/${name}"
+#command_background="yes"
  
 depend() {
 	after sshd
@@ -4283,7 +4289,7 @@ ln -s /lib/libc.musl-aarch64.so.1 /lib/ld-linux-aarch64.so.1
 ADD arm.tar.gz /
 ADD go.xxx.tar.gz /usr/local
 ENV PATH $PATH:/usr/local/go/bin
-CMD [&quot;/bin/sh&quot;]
+CMD ["/bin/sh"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="alpine-4"><a class="header" href="#alpine-4">alpine</a></h1>
 <h2 id="login-docker"><a class="header" href="#login-docker">login docker</a></h2>
@@ -4292,7 +4298,7 @@ CMD [&quot;/bin/sh&quot;]
 <h2 id="build-docker"><a class="header" href="#build-docker">build docker</a></h2>
 <pre><code>FROM scratch
 ADD rootfs.tar.gz /
-CMD [&quot;/bin/sh&quot;]
+CMD ["/bin/sh"]
 </code></pre>
 <h3 id="change-source"><a class="header" href="#change-source">change source</a></h3>
 <pre><code>FROM alpine:3.10
@@ -4316,7 +4322,7 @@ RUN apt update \
 <h3 id="build-golang-env"><a class="header" href="#build-golang-env">build golang env</a></h3>
 <pre><code>FROM alpine:3.10
 RUN apk add --no-cache libc6-compat ca-certificates \
-    &amp;&amp; echo &quot;hosts: files dns&quot; &gt; /etc/nsswitch.conf
+    &amp;&amp; echo "hosts: files dns" &gt; /etc/nsswitch.conf
 ADD go.xxx.tar.gz /usr/local
 ENV PATH $PATH:/usr/local/go/bin
 </code></pre>
@@ -4346,7 +4352,7 @@ tar -xzvf xxx.tar.gz -C dir --strip-components N  // N=1,2,3...
 
 ADD debian-rootfs.tar.xz /
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="debian-base-1"><a class="header" href="#debian-base-1">debian base</a></h2>
 <pre><code>FROM irepoing/debian:10
@@ -4355,7 +4361,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="ubuntu-base-1"><a class="header" href="#ubuntu-base-1">ubuntu base</a></h2>
 <pre><code>FROM irepoing/ubuntu:20
@@ -4366,7 +4372,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="centos-1"><a class="header" href="#centos-1">centos</a></h1>
 <h2 id="synchronize-cache-appstream"><a class="header" href="#synchronize-cache-appstream">Synchronize cache AppStream</a></h2>
@@ -4405,7 +4411,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 <div style="break-before: page; page-break-before: always;"></div><h3 id="linux-curl"><a class="header" href="#linux-curl">linux curl</a></h3>
 <pre><code>Usage: curl [options...] &lt;url&gt;
 Options: (H) means HTTP/HTTPS only, (F) means FTP only
-     --anyauth       Pick &quot;any&quot; authentication method (H)
+     --anyauth       Pick "any" authentication method (H)
  -a, --append        Append to target file when uploading (F/SFTP)
      --basic         Use HTTP Basic Authentication (H)
      --cacert FILE   CA certificate to verify peer against (SSL)
@@ -4439,15 +4445,15 @@ Options: (H) means HTTP/HTTPS only, (F) means FTP only
      --dns-ipv6-addr  IPv6 address to use for DNS requests, dot notation
  -D, --dump-header FILE  Write the received headers to FILE
      --egd-file FILE  EGD socket path for random data (SSL)
-     --engine ENGINE  Crypto engine (use &quot;--engine list&quot; for list) (SSL)
+     --engine ENGINE  Crypto engine (use "--engine list" for list) (SSL)
      --expect100-timeout SECONDS How long to wait for 100-continue (H)
  -f, --fail          Fail silently (no output at all) on HTTP errors (H)
      --fail-early    Fail on first transfer error, do not continue
      --false-start   Enable TLS False Start.
- -F, --form CONTENT  Specify HTTP multipart POST data (H), (upload file use -F &quot;file=@path&quot;)
+ -F, --form CONTENT  Specify HTTP multipart POST data (H), (upload file use -F "file=@path")
      --form-string STRING  Specify HTTP multipart POST data (H)
      --ftp-account DATA  Account data string (F)
-     --ftp-alternative-to-user COMMAND  String to replace &quot;USER [name]&quot; (F)
+     --ftp-alternative-to-user COMMAND  String to replace "USER [name]" (F)
      --ftp-create-dirs  Create the remote dirs if not present (F)
      --ftp-method [MULTICWD/NOCWD/SINGLECWD]  Control CWD usage (F)
      --ftp-pasv      Use PASV/EPSV instead of PORT (F)
@@ -4520,7 +4526,7 @@ Options: (H) means HTTP/HTTPS only, (F) means FTP only
      --proto-default PROTOCOL  Use PROTOCOL for any URL missing a scheme
      --proto-redir PROTOCOLS   Enable/disable PROTOCOLS on redirect
  -x, --proxy [PROTOCOL://]HOST[:PORT]  Use proxy on given port
-     --proxy-anyauth  Pick &quot;any&quot; proxy authentication method (H)
+     --proxy-anyauth  Pick "any" proxy authentication method (H)
      --proxy-basic   Use Basic authentication on the proxy (H)
      --proxy-digest  Use Digest authentication on the proxy (H)
      --proxy-cacert FILE CA certificate to verify peer against for proxy (SSL)
@@ -4550,7 +4556,7 @@ Options: (H) means HTTP/HTTPS only, (F) means FTP only
  -Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
      --random-file FILE  File for reading random data from (SSL)
  -r, --range RANGE   Retrieve only the bytes within RANGE
-     --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)
+     --raw           Do HTTP "raw"; no transfer decoding (H)
  -e, --referer       Referer URL (H)
  -J, --remote-header-name  Use the header-provided filename (H)
  -O, --remote-name   Write output to a file named as the remote file
@@ -4579,7 +4585,7 @@ Options: (H) means HTTP/HTTPS only, (F) means FTP only
  -3, --sslv3         Use SSLv3 (SSL)
      --ssl-allow-beast  Allow security flaw to improve interop (SSL)
      --ssl-no-revoke    Disable cert revocation checks (WinSSL)
-     --stderr FILE   Where to redirect stderr (use &quot;-&quot; for stdout)
+     --stderr FILE   Where to redirect stderr (use "-" for stdout)
      --suppress-connect-headers  Suppress proxy CONNECT response headers
      --tcp-nodelay   Use the TCP_NODELAY option
      --tcp-fastopen  Use TCP Fast Open
@@ -4943,20 +4949,20 @@ brew update
 # Already up-to-date.
 </code></pre>
 <h2 id="origin-install"><a class="header" href="#origin-install">origin install</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 </code></pre>
 <h2 id="change-source-1"><a class="header" href="#change-source-1">change source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 </code></pre>
 <h2 id="restore-source"><a class="header" href="#restore-source">restore source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://github.com/Homebrew/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="brew-1"><a class="header" href="#brew-1">brew</a></h1>
@@ -4981,30 +4987,30 @@ brew update
 # Already up-to-date.
 </code></pre>
 <h2 id="origin-install-1"><a class="header" href="#origin-install-1">origin install</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 </code></pre>
 <h2 id="change-source-2"><a class="header" href="#change-source-2">change source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 </code></pre>
 <h2 id="restore-source-1"><a class="header" href="#restore-source-1">restore source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://github.com/Homebrew/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="homebrew"><a class="header" href="#homebrew">homebrew</a></h1>
 <h2 id="set-env-1"><a class="header" href="#set-env-1">set env</a></h2>
-<pre><code>export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;
-export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;
-export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;
+<pre><code>export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 </code></pre>
 <h2 id="install-brew"><a class="header" href="#install-brew">install brew</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 </code></pre>
 <h2 id="install-brew-cask"><a class="header" href="#install-brew-cask">install brew cask</a></h2>
 <pre><code>brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
@@ -5020,21 +5026,21 @@ brew config
 echo $SHELL
 
 # bash user
-echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' &gt;&gt; ~/.bash_profile
 
 # zsh user
-echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' &gt;&gt; ~/.zshrc
 
 # echo env
 cat ~/.bash_profile
 cat ~/.zshrc
 </code></pre>
 <h2 id="uninstall-brew"><a class="header" href="#uninstall-brew">uninstall brew</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 </code></pre>
 <h2 id="brew-command"><a class="header" href="#brew-command">brew command</a></h2>
 <pre><code># install xxx
@@ -5152,7 +5158,7 @@ TLS是以SSL 3.0为基础于1999年作为SSL的新版本推出的，也就是说
 <li>这里如果是银行U盾这种的话，服务器会有一个验证客户端的合法性的步骤，其他基本用不到</li>
 <li>然后双方就可以通过这个随机密钥来进行通信了</li>
 </ol>
-<p>注意这里的随机对称密钥是对称加密，所以运算速度非常快，而服务器公钥只用于加密&quot;对话密钥&quot;本身，这样就减少了加密运算的消耗时间。另外为了优化性能，为了弥补完整的TLS握手所带来的额外的延迟和计算量，TLS提供了会话恢复功能，即在多个连接间共享这个协商后的安全密钥，也就是上面第9部中生成的用公钥加密的随机对称密钥：
+<p>注意这里的随机对称密钥是对称加密，所以运算速度非常快，而服务器公钥只用于加密"对话密钥"本身，这样就减少了加密运算的消耗时间。另外为了优化性能，为了弥补完整的TLS握手所带来的额外的延迟和计算量，TLS提供了会话恢复功能，即在多个连接间共享这个协商后的安全密钥，也就是上面第9部中生成的用公钥加密的随机对称密钥：
 在内部服务器会给每个客户端保存一个会话ID和协商后的会话参数就是密钥，对应客户端也会有保存，这样下次连接的时候就可以告诉对方自己有保存上次连接的资料，这样就可以迅速连接，节省一次往返，相当于加了一层缓冲层。</p>
 <p>TLS的握手过程基本确保了传输的信息加密过；有身份认证机制，A想发消息给B，A能确保发送到的是B而不是中间被人拦截接受；有校验机制，能保证信息不会被篡改，这三个机制就是TLS出现的意义所在。</p>
 <h2 id="http-1x"><a class="header" href="#http-1x">HTTP 1.x</a></h2>
@@ -5326,7 +5332,7 @@ TLS是以SSL 3.0为基础于1999年作为SSL的新版本推出的，也就是说
 <li>这里如果是银行U盾这种的话，服务器会有一个验证客户端的合法性的步骤，其他基本用不到</li>
 <li>然后双方就可以通过这个随机密钥来进行通信了</li>
 </ol>
-<p>注意这里的随机对称密钥是对称加密，所以运算速度非常快，而服务器公钥只用于加密&quot;对话密钥&quot;本身，这样就减少了加密运算的消耗时间。另外为了优化性能，为了弥补完整的TLS握手所带来的额外的延迟和计算量，TLS提供了会话恢复功能，即在多个连接间共享这个协商后的安全密钥，也就是上面第9部中生成的用公钥加密的随机对称密钥：
+<p>注意这里的随机对称密钥是对称加密，所以运算速度非常快，而服务器公钥只用于加密"对话密钥"本身，这样就减少了加密运算的消耗时间。另外为了优化性能，为了弥补完整的TLS握手所带来的额外的延迟和计算量，TLS提供了会话恢复功能，即在多个连接间共享这个协商后的安全密钥，也就是上面第9部中生成的用公钥加密的随机对称密钥：
 在内部服务器会给每个客户端保存一个会话ID和协商后的会话参数就是密钥，对应客户端也会有保存，这样下次连接的时候就可以告诉对方自己有保存上次连接的资料，这样就可以迅速连接，节省一次往返，相当于加了一层缓冲层。</p>
 <p>TLS的握手过程基本确保了传输的信息加密过；有身份认证机制，A想发消息给B，A能确保发送到的是B而不是中间被人拦截接受；有校验机制，能保证信息不会被篡改，这三个机制就是TLS出现的意义所在。</p>
 <h2 id="http-1x-1"><a class="header" href="#http-1x-1">HTTP 1.x</a></h2>
@@ -5594,7 +5600,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: true
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -5609,7 +5615,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: false
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -5644,21 +5650,21 @@ cd /opt/elk/elasticsearch-7.0.0
 </code></pre>
 <p>如果返回status=green表示正常</p>
 <pre><code>{
-  &quot;cluster_name&quot;: &quot;esc&quot;,
-  &quot;status&quot;: &quot;green&quot;,
-  &quot;timed_out&quot;: false,
-  &quot;number_of_nodes&quot;: 2,
-  &quot;number_of_data_nodes&quot;: 2,
-  &quot;active_primary_shards&quot;: 0,
-  &quot;active_shards&quot;: 0,
-  &quot;relocating_shards&quot;: 0,
-  &quot;initializing_shards&quot;: 0,
-  &quot;unassigned_shards&quot;: 0,
-  &quot;delayed_unassigned_shards&quot;: 0,
-  &quot;number_of_pending_tasks&quot;: 0,
-  &quot;number_of_in_flight_fetch&quot;: 0,
-  &quot;task_max_waiting_in_queue_millis&quot;: 0,
-  &quot;active_shards_percent_as_number&quot;: 100.0
+  "cluster_name": "esc",
+  "status": "green",
+  "timed_out": false,
+  "number_of_nodes": 2,
+  "number_of_data_nodes": 2,
+  "active_primary_shards": 0,
+  "active_shards": 0,
+  "relocating_shards": 0,
+  "initializing_shards": 0,
+  "unassigned_shards": 0,
+  "delayed_unassigned_shards": 0,
+  "number_of_pending_tasks": 0,
+  "number_of_in_flight_fetch": 0,
+  "task_max_waiting_in_queue_millis": 0,
+  "active_shards_percent_as_number": 100.0
 }
 </code></pre>
 <h1 id="四logstash-部署"><a class="header" href="#四logstash-部署">四、Logstash 部署</a></h1>
@@ -5714,21 +5720,21 @@ path.logs: /elk/logstash/logs
  
 input {
   redis {
-    data_type =&gt; &quot;list&quot;
-    key =&gt; &quot;logstash&quot;
-    host =&gt; &quot;192.168.1.21&quot;
+    data_type =&gt; "list"
+    key =&gt; "logstash"
+    host =&gt; "192.168.1.21"
     port =&gt; 6379
     threads =&gt; 5
-    codec =&gt; &quot;json&quot;
+    codec =&gt; "json"
   }
 }
 filter {
 }
 output {
   elasticsearch {
-    hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
-    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
-    document_type =&gt; &quot;%{type}&quot;
+    hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
+    index =&gt; "logstash-%{type}-%{+YYYY.MM.dd}"
+    document_type =&gt; "%{type}"
   }
   stdout {
   }
@@ -5737,9 +5743,9 @@ output {
 <p>该配置就是从redis中读取数据，然后写入指定的elasticsearch。
 Redis核心配置项说明：</p>
 <pre><code>配置项	说明
-data_type =&gt; &quot;list&quot;	数据类型为list
-key =&gt; &quot;logstash&quot;	缓存key为：logstash
-codec =&gt; &quot;json&quot;	数据格式为：json
+data_type =&gt; "list"	数据类型为list
+key =&gt; "logstash"	缓存key为：logstash
+codec =&gt; "json"	数据格式为：json
 </code></pre>
 <ul>
 <li>启动</li>
@@ -5752,8 +5758,8 @@ cd /opt/elk/logstash-7.0.0
 ./bin/logstash -f config/input-output.conf
 </code></pre>
 <p>启动成功后，在启动输出的最后一行会看到如下信息：</p>
-<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {&quot;pipeline.id&quot;=&gt;&quot;main&quot;}
-[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;[&quot;main&quot;]}
+<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {"pipeline.id"=&gt;"main"}
+[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;["main"]}
 </code></pre>
 <h1 id="五kibana-部署"><a class="header" href="#五kibana-部署">五、Kibana 部署</a></h1>
 <h2 id="1准备工作-2"><a class="header" href="#1准备工作-2">1、准备工作</a></h2>
@@ -5791,8 +5797,8 @@ vi config/kibana.yml
  
 #增加以下内容
 server.port: 5601
-server.host: &quot;192.168.1.21&quot;
-elasticsearch.url: &quot;http://192.168.1.31:9200&quot; 
+server.host: "192.168.1.21"
+elasticsearch.url: "http://192.168.1.31:9200" 
 </code></pre>
 <ul>
 <li>启动</li>
@@ -5815,14 +5821,14 @@ cd /opt/elk/kibana-7.0.0
 </ul>
 <pre><code>#启动redis客户端
 #执行以下命令
-lpush logstash '{&quot;host&quot;:&quot;127.0.0.1&quot;,&quot;type&quot;:&quot;logtest&quot;,&quot;message&quot;:&quot;hello&quot;}'
+lpush logstash '{"host":"127.0.0.1","type":"logtest","message":"hello"}'
 </code></pre>
 <ul>
 <li>Java代码批量写入（引入Jedis）</li>
 </ul>
-<pre><code>Jedis jedis = new Jedis(&quot;192.168.1.21&quot;, 6379);
+<pre><code>Jedis jedis = new Jedis("192.168.1.21", 6379);
 for (int i = 0; i &lt; 1000; i++) {
-    jedis.lpush(&quot;logstash&quot;, &quot;{\&quot;host\&quot;:\&quot;127.0.0.1\&quot;,\&quot;type\&quot;:\&quot;logtest\&quot;,\&quot;message\&quot;:\&quot;&quot; + i + &quot;\&quot;}&quot;);
+    jedis.lpush("logstash", "{\"host\":\"127.0.0.1\",\"type\":\"logtest\",\"message\":\"" + i + "\"}");
 }
 </code></pre>
 <h2 id="2kibana使用"><a class="header" href="#2kibana使用">2、Kibana使用</a></h2>
@@ -5840,7 +5846,7 @@ tcp/udp：使用tcp或udp传输过来的日志
 </code></pre>
 <pre><code>path: 日志文件或目录的绝对路径，也可以是通配符的。
 type: 类型，自定义
-start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 &quot;beginning&quot;，logstash 进程就从头开始读取，类似 less +F 的形式运行。
+start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 "beginning"，logstash 进程就从头开始读取，类似 less +F 的形式运行。
 codec: codec配置，通过它可以更好更方便的与其他有自定义数据格式的运维产品共存，比如 graphite、fluent、netflow、collectd，以及使用 msgpack、json、edn 等通用数据格式的其他产品等。
 </code></pre>
 <ul>
@@ -5849,25 +5855,25 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
 <pre><code>input {
     file {
         #指定单一文件
-        path =&gt; &quot;/data/es/logstash/files/test.log&quot;
+        path =&gt; "/data/es/logstash/files/test.log"
         #指定数组文件
-        #path =&gt; [&quot;/data/es/logstash/files/test-1.log&quot;,&quot;/data/es/logstash/files/test-2.log&quot;]
+        #path =&gt; ["/data/es/logstash/files/test-1.log","/data/es/logstash/files/test-2.log"]
         #指定同级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/test*.log"
         #指定多级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/**/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/**/test*.log"
 
         #当存在多个文件的时候可使用type指定输入输出路径
-        type =&gt; &quot;log_index&quot;
+        type =&gt; "log_index"
         
         #可设置成begining或end，begining表示从头开始读取文件，end表示读取最新数据，可和ignore_older一起使用
         #begining只针对首次启动是否需要读取所有的历史数据，而当文件修改了之后，同样会自动增量更新新数据
-        start_position =&gt; &quot;beginning&quot;
+        start_position =&gt; "beginning"
 
         #设置输入规则
         codec =&gt; multiline {
             #利用正则匹配规则，匹配每一行开始的位置，这里匹配每一行开始的位置为数字
-            pattern =&gt; &quot;^[0-9]&quot;
+            pattern =&gt; "^[0-9]"
      
             #true表示不匹配正则表达式，false为匹配正则表达式，默认false
             #如果不匹配，则会结合what参数，进行合并操作
@@ -5875,7 +5881,7 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
             
             #what可设置previous和next，previous则表示将所有不匹配的数据都合并到上一个正则事件
             #而next则相反，将所有的不匹配的数据都合并到下一个正则事件
-            what =&gt; &quot;previous&quot;
+            what =&gt; "previous"
  
             #表示当多长时间没有新的数据，最后一个正则匹配积累的多行数据都归属为最后一个事件，这里的10表示10秒
             #auto_flush_interval =&gt; 10
@@ -5883,22 +5889,22 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
     }
     tcp {
         port =&gt; 8888
-        mode =&gt; &quot;server&quot;
+        mode =&gt; "server"
         ssl_enable =&gt; false
     }
 }
 filter {
     grok {
         match =&gt; {
-            &quot;message&quot; =&gt; &quot;%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \&quot;(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \&quot;%{DATA:referrer}\&quot; \&quot;%{DATA:agent}\&quot;&quot;
+            "message" =&gt; "%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \"(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \"%{DATA:referrer}\" \"%{DATA:agent}\""
         }
     }
     ruby{
-        init =&gt; &quot;@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']&quot;
-        code =&gt; &quot;
+        init =&gt; "@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']"
+        code =&gt; "
             new_event = LogStash::Event.new(Hash[@kname.zip(event.get('message').split('|'))])
             new_event.remove('@timestamp')
-            event.append(new_event)&quot;
+            event.append(new_event)"
     }
 }
 output {
@@ -5908,38 +5914,38 @@ output {
     }
 
     #输出到elasticsearch
-    if [type] == &quot;log_index&quot; {
+    if [type] == "log_index" {
         elasticsearch {
-            hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
+            hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
             
             #以当前的日期作为index和type
-            #index =&gt; &quot;log-%{+YYYY.MM.dd}&quot;
-            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
-            document_type =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+            #index =&gt; "log-%{+YYYY.MM.dd}"
+            index =&gt; "%{type}-%{+YYYY.MM.dd}"
+            document_type =&gt; "%{type}-%{+YYYY.MM.dd}"
             
             #覆盖模板
             #template_overwrite =&gt; true
-            #template =&gt; &quot;/elk/es/logstash/template/logstash.json&quot;
+            #template =&gt; "/elk/es/logstash/template/logstash.json"
         }
     }
 
     #输出到文件
-    if [type] == &quot;log_file&quot; {
+    if [type] == "log_file" {
         file {
-            path =&gt; &quot;/elk/logstash/logs/website-%{+YYYY.MM.dd}.log&quot;
+            path =&gt; "/elk/logstash/logs/website-%{+YYYY.MM.dd}.log"
             flush_interval =&gt; 0
         }
     }
 
     #输出到Redis
-    if [type] == &quot;log_redis&quot; {
+    if [type] == "log_redis" {
         redis {
-            host =&gt; &quot;192.168.11.5&quot;
+            host =&gt; "192.168.11.5"
             port =&gt; 7890
             db =&gt; 1
-            password =&gt; &quot;123456&quot;
-            data_type =&gt; &quot;channel&quot;
-            key =&gt; &quot;/wefintek/education/website/logs/website-log&quot;
+            password =&gt; "123456"
+            data_type =&gt; "channel"
+            key =&gt; "/wefintek/education/website/logs/website-log"
         }
     }
 }
@@ -6137,7 +6143,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: true
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -6152,7 +6158,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: false
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -6187,21 +6193,21 @@ cd /opt/elk/elasticsearch-7.0.0
 </code></pre>
 <p>如果返回status=green表示正常</p>
 <pre><code>{
-  &quot;cluster_name&quot;: &quot;esc&quot;,
-  &quot;status&quot;: &quot;green&quot;,
-  &quot;timed_out&quot;: false,
-  &quot;number_of_nodes&quot;: 2,
-  &quot;number_of_data_nodes&quot;: 2,
-  &quot;active_primary_shards&quot;: 0,
-  &quot;active_shards&quot;: 0,
-  &quot;relocating_shards&quot;: 0,
-  &quot;initializing_shards&quot;: 0,
-  &quot;unassigned_shards&quot;: 0,
-  &quot;delayed_unassigned_shards&quot;: 0,
-  &quot;number_of_pending_tasks&quot;: 0,
-  &quot;number_of_in_flight_fetch&quot;: 0,
-  &quot;task_max_waiting_in_queue_millis&quot;: 0,
-  &quot;active_shards_percent_as_number&quot;: 100.0
+  "cluster_name": "esc",
+  "status": "green",
+  "timed_out": false,
+  "number_of_nodes": 2,
+  "number_of_data_nodes": 2,
+  "active_primary_shards": 0,
+  "active_shards": 0,
+  "relocating_shards": 0,
+  "initializing_shards": 0,
+  "unassigned_shards": 0,
+  "delayed_unassigned_shards": 0,
+  "number_of_pending_tasks": 0,
+  "number_of_in_flight_fetch": 0,
+  "task_max_waiting_in_queue_millis": 0,
+  "active_shards_percent_as_number": 100.0
 }
 </code></pre>
 <h1 id="四logstash-部署-1"><a class="header" href="#四logstash-部署-1">四、Logstash 部署</a></h1>
@@ -6257,21 +6263,21 @@ path.logs: /elk/logstash/logs
  
 input {
   redis {
-    data_type =&gt; &quot;list&quot;
-    key =&gt; &quot;logstash&quot;
-    host =&gt; &quot;192.168.1.21&quot;
+    data_type =&gt; "list"
+    key =&gt; "logstash"
+    host =&gt; "192.168.1.21"
     port =&gt; 6379
     threads =&gt; 5
-    codec =&gt; &quot;json&quot;
+    codec =&gt; "json"
   }
 }
 filter {
 }
 output {
   elasticsearch {
-    hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
-    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
-    document_type =&gt; &quot;%{type}&quot;
+    hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
+    index =&gt; "logstash-%{type}-%{+YYYY.MM.dd}"
+    document_type =&gt; "%{type}"
   }
   stdout {
   }
@@ -6280,9 +6286,9 @@ output {
 <p>该配置就是从redis中读取数据，然后写入指定的elasticsearch。
 Redis核心配置项说明：</p>
 <pre><code>配置项	说明
-data_type =&gt; &quot;list&quot;	数据类型为list
-key =&gt; &quot;logstash&quot;	缓存key为：logstash
-codec =&gt; &quot;json&quot;	数据格式为：json
+data_type =&gt; "list"	数据类型为list
+key =&gt; "logstash"	缓存key为：logstash
+codec =&gt; "json"	数据格式为：json
 </code></pre>
 <ul>
 <li>启动</li>
@@ -6295,8 +6301,8 @@ cd /opt/elk/logstash-7.0.0
 ./bin/logstash -f config/input-output.conf
 </code></pre>
 <p>启动成功后，在启动输出的最后一行会看到如下信息：</p>
-<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {&quot;pipeline.id&quot;=&gt;&quot;main&quot;}
-[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;[&quot;main&quot;]}
+<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {"pipeline.id"=&gt;"main"}
+[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;["main"]}
 </code></pre>
 <h1 id="五kibana-部署-1"><a class="header" href="#五kibana-部署-1">五、Kibana 部署</a></h1>
 <h2 id="1准备工作-5"><a class="header" href="#1准备工作-5">1、准备工作</a></h2>
@@ -6334,8 +6340,8 @@ vi config/kibana.yml
  
 #增加以下内容
 server.port: 5601
-server.host: &quot;192.168.1.21&quot;
-elasticsearch.url: &quot;http://192.168.1.31:9200&quot; 
+server.host: "192.168.1.21"
+elasticsearch.url: "http://192.168.1.31:9200" 
 </code></pre>
 <ul>
 <li>启动</li>
@@ -6358,14 +6364,14 @@ cd /opt/elk/kibana-7.0.0
 </ul>
 <pre><code>#启动redis客户端
 #执行以下命令
-lpush logstash '{&quot;host&quot;:&quot;127.0.0.1&quot;,&quot;type&quot;:&quot;logtest&quot;,&quot;message&quot;:&quot;hello&quot;}'
+lpush logstash '{"host":"127.0.0.1","type":"logtest","message":"hello"}'
 </code></pre>
 <ul>
 <li>Java代码批量写入（引入Jedis）</li>
 </ul>
-<pre><code>Jedis jedis = new Jedis(&quot;192.168.1.21&quot;, 6379);
+<pre><code>Jedis jedis = new Jedis("192.168.1.21", 6379);
 for (int i = 0; i &lt; 1000; i++) {
-    jedis.lpush(&quot;logstash&quot;, &quot;{\&quot;host\&quot;:\&quot;127.0.0.1\&quot;,\&quot;type\&quot;:\&quot;logtest\&quot;,\&quot;message\&quot;:\&quot;&quot; + i + &quot;\&quot;}&quot;);
+    jedis.lpush("logstash", "{\"host\":\"127.0.0.1\",\"type\":\"logtest\",\"message\":\"" + i + "\"}");
 }
 </code></pre>
 <h2 id="2kibana使用-1"><a class="header" href="#2kibana使用-1">2、Kibana使用</a></h2>
@@ -6383,7 +6389,7 @@ tcp/udp：使用tcp或udp传输过来的日志
 </code></pre>
 <pre><code>path: 日志文件或目录的绝对路径，也可以是通配符的。
 type: 类型，自定义
-start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 &quot;beginning&quot;，logstash 进程就从头开始读取，类似 less +F 的形式运行。
+start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 "beginning"，logstash 进程就从头开始读取，类似 less +F 的形式运行。
 codec: codec配置，通过它可以更好更方便的与其他有自定义数据格式的运维产品共存，比如 graphite、fluent、netflow、collectd，以及使用 msgpack、json、edn 等通用数据格式的其他产品等。
 </code></pre>
 <ul>
@@ -6392,25 +6398,25 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
 <pre><code>input {
     file {
         #指定单一文件
-        path =&gt; &quot;/data/es/logstash/files/test.log&quot;
+        path =&gt; "/data/es/logstash/files/test.log"
         #指定数组文件
-        #path =&gt; [&quot;/data/es/logstash/files/test-1.log&quot;,&quot;/data/es/logstash/files/test-2.log&quot;]
+        #path =&gt; ["/data/es/logstash/files/test-1.log","/data/es/logstash/files/test-2.log"]
         #指定同级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/test*.log"
         #指定多级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/**/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/**/test*.log"
 
         #当存在多个文件的时候可使用type指定输入输出路径
-        type =&gt; &quot;log_index&quot;
+        type =&gt; "log_index"
         
         #可设置成begining或end，begining表示从头开始读取文件，end表示读取最新数据，可和ignore_older一起使用
         #begining只针对首次启动是否需要读取所有的历史数据，而当文件修改了之后，同样会自动增量更新新数据
-        start_position =&gt; &quot;beginning&quot;
+        start_position =&gt; "beginning"
 
         #设置输入规则
         codec =&gt; multiline {
             #利用正则匹配规则，匹配每一行开始的位置，这里匹配每一行开始的位置为数字
-            pattern =&gt; &quot;^[0-9]&quot;
+            pattern =&gt; "^[0-9]"
      
             #true表示不匹配正则表达式，false为匹配正则表达式，默认false
             #如果不匹配，则会结合what参数，进行合并操作
@@ -6418,7 +6424,7 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
             
             #what可设置previous和next，previous则表示将所有不匹配的数据都合并到上一个正则事件
             #而next则相反，将所有的不匹配的数据都合并到下一个正则事件
-            what =&gt; &quot;previous&quot;
+            what =&gt; "previous"
  
             #表示当多长时间没有新的数据，最后一个正则匹配积累的多行数据都归属为最后一个事件，这里的10表示10秒
             #auto_flush_interval =&gt; 10
@@ -6426,22 +6432,22 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
     }
     tcp {
         port =&gt; 8888
-        mode =&gt; &quot;server&quot;
+        mode =&gt; "server"
         ssl_enable =&gt; false
     }
 }
 filter {
     grok {
         match =&gt; {
-            &quot;message&quot; =&gt; &quot;%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \&quot;(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \&quot;%{DATA:referrer}\&quot; \&quot;%{DATA:agent}\&quot;&quot;
+            "message" =&gt; "%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \"(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \"%{DATA:referrer}\" \"%{DATA:agent}\""
         }
     }
     ruby{
-        init =&gt; &quot;@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']&quot;
-        code =&gt; &quot;
+        init =&gt; "@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']"
+        code =&gt; "
             new_event = LogStash::Event.new(Hash[@kname.zip(event.get('message').split('|'))])
             new_event.remove('@timestamp')
-            event.append(new_event)&quot;
+            event.append(new_event)"
     }
 }
 output {
@@ -6451,38 +6457,38 @@ output {
     }
 
     #输出到elasticsearch
-    if [type] == &quot;log_index&quot; {
+    if [type] == "log_index" {
         elasticsearch {
-            hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
+            hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
             
             #以当前的日期作为index和type
-            #index =&gt; &quot;log-%{+YYYY.MM.dd}&quot;
-            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
-            document_type =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+            #index =&gt; "log-%{+YYYY.MM.dd}"
+            index =&gt; "%{type}-%{+YYYY.MM.dd}"
+            document_type =&gt; "%{type}-%{+YYYY.MM.dd}"
             
             #覆盖模板
             #template_overwrite =&gt; true
-            #template =&gt; &quot;/elk/es/logstash/template/logstash.json&quot;
+            #template =&gt; "/elk/es/logstash/template/logstash.json"
         }
     }
 
     #输出到文件
-    if [type] == &quot;log_file&quot; {
+    if [type] == "log_file" {
         file {
-            path =&gt; &quot;/elk/logstash/logs/website-%{+YYYY.MM.dd}.log&quot;
+            path =&gt; "/elk/logstash/logs/website-%{+YYYY.MM.dd}.log"
             flush_interval =&gt; 0
         }
     }
 
     #输出到Redis
-    if [type] == &quot;log_redis&quot; {
+    if [type] == "log_redis" {
         redis {
-            host =&gt; &quot;192.168.11.5&quot;
+            host =&gt; "192.168.11.5"
             port =&gt; 7890
             db =&gt; 1
-            password =&gt; &quot;123456&quot;
-            data_type =&gt; &quot;channel&quot;
-            key =&gt; &quot;/wefintek/education/website/logs/website-log&quot;
+            password =&gt; "123456"
+            data_type =&gt; "channel"
+            key =&gt; "/wefintek/education/website/logs/website-log"
         }
     }
 }
@@ -6680,7 +6686,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: true
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -6695,7 +6701,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: false
 node.data: true
-discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
+discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -6730,21 +6736,21 @@ cd /opt/elk/elasticsearch-7.0.0
 </code></pre>
 <p>如果返回status=green表示正常</p>
 <pre><code>{
-  &quot;cluster_name&quot;: &quot;esc&quot;,
-  &quot;status&quot;: &quot;green&quot;,
-  &quot;timed_out&quot;: false,
-  &quot;number_of_nodes&quot;: 2,
-  &quot;number_of_data_nodes&quot;: 2,
-  &quot;active_primary_shards&quot;: 0,
-  &quot;active_shards&quot;: 0,
-  &quot;relocating_shards&quot;: 0,
-  &quot;initializing_shards&quot;: 0,
-  &quot;unassigned_shards&quot;: 0,
-  &quot;delayed_unassigned_shards&quot;: 0,
-  &quot;number_of_pending_tasks&quot;: 0,
-  &quot;number_of_in_flight_fetch&quot;: 0,
-  &quot;task_max_waiting_in_queue_millis&quot;: 0,
-  &quot;active_shards_percent_as_number&quot;: 100.0
+  "cluster_name": "esc",
+  "status": "green",
+  "timed_out": false,
+  "number_of_nodes": 2,
+  "number_of_data_nodes": 2,
+  "active_primary_shards": 0,
+  "active_shards": 0,
+  "relocating_shards": 0,
+  "initializing_shards": 0,
+  "unassigned_shards": 0,
+  "delayed_unassigned_shards": 0,
+  "number_of_pending_tasks": 0,
+  "number_of_in_flight_fetch": 0,
+  "task_max_waiting_in_queue_millis": 0,
+  "active_shards_percent_as_number": 100.0
 }
 </code></pre>
 <h1 id="四logstash-部署-2"><a class="header" href="#四logstash-部署-2">四、Logstash 部署</a></h1>
@@ -6800,21 +6806,21 @@ path.logs: /elk/logstash/logs
  
 input {
   redis {
-    data_type =&gt; &quot;list&quot;
-    key =&gt; &quot;logstash&quot;
-    host =&gt; &quot;192.168.1.21&quot;
+    data_type =&gt; "list"
+    key =&gt; "logstash"
+    host =&gt; "192.168.1.21"
     port =&gt; 6379
     threads =&gt; 5
-    codec =&gt; &quot;json&quot;
+    codec =&gt; "json"
   }
 }
 filter {
 }
 output {
   elasticsearch {
-    hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
-    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
-    document_type =&gt; &quot;%{type}&quot;
+    hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
+    index =&gt; "logstash-%{type}-%{+YYYY.MM.dd}"
+    document_type =&gt; "%{type}"
   }
   stdout {
   }
@@ -6823,9 +6829,9 @@ output {
 <p>该配置就是从redis中读取数据，然后写入指定的elasticsearch。
 Redis核心配置项说明：</p>
 <pre><code>配置项	说明
-data_type =&gt; &quot;list&quot;	数据类型为list
-key =&gt; &quot;logstash&quot;	缓存key为：logstash
-codec =&gt; &quot;json&quot;	数据格式为：json
+data_type =&gt; "list"	数据类型为list
+key =&gt; "logstash"	缓存key为：logstash
+codec =&gt; "json"	数据格式为：json
 </code></pre>
 <ul>
 <li>启动</li>
@@ -6838,8 +6844,8 @@ cd /opt/elk/logstash-7.0.0
 ./bin/logstash -f config/input-output.conf
 </code></pre>
 <p>启动成功后，在启动输出的最后一行会看到如下信息：</p>
-<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {&quot;pipeline.id&quot;=&gt;&quot;main&quot;}
-[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;[&quot;main&quot;]}
+<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {"pipeline.id"=&gt;"main"}
+[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;["main"]}
 </code></pre>
 <h1 id="五kibana-部署-2"><a class="header" href="#五kibana-部署-2">五、Kibana 部署</a></h1>
 <h2 id="1准备工作-8"><a class="header" href="#1准备工作-8">1、准备工作</a></h2>
@@ -6877,8 +6883,8 @@ vi config/kibana.yml
  
 #增加以下内容
 server.port: 5601
-server.host: &quot;192.168.1.21&quot;
-elasticsearch.url: &quot;http://192.168.1.31:9200&quot; 
+server.host: "192.168.1.21"
+elasticsearch.url: "http://192.168.1.31:9200" 
 </code></pre>
 <ul>
 <li>启动</li>
@@ -6901,14 +6907,14 @@ cd /opt/elk/kibana-7.0.0
 </ul>
 <pre><code>#启动redis客户端
 #执行以下命令
-lpush logstash '{&quot;host&quot;:&quot;127.0.0.1&quot;,&quot;type&quot;:&quot;logtest&quot;,&quot;message&quot;:&quot;hello&quot;}'
+lpush logstash '{"host":"127.0.0.1","type":"logtest","message":"hello"}'
 </code></pre>
 <ul>
 <li>Java代码批量写入（引入Jedis）</li>
 </ul>
-<pre><code>Jedis jedis = new Jedis(&quot;192.168.1.21&quot;, 6379);
+<pre><code>Jedis jedis = new Jedis("192.168.1.21", 6379);
 for (int i = 0; i &lt; 1000; i++) {
-    jedis.lpush(&quot;logstash&quot;, &quot;{\&quot;host\&quot;:\&quot;127.0.0.1\&quot;,\&quot;type\&quot;:\&quot;logtest\&quot;,\&quot;message\&quot;:\&quot;&quot; + i + &quot;\&quot;}&quot;);
+    jedis.lpush("logstash", "{\"host\":\"127.0.0.1\",\"type\":\"logtest\",\"message\":\"" + i + "\"}");
 }
 </code></pre>
 <h2 id="2kibana使用-2"><a class="header" href="#2kibana使用-2">2、Kibana使用</a></h2>
@@ -6926,7 +6932,7 @@ tcp/udp：使用tcp或udp传输过来的日志
 </code></pre>
 <pre><code>path: 日志文件或目录的绝对路径，也可以是通配符的。
 type: 类型，自定义
-start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 &quot;beginning&quot;，logstash 进程就从头开始读取，类似 less +F 的形式运行。
+start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 "beginning"，logstash 进程就从头开始读取，类似 less +F 的形式运行。
 codec: codec配置，通过它可以更好更方便的与其他有自定义数据格式的运维产品共存，比如 graphite、fluent、netflow、collectd，以及使用 msgpack、json、edn 等通用数据格式的其他产品等。
 </code></pre>
 <ul>
@@ -6935,25 +6941,25 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
 <pre><code>input {
     file {
         #指定单一文件
-        path =&gt; &quot;/data/es/logstash/files/test.log&quot;
+        path =&gt; "/data/es/logstash/files/test.log"
         #指定数组文件
-        #path =&gt; [&quot;/data/es/logstash/files/test-1.log&quot;,&quot;/data/es/logstash/files/test-2.log&quot;]
+        #path =&gt; ["/data/es/logstash/files/test-1.log","/data/es/logstash/files/test-2.log"]
         #指定同级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/test*.log"
         #指定多级目录模糊匹配
-        #path =&gt; &quot;/data/es/logstash/files/**/test*.log&quot;
+        #path =&gt; "/data/es/logstash/files/**/test*.log"
 
         #当存在多个文件的时候可使用type指定输入输出路径
-        type =&gt; &quot;log_index&quot;
+        type =&gt; "log_index"
         
         #可设置成begining或end，begining表示从头开始读取文件，end表示读取最新数据，可和ignore_older一起使用
         #begining只针对首次启动是否需要读取所有的历史数据，而当文件修改了之后，同样会自动增量更新新数据
-        start_position =&gt; &quot;beginning&quot;
+        start_position =&gt; "beginning"
 
         #设置输入规则
         codec =&gt; multiline {
             #利用正则匹配规则，匹配每一行开始的位置，这里匹配每一行开始的位置为数字
-            pattern =&gt; &quot;^[0-9]&quot;
+            pattern =&gt; "^[0-9]"
      
             #true表示不匹配正则表达式，false为匹配正则表达式，默认false
             #如果不匹配，则会结合what参数，进行合并操作
@@ -6961,7 +6967,7 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
             
             #what可设置previous和next，previous则表示将所有不匹配的数据都合并到上一个正则事件
             #而next则相反，将所有的不匹配的数据都合并到下一个正则事件
-            what =&gt; &quot;previous&quot;
+            what =&gt; "previous"
  
             #表示当多长时间没有新的数据，最后一个正则匹配积累的多行数据都归属为最后一个事件，这里的10表示10秒
             #auto_flush_interval =&gt; 10
@@ -6969,22 +6975,22 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
     }
     tcp {
         port =&gt; 8888
-        mode =&gt; &quot;server&quot;
+        mode =&gt; "server"
         ssl_enable =&gt; false
     }
 }
 filter {
     grok {
         match =&gt; {
-            &quot;message&quot; =&gt; &quot;%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \&quot;(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \&quot;%{DATA:referrer}\&quot; \&quot;%{DATA:agent}\&quot;&quot;
+            "message" =&gt; "%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \"(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \"%{DATA:referrer}\" \"%{DATA:agent}\""
         }
     }
     ruby{
-        init =&gt; &quot;@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']&quot;
-        code =&gt; &quot;
+        init =&gt; "@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']"
+        code =&gt; "
             new_event = LogStash::Event.new(Hash[@kname.zip(event.get('message').split('|'))])
             new_event.remove('@timestamp')
-            event.append(new_event)&quot;
+            event.append(new_event)"
     }
 }
 output {
@@ -6994,38 +7000,38 @@ output {
     }
 
     #输出到elasticsearch
-    if [type] == &quot;log_index&quot; {
+    if [type] == "log_index" {
         elasticsearch {
-            hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
+            hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
             
             #以当前的日期作为index和type
-            #index =&gt; &quot;log-%{+YYYY.MM.dd}&quot;
-            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
-            document_type =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+            #index =&gt; "log-%{+YYYY.MM.dd}"
+            index =&gt; "%{type}-%{+YYYY.MM.dd}"
+            document_type =&gt; "%{type}-%{+YYYY.MM.dd}"
             
             #覆盖模板
             #template_overwrite =&gt; true
-            #template =&gt; &quot;/elk/es/logstash/template/logstash.json&quot;
+            #template =&gt; "/elk/es/logstash/template/logstash.json"
         }
     }
 
     #输出到文件
-    if [type] == &quot;log_file&quot; {
+    if [type] == "log_file" {
         file {
-            path =&gt; &quot;/elk/logstash/logs/website-%{+YYYY.MM.dd}.log&quot;
+            path =&gt; "/elk/logstash/logs/website-%{+YYYY.MM.dd}.log"
             flush_interval =&gt; 0
         }
     }
 
     #输出到Redis
-    if [type] == &quot;log_redis&quot; {
+    if [type] == "log_redis" {
         redis {
-            host =&gt; &quot;192.168.11.5&quot;
+            host =&gt; "192.168.11.5"
             port =&gt; 7890
             db =&gt; 1
-            password =&gt; &quot;123456&quot;
-            data_type =&gt; &quot;channel&quot;
-            key =&gt; &quot;/wefintek/education/website/logs/website-log&quot;
+            password =&gt; "123456"
+            data_type =&gt; "channel"
+            key =&gt; "/wefintek/education/website/logs/website-log"
         }
     }
 }
@@ -7231,7 +7237,7 @@ print(find)
 </code></pre>
 <p>那么 python string/foo.py 和 python -m string.foo 的运行结果又是怎样呢？运行一下发现，两者的输出分别是：</p>
 <pre><code class="language-buildoutcfg">Traceback (most recent call last):
-  File &quot;string/foo.py&quot;, line 1, in &lt;module&gt;
+  File "string/foo.py", line 1, in &lt;module&gt;
     from . import find
 ValueError: Attempted relative import in non-package
 </code></pre>
@@ -7355,7 +7361,7 @@ RUN conda install -y -c conda-forge jupyter nb_conda jupyter_contrib_nbextension
 
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
-ENTRYPOINT [&quot;jupyter&quot;, &quot;notebook --allow-root&quot;]
+ENTRYPOINT ["jupyter", "notebook --allow-root"]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="other-4"><a class="header" href="#other-4">Other</a></h1>
 <h2 id="修改centos默认python版本"><a class="header" href="#修改centos默认python版本">修改Centos默认Python版本</a></h2>
@@ -7372,10 +7378,10 @@ vi /usr/libexec/urlgrabber-ext-down
 python -m pip install --upgrade pip==10.0.0
 </code></pre>
 <h2 id="install-specify-version"><a class="header" href="#install-specify-version">install specify version</a></h2>
-<pre><code>pip install &quot;requests==2.5&quot; 
-pip install &quot;requests&gt;=2.0&quot; 
-pip install &quot;requests&lt;=3.0&quot;
-pip install &quot;requests&gt;=2.0,&lt;=3.0&quot;
+<pre><code>pip install "requests==2.5" 
+pip install "requests&gt;=2.0" 
+pip install "requests&lt;=3.0"
+pip install "requests&gt;=2.0,&lt;=3.0"
 </code></pre>
 <h2 id="temp-index-url"><a class="header" href="#temp-index-url">temp index url</a></h2>
 <pre><code>pip install -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com --no-cache-dir numpy
@@ -7422,14 +7428,14 @@ pip install --no-index -f file://xxx/packs numpy
 <pre><code>REACT_APP_XXX = xxx
 </code></pre>
 <h2 id="react-scripts"><a class="header" href="#react-scripts">react scripts</a></h2>
-<pre><code>&quot;scripts&quot;: {
-    &quot;eject&quot;: &quot;react-scripts eject&quot;,
-    &quot;start&quot;: &quot;react-scripts start&quot;,
-    &quot;test&quot;: &quot;react-scripts test&quot;,
-    &quot;build&quot;: &quot;react-scripts build&quot;,
-    &quot;dev&quot;: &quot;dotenv -e .env.dev react-scripts start&quot;,
-    &quot;build-stg&quot;: &quot;dotenv -e .env.stg react-scripts build&quot;,
-    &quot;build-prd&quot;: &quot;dotenv -e .env.prd react-scripts build&quot;
+<pre><code>"scripts": {
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "dev": "dotenv -e .env.dev react-scripts start",
+    "build-stg": "dotenv -e .env.stg react-scripts build",
+    "build-prd": "dotenv -e .env.prd react-scripts build"
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="react-1"><a class="header" href="#react-1">react</a></h1>
@@ -7440,14 +7446,14 @@ pip install --no-index -f file://xxx/packs numpy
 <pre><code>REACT_APP_XXX = xxx
 </code></pre>
 <h2 id="react-scripts-1"><a class="header" href="#react-scripts-1">react scripts</a></h2>
-<pre><code>&quot;scripts&quot;: {
-    &quot;eject&quot;: &quot;react-scripts eject&quot;,
-    &quot;start&quot;: &quot;react-scripts start&quot;,
-    &quot;test&quot;: &quot;react-scripts test&quot;,
-    &quot;build&quot;: &quot;react-scripts build&quot;,
-    &quot;dev&quot;: &quot;dotenv -e .env.dev react-scripts start&quot;,
-    &quot;build-stg&quot;: &quot;dotenv -e .env.stg react-scripts build&quot;,
-    &quot;build-prd&quot;: &quot;dotenv -e .env.prd react-scripts build&quot;
+<pre><code>"scripts": {
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "dev": "dotenv -e .env.dev react-scripts start",
+    "build-stg": "dotenv -e .env.stg react-scripts build",
+    "build-prd": "dotenv -e .env.prd react-scripts build"
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">rust</a></h1>
@@ -7463,11 +7469,11 @@ export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 <pre><code>&gt; vi ~/.cargo/config  
 </code></pre>
 <pre><code>[source.crates-io]
-replace-with = &quot;rsproxy&quot;
+replace-with = "rsproxy"
 [source.rsproxy]
-registry = &quot;https://rsproxy.cn/crates.io-index&quot;
+registry = "https://rsproxy.cn/crates.io-index"
 [registries.rsproxy]
-index = &quot;https://rsproxy.cn/crates.io-index&quot;
+index = "https://rsproxy.cn/crates.io-index"
 [net]
 git-fetch-with-cli = true
 </code></pre>
@@ -7485,19 +7491,19 @@ RUST_SRC_PATH=$RUST_HOME/lib/rustlib/src/rust/library
 <blockquote>
 <p>build.rs</p>
 </blockquote>
-<pre><code>println!(&quot;cargo:rustc-link-search=native=./lib&quot;);
-println!(&quot;cargo:rustc-link-lib=dylib=xxx&quot;);
+<pre><code>println!("cargo:rustc-link-search=native=./lib");
+println!("cargo:rustc-link-lib=dylib=xxx");
 </code></pre>
 <blockquote>
 <p>.cargo/config</p>
 </blockquote>
 <pre><code>[build]
-rustflags = [&quot;-L./lib&quot;, &quot;-lxxx&quot;]
+rustflags = ["-L./lib", "-lxxx"]
 </code></pre>
 <h3 id="msvc"><a class="header" href="#msvc">msvc</a></h3>
 <blockquote>
-<p>the import library name should be &quot;xxx.lib&quot;<br />
-the dynamic library name should be &quot;xxx.dll&quot;</p>
+<p>the import library name should be "xxx.lib"<br />
+the dynamic library name should be "xxx.dll"</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="证书操作"><a class="header" href="#证书操作">证书操作</a></h1>
 <ul>
@@ -7543,7 +7549,7 @@ the dynamic library name should be &quot;xxx.dll&quot;</p>
 <ul>
 <li>制作过程</li>
 </ul>
-<p><img src="server/../static/img/pem/pem001.jpg" alt="" /> </p>
+<p><img src="server/../static/img/pem/pem001.jpg" alt="" /></p>
 <ul>
 <li>Nginx配置</li>
 </ul>
@@ -7593,7 +7599,7 @@ the dynamic library name should be &quot;xxx.dll&quot;</p>
 <ul>
 <li>制作过程</li>
 </ul>
-<p><img src="server/../static/img/pem/pem001.jpg" alt="" /> </p>
+<p><img src="server/../static/img/pem/pem001.jpg" alt="" /></p>
 <ul>
 <li>Nginx配置</li>
 </ul>
@@ -7661,9 +7667,9 @@ http
     {
         include mime.types;
         default_type application/octet-stream;
-        log_format main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
-        '$status $body_bytes_sent &quot;$http_referer&quot; '
-        '&quot;$http_user_agent&quot; $http_x_forwarded_for';
+        log_format main  '$remote_addr - $remote_user [$time_local] "$request" '
+        '$status $body_bytes_sent "$http_referer" '
+        '"$http_user_agent" $http_x_forwarded_for';
 
         #charset utf8;
 
@@ -7962,10 +7968,10 @@ remote ~/.ssh/authorized_keys
 </code></pre>
 <h2 id="settingsjson"><a class="header" href="#settingsjson">settings.json</a></h2>
 <pre><code>{
-    &quot;go.goroot&quot;: &quot;/path/go&quot;,
-    &quot;go.gopath&quot;: &quot;/home/c/go&quot;,
-    &quot;go.gotoSymbol.includeGoroot&quot;: true,
-    &quot;go.toolsManagement.autoUpdate&quot;: true,
+    "go.goroot": "/path/go",
+    "go.gopath": "/home/c/go",
+    "go.gotoSymbol.includeGoroot": true,
+    "go.toolsManagement.autoUpdate": true,
 }
 </code></pre>
 <h2 id="go-plugin-goinstallupdate"><a class="header" href="#go-plugin-goinstallupdate">go plugin (go:install/update)</a></h2>
@@ -7980,16 +7986,16 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="java-1"><a class="header" href="#java-1">java</a></h1>
 <h2 id="settingsjson-1"><a class="header" href="#settingsjson-1">settings.json</a></h2>
-<pre><code>&quot;java.home&quot;: &quot;/path/to/jdk-11&quot;,
-&quot;java.configuration.runtimes&quot;: [
+<pre><code>"java.home": "/path/to/jdk-11",
+"java.configuration.runtimes": [
   {
-    &quot;name&quot;: &quot;JavaSE-8&quot;,
-    &quot;path&quot;: &quot;/path/to/jdk-8&quot;,
-    &quot;default&quot;: true
+    "name": "JavaSE-8",
+    "path": "/path/to/jdk-8",
+    "default": true
   },
   {
-    &quot;name&quot;: &quot;JavaSE-11&quot;,
-    &quot;path&quot;: &quot;/path/to/jdk-11&quot;,
+    "name": "JavaSE-11",
+    "path": "/path/to/jdk-11",
   },
 ]
 </code></pre>
@@ -8023,7 +8029,7 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 <p>@    跳转到 symbol（搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入</p>
 </blockquote>
 <blockquote>
-<p>@    根据分类跳转 symbol，查找属性或函数，也可以 Ctrl+Shift+O 后输入&quot; : &quot;进入</p>
+<p>@    根据分类跳转 symbol，查找属性或函数，也可以 Ctrl+Shift+O 后输入" : "进入</p>
 </blockquote>
 <blockquote>
 <p>#   根据名字查找 symbol，也可以 Ctrl+T</p>
@@ -8128,7 +8134,7 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 <pre><code>自动保存：File -&gt; AutoSave(中文界面下“文件”-&gt;“自动保存”) 或者 Ctrl+Shift+P，输入 auto
 </code></pre>
 <h2 id="三修改默认快捷键"><a class="header" href="#三修改默认快捷键">三、修改默认快捷键</a></h2>
-<p>打开默认键盘快捷方式设置：File -&gt; Preferences -&gt; Keyboard Shortcuts( 中文界面时：“文件”-&gt;&quot;首选项&quot;-&gt;&quot;键盘快捷方式&quot;)，或者：Alt+F -&gt; p -&gt; k -&gt; Enter，进入后如下图一所示。</p>
+<p>打开默认键盘快捷方式设置：File -&gt; Preferences -&gt; Keyboard Shortcuts( 中文界面时：“文件”-&gt;"首选项"-&gt;"键盘快捷方式")，或者：Alt+F -&gt; p -&gt; k -&gt; Enter，进入后如下图一所示。</p>
 <p>修改快捷键绑定方法一：直接在对应命令那一行点击，出现笔状图标，点击进入修改，如下图一所示：</p>
 <p><img src="vscode/../static/img/vs/vs3.png" alt="" /></p>
 <p>修改快捷键绑定方法二：点击搜索栏下侧的“ keybindings.json ”，进入编辑界面，如下图所示：</p>
@@ -8136,10 +8142,10 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 <p>编写对应规则有一定的方法，如下所示：</p>
 <pre><code>// 将键绑定放入此文件中以覆盖默认值
 [{
-    &quot;key&quot;: &quot;f8&quot;,
-    &quot;command&quot;: &quot;workbench.action.tasks.runTask&quot;,
-    &quot;args&quot;: &quot;build&quot;,
-    &quot;when&quot;: &quot;editorTextFocus&quot;
+    "key": "f8",
+    "command": "workbench.action.tasks.runTask",
+    "args": "build",
+    "when": "editorTextFocus"
 }
 ]
 
@@ -8153,60 +8159,60 @@ when    快捷键在何时生效，这里指的是编辑区
 
 保存完，你尝试按下F8，任务便顺利运行了。
 </code></pre>
-<p>自己的&quot; keybindings.json &quot;文件参考如下(谨慎使用)：</p>
+<p>自己的" keybindings.json "文件参考如下(谨慎使用)：</p>
 <pre><code>// Place your key bindings in this file to overwrite the defaults
 [
     // ctrl+space 被切换输入法快捷键占用
     {
-        &quot;key&quot;: &quot;ctrl+alt+space&quot;,
-        &quot;command&quot;: &quot;editor.action.triggerSuggest&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+alt+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus"
     },
     // ctrl+d 删除一行
     {
-        &quot;key&quot;: &quot;ctrl+d&quot;,
-        &quot;command&quot;: &quot;editor.action.deleteLines&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
     },
     // 与删除一行的快捷键互换
     {
-        &quot;key&quot;: &quot;ctrl+shift+k&quot;,
-        &quot;command&quot;: &quot;editor.action.addSelectionToNextFindMatch&quot;,
-        &quot;when&quot;: &quot;editorFocus&quot;
+        "key": "ctrl+shift+k",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
     },
     // ctrl+shift+/多行注释
     {
-        &quot;key&quot;:&quot;ctrl+shift+/&quot;,
-        &quot;command&quot;: &quot;editor.action.blockComment&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key":"ctrl+shift+/",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus"
     },
     // 定制与 sublime 相同的大小写转换快捷键
     editor.action.transformToLowercase
     editor.action.transformToUppercase
     {
-        &quot;key&quot;: &quot;ctrl+k ctrl+u&quot;,
-        &quot;command&quot;: &quot;editor.action.transformToUppercase&quot;
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+k ctrl+u",
+        "command": "editor.action.transformToUppercase"
+        "when": "editorTextFocus"
     },
     {
-        &quot;key&quot;: &quot;ctrl+k ctrl+l&quot;,
-        &quot;command&quot;: &quot;editor.action.transformToLowercase&quot;
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+k ctrl+l",
+        "command": "editor.action.transformToLowercase"
+        "when": "editorTextFocus"
     }
 ]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="maven-2"><a class="header" href="#maven-2">maven</a></h1>
 <h2 id="settingsjson-2"><a class="header" href="#settingsjson-2">settings.json</a></h2>
-<pre><code>&quot;maven.executable.path&quot;: &quot;/path/maven/bin/mvn&quot;,
-&quot;maven.settingsFile&quot;: &quot;/path/maven/conf/settings.xml&quot;,
+<pre><code>"maven.executable.path": "/path/maven/bin/mvn",
+"maven.settingsFile": "/path/maven/conf/settings.xml",
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="svn"><a class="header" href="#svn">svn</a></h1>
 <h2 id="1-svn-ignore"><a class="header" href="#1-svn-ignore">1. svn ignore</a></h2>
 <h3 id="11-settingsjson"><a class="header" href="#11-settingsjson">1.1 settings.json</a></h3>
-<pre><code>&quot;svn.sourceControl.ignore&quot;: [
-        &quot;.vscode&quot;,
-        &quot;**/target&quot;,
-        &quot;**/log&quot;,
+<pre><code>"svn.sourceControl.ignore": [
+        ".vscode",
+        "**/target",
+        "**/log",
     ]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vue"><a class="header" href="#vue">vue</a></h1>
@@ -8226,7 +8232,7 @@ new Vue({
 </code></pre>
 <h2 id="srcappvue"><a class="header" href="#srcappvue">src/app.vue</a></h2>
 <pre><code>&lt;template&gt;
-    &lt;div id=&quot;app&quot;&gt;
+    &lt;div id="app"&gt;
         &lt;router-view&gt;&lt;/router-view&gt;
     &lt;/div&gt;
 &lt;/template&gt;
@@ -8391,7 +8397,7 @@ new Vue({
 </code></pre>
 <h2 id="srcappvue-1"><a class="header" href="#srcappvue-1">src/app.vue</a></h2>
 <pre><code>&lt;template&gt;
-    &lt;div id=&quot;app&quot;&gt;
+    &lt;div id="app"&gt;
         &lt;router-view&gt;&lt;/router-view&gt;
     &lt;/div&gt;
 &lt;/template&gt;
@@ -8555,15 +8561,15 @@ module.exports = {
 <pre><code>FROM docker.io/itesting/alpine:caddy
 COPY dist /code/dist
 COPY Caddyfile /code/Caddyfile
-ENTRYPOINT [&quot;caddy&quot;, &quot;run&quot;, &quot;--config&quot;, &quot;/code/Caddyfile&quot;]
+ENTRYPOINT ["caddy", "run", "--config", "/code/Caddyfile"]
 </code></pre>
 <pre><code>FROM docker.io/itesting/npm:caddy
 COPY . /code
 WORKDIR /code
 RUN npm install
-RUN npm run build -- --dest=&quot;dist/stg&quot; --mode=&quot;stg&quot;
-RUN npm run build -- --dest=&quot;dist/prd&quot; --mode=&quot;prd&quot;
-ENTRYPOINT [&quot;caddy&quot;, &quot;run&quot;, &quot;--config&quot;, &quot;/code/Caddyfile&quot;]
+RUN npm run build -- --dest="dist/stg" --mode="stg"
+RUN npm run build -- --dest="dist/prd" --mode="prd"
+ENTRYPOINT ["caddy", "run", "--config", "/code/Caddyfile"]
 </code></pre>
 <h3 id="build-docker-2"><a class="header" href="#build-docker-2">build docker</a></h3>
 <pre><code>docker build -t vue-demo .
@@ -8607,14 +8613,14 @@ requireAll(require.context('@/static/icons/svg', false, /\.svg$/))
 </code></pre>
 <h2 id="srccomponentssvgsvgiconvue"><a class="header" href="#srccomponentssvgsvgiconvue">src/components/svg/SvgIcon.vue</a></h2>
 <pre><code>&lt;template&gt;
-    &lt;svg :class=&quot;svgClass&quot; aria-hidden=&quot;true&quot; v-on=&quot;$listeners&quot;&gt;
-        &lt;use :xlink:href=&quot;iconName&quot;&gt;&lt;/use&gt;
+    &lt;svg :class="svgClass" aria-hidden="true" v-on="$listeners"&gt;
+        &lt;use :xlink:href="iconName"&gt;&lt;/use&gt;
     &lt;/svg&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
     export default {
-        name: &quot;SvgIcon&quot;,
+        name: "SvgIcon",
         props: {
             iconClass: {
                 type: String,
@@ -8777,7 +8783,7 @@ oobe\bypassnro
 <p>用法跟链接的基本一样，唯一的不同就是，图片前面要写一个！（这是必须的）</p>
 <h2 id="七代码框"><a class="header" href="#七代码框">七、代码框</a></h2>
 <h3 id="单行代码用-反单引号"><a class="header" href="#单行代码用-反单引号">单行代码用<code> </code>(反单引号)</a></h3>
-<p><code>fmt.Println(&quot;hello world&quot;)</code></p>
+<p><code>fmt.Println("hello world")</code></p>
 <h3 id="多行代码-三个反单引号"><a class="header" href="#多行代码-三个反单引号">多行代码<code> </code>（三个反单引号）</a></h3>
 <pre><code class="language-buildoutcfg">func main() {
 	tools.Task()

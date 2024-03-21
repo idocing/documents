@@ -240,44 +240,44 @@
 <pre><code>package main
  
 import (
-    &quot;encoding/json&quot;
-    &quot;fmt&quot;
-    &quot;os&quot;
+    "encoding/json"
+    "fmt"
+    "os"
 )
  
 type ConfigStruct struct {
-    Host              string   `json:&quot;host&quot;`
-    Port              int      `json:&quot;port&quot;`
-    AnalyticsFile     string   `json:&quot;analytics_file&quot;`
-    StaticFileVersion int      `json:&quot;static_file_version&quot;`
-    StaticDir         string   `json:&quot;static_dir&quot;`
-    TemplatesDir      string   `json:&quot;templates_dir&quot;`
-    SerTcpSocketHost  string   `json:&quot;serTcpSocketHost&quot;`
-    SerTcpSocketPort  int      `json:&quot;serTcpSocketPort&quot;`
-    Fruits            []string `json:&quot;fruits&quot;`
+    Host              string   `json:"host"`
+    Port              int      `json:"port"`
+    AnalyticsFile     string   `json:"analytics_file"`
+    StaticFileVersion int      `json:"static_file_version"`
+    StaticDir         string   `json:"static_dir"`
+    TemplatesDir      string   `json:"templates_dir"`
+    SerTcpSocketHost  string   `json:"serTcpSocketHost"`
+    SerTcpSocketPort  int      `json:"serTcpSocketPort"`
+    Fruits            []string `json:"fruits"`
 }
  
 type Other struct {
-    SerTcpSocketHost string   `json:&quot;serTcpSocketHost&quot;`
-    SerTcpSocketPort int      `json:&quot;serTcpSocketPort&quot;`
-    Fruits           []string `json:&quot;fruits&quot;`
+    SerTcpSocketHost string   `json:"serTcpSocketHost"`
+    SerTcpSocketPort int      `json:"serTcpSocketPort"`
+    Fruits           []string `json:"fruits"`
 }
  
 func main() { 
-    jsonStr := `{&quot;host&quot;: &quot;http://localhost:8080&quot;,&quot;port&quot;: 8080,&quot;analytics_file&quot;: &quot;&quot;,&quot;static_file_version&quot;: 1,&quot;static_dir&quot;: &quot;/opt/Project/goTest/src/&quot;,&quot;templates_dir&quot;: &quot;/opt/Project/goTest/src/templates/&quot;,&quot;serTcpSocketHost&quot;: &quot;:12340&quot;,&quot;serTcpSocketPort&quot;: 12340,&quot;fruits&quot;: [&quot;apple&quot;, &quot;peach&quot;]}`
+    jsonStr := `{"host": "http://localhost:8080","port": 8080,"analytics_file": "","static_file_version": 1,"static_dir": "/opt/Project/goTest/src/","templates_dir": "/opt/Project/goTest/src/templates/","serTcpSocketHost": ":12340","serTcpSocketPort": 12340,"fruits": ["apple", "peach"]}`
  
     //json str &gt;&gt; map
     var dat map[string]interface{}
     if err := json.Unmarshal([]byte(jsonStr), &amp;dat); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; map ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; map ==============")
         fmt.Println(dat)
-        fmt.Println(dat[&quot;host&quot;])
+        fmt.Println(dat["host"])
     }
  
     //json str &gt;&gt; struct
     var config ConfigStruct
     if err := json.Unmarshal([]byte(jsonStr), &amp;config); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; struct ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; struct ==============")
         fmt.Println(config)
         fmt.Println(config.Host)
     }
@@ -285,34 +285,34 @@ func main() {
     //json str &gt;&gt; struct
     var part Other
     if err := json.Unmarshal([]byte(jsonStr), &amp;part); err == nil {
-        fmt.Println(&quot;============== json str &gt;&gt; struct ==============&quot;)
+        fmt.Println("============== json str &gt;&gt; struct ==============")
         fmt.Println(part)
         fmt.Println(part.SerTcpSocketPort)
     }
  
     //struct &gt;&gt; json str
     if b, err := json.Marshal(config); err == nil {
-        fmt.Println(&quot;============== struct &gt;&gt; json str ==============&quot;)
+        fmt.Println("============== struct &gt;&gt; json str ==============")
         fmt.Println(string(b))
     }
  
     //map &gt;&gt; json str
-    fmt.Println(&quot;============== map &gt;&gt; json str ==============&quot;)
+    fmt.Println("============== map &gt;&gt; json str ==============")
     enc := json.NewEncoder(os.Stdout)
     enc.Encode(dat)
  
     //array &gt;&gt; json str
-    arr := []string{&quot;hello&quot;, &quot;apple&quot;, &quot;python&quot;, &quot;golang&quot;, &quot;base&quot;, &quot;peach&quot;, &quot;pear&quot;}
+    arr := []string{"hello", "apple", "python", "golang", "base", "peach", "pear"}
     lang, err := json.Marshal(arr)
     if err == nil {
-        fmt.Println(&quot;============== array &gt;&gt; json str ==============&quot;)
+        fmt.Println("============== array &gt;&gt; json str ==============")
         fmt.Println(string(lang))
     }
  
     //json &gt;&gt; []string
     var wo []string
     if err := json.Unmarshal(lang, &amp;wo); err == nil {
-        fmt.Println(&quot;============== json &gt;&gt; []string ==============&quot;)
+        fmt.Println("============== json &gt;&gt; []string ==============")
         fmt.Println(wo)
     }
 }

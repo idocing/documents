@@ -263,13 +263,13 @@ WORKDIR /usr/local/nginx
 
 RUN ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_ssl_module --with-pcre &amp;&amp; make &amp;&amp; make install
 
-RUN echo &quot;daemon off;&quot; &gt;&gt; /etc/nginx.conf
+RUN echo "daemon off;" &gt;&gt; /etc/nginx.conf
 
 #EXPOSE 映射端口
 EXPOSE 80
 
 #CMD 运行以下命令
-CMD [&quot;nginx&quot;]
+CMD ["nginx"]
 </code></pre>
 <h1 id="base-image"><a class="header" href="#base-image">base image</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>镜像名称</th><th>大小</th><th>使用场景</th></tr></thead><tbody>
@@ -327,7 +327,7 @@ scratch                 latest              775bfce21429        9 minutes ago   
 <p>则可以用docker build --build-arg<name>=<value>来指定参数值。</p>
 <h2 id="run在镜像中要执行的命令"><a class="header" href="#run在镜像中要执行的命令">RUN：在镜像中要执行的命令</a></h2>
 <blockquote>
-<p>格式为 RUN <command> 或 RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</p>
+<p>格式为 RUN <command> 或 RUN ["executable", "param1", "param2"]</p>
 </blockquote>
 <p>前者默认将在 shell 终端中运行命令，即 /bin/bash -c ；后者则使用 exec 执行。指定使用其它终端可以通过第二种方式实现，例如 RUN [“/bin/bash”, “-c”,”echo hello”] 。</p>
 <p>每条RUN指令将在当前镜像的基础上执行指定命令，并提交为新的镜像。当命令较长时可以使用\换行。例如：</p>
@@ -374,7 +374,7 @@ RUN pwd
 </code></pre>
 <h2 id="volume挂载目录"><a class="header" href="#volume挂载目录">VOLUME：挂载目录</a></h2>
 <blockquote>
-<p>格式为VOLUME [&quot;/data&quot;]</p>
+<p>格式为VOLUME ["/data"]</p>
 </blockquote>
 <p>创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。</p>
 <h2 id="user"><a class="header" href="#user">USER</a></h2>
@@ -387,22 +387,22 @@ RUN pwd
 <blockquote>
 <p>格式为：LABEL <key>=<value> <key>=<value> <key>=<value> ...</p>
 </blockquote>
-<pre><code>LABEL version=&quot;1.0&quot;
-LABEL description=&quot;This text illustrates \ that label-values can span multiple lines.&quot;
+<pre><code>LABEL version="1.0"
+LABEL description="This text illustrates \ that label-values can span multiple lines."
 </code></pre>
 <h2 id="entrypoint"><a class="header" href="#entrypoint">ENTRYPOINT</a></h2>
 <p>指定镜像的默认入口命令，该入口命令会在启动容器时作为根命令执行，所有传入值作为该命令的参数。</p>
 <p>两种格式：</p>
-<pre><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
+<pre><code>ENTRYPOINT ["executable", "param1", "param2"]
  
 ENTRYPOINT command param1 param2 （shell 中执行）
 </code></pre>
 <p>此时，CMD指令指定值将作为根命令的参数。每个Dockerfile中只能有一个ENTRYPOINT，当指定多个时，只有最后一个有效。在运行时可以被--entrypoint参数覆盖掉，如docker run --entrypoint。</p>
 <h2 id="cmd"><a class="header" href="#cmd">CMD</a></h2>
 <p>支持三种格式</p>
-<pre><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 使用 exec 执行，推荐方式；
+<pre><code>CMD ["executable","param1","param2"] 使用 exec 执行，推荐方式；
 CMD command param1 param2 在 /bin/bash 中执行，提供给需要交互的应用；
-CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数；
+CMD ["param1","param2"] 提供给 ENTRYPOINT 的默认参数；
 </code></pre>
 <p>指定启动容器时执行的命令，每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。</p>
 <h2 id="onbuild在构建本镜像时不生效在基于此镜像构建镜像时生效"><a class="header" href="#onbuild在构建本镜像时不生效在基于此镜像构建镜像时生效">ONBUILD：在构建本镜像时不生效，在基于此镜像构建镜像时生效</a></h2>
@@ -430,9 +430,9 @@ CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数
 <h2 id="shell"><a class="header" href="#shell">SHELL</a></h2>
 <p>指定其他命令使用shell时的默认shell类型。</p>
 <blockquote>
-<p>格式为： SHELL [&quot;executable&quot;,&quot;parameters&quot;]</p>
+<p>格式为： SHELL ["executable","parameters"]</p>
 </blockquote>
-<p>默认值为 [&quot;bin/sh&quot;,&quot;-c&quot;]</p>
+<p>默认值为 ["bin/sh","-c"]</p>
 <p>注意：
 对于Windows系统，建议在Dockerfile开头添加# escape=`来指定转移信息。</p>
 <p>ENTRYPOINT 和 CMD 的区别：ENTRYPOINT 指定了该镜像启动时的入口，CMD 则指定了容器启动时的命令，当两者共用时，完整的启动命令像是 ENTRYPOINT + CMD 这样。使用 ENTRYPOINT 的好处是在我们启动镜像就像是启动了一个可执行程序，在 CMD 上仅需要指定参数；另外在我们需要自定义 CMD 时不容易出错。</p>
@@ -440,13 +440,13 @@ CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数
 <pre><code>[root@sta2 test]# cat Dockerfile 
 FROM mysql
 
-CMD [&quot;echo&quot;,&quot;test&quot;]
+CMD ["echo","test"]
 </code></pre>
 <p>使用 ENTRYPOINT 的 Dockerfile：</p>
 <pre><code>[root@sta2 entrypoint]#  cat  Dockerfile 
 FROM mysql
  
-ENTRYPOINT [&quot;echo&quot;,&quot;test&quot;]
+ENTRYPOINT ["echo","test"]
 </code></pre>
 <p>结论：ENTRYPOINT 不能覆盖掉执行时的参数，CMD 可以掉覆盖默认的参数。</p>
 <p>可以使用以下命令覆盖默认的参数，方便调试 Dockerfile 中的 bug：</p>

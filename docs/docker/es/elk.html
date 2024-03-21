@@ -250,7 +250,7 @@
 <pre><code>docker network create somenetwork
 </code></pre>
 <p>Run Elasticsearch:</p>
-<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elastic/elasticsearch:7.0.0
+<pre><code>docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elastic/elasticsearch:7.0.0
 </code></pre>
 <ul>
 <li>Running in Production Mode</li>
@@ -267,8 +267,8 @@
 <p>Every file in the host directory ~/pipeline/ will then be parsed by Logstash as pipeline configuration.</p>
 <p>If you don’t provide configuration to Logstash, it will run with a minimal config that listens for messages from the Beats input plugin and echoes any that are received to stdout. In this case, the startup logs will be similar to the following:</p>
 <pre><code>Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties.
-[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;&quot;0.0.0.0:5044&quot;}
-[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {&quot;id&quot;=&gt;&quot;main&quot;, &quot;pipeline.workers&quot;=&gt;4, &quot;pipeline.batch.size&quot;=&gt;125, &quot;pipeline.batch.delay&quot;=&gt;5, &quot;pipeline.max_inflight&quot;=&gt;500}
+[2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;"0.0.0.0:5044"}
+[2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {"id"=&gt;"main", "pipeline.workers"=&gt;4, "pipeline.batch.size"=&gt;125, "pipeline.batch.delay"=&gt;5, "pipeline.max_inflight"=&gt;500}
 [2016-10-26T05:11:35,078][INFO ][org.logstash.beats.Server] Starting server on port: 5044
 [2016-10-26T05:11:35,078][INFO ][logstash.pipeline        ] Pipeline main started
 [2016-10-26T05:11:35,105][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=&gt;9600}
@@ -324,7 +324,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <ul>
 <li>IMPORTANT</li>
 </ul>
-<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be &quot;masked&quot; by the new file.</p>
+<p>If replacing logstash.yml with a custom version, be sure to copy the above defaults to the custom file if you want to retain them. If not, they will be "masked" by the new file.</p>
 <ul>
 <li>Logging Configuration</li>
 </ul>
@@ -365,7 +365,7 @@ xpack.monitoring.elasticsearch.hosts    http://elasticsearch:9200
 <pre><code>docker run \
 elastic/filebeat:7.0.0 \
 setup -E setup.kibana.host=kibana:5601 \
--E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+-E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Kibana and Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using this syntax:</p>
@@ -389,11 +389,11 @@ setup -E setup.kibana.host=kibana:5601 \
 <pre><code>docker run -d \
   --name=filebeat \
   --user=root \
-  --volume=&quot;$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro&quot; \
-  --volume=&quot;/var/lib/docker/containers:/var/lib/docker/containers:ro&quot; \
-  --volume=&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot; \
+  --volume="$(pwd)/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro" \
+  --volume="/var/lib/docker/containers:/var/lib/docker/containers:ro" \
+  --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
   docker.elastic.co/beats/filebeat:7.0.0 filebeat -e -strict.perms=false \
-  -E output.elasticsearch.hosts=[&quot;elasticsearch:9200&quot;]
+  -E output.elasticsearch.hosts=["elasticsearch:9200"]
 </code></pre>
 <p>Substitute your Elasticsearch hosts and ports.</p>
 <p>If you are using the hosted Elasticsearch Service in Elastic Cloud, replace the -E output.elasticsearch.hosts line with the Cloud ID and elastic password using the syntax shown earlier.</p>
