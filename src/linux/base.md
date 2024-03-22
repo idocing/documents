@@ -13,7 +13,7 @@ CMD ["bash"]
 ```
 FROM irepoing/debian:10
 
-RUN apt update -y && apt install -y procps less curl wget telnet vim zip unzip git net-tools lsof tcpdump strace traceroute \
+RUN apt update -y && apt install -y procps less curl wget telnet vim zip unzip git net-tools iputils-ping lsof tcpdump strace traceroute \
     && apt install -y tzdata && \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apt autoremove && apt autoclean && apt clean
 
