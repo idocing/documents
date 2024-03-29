@@ -91,6 +91,7 @@
     - [ubuntu](./linux/ubuntu.md)
 - [mac](./mac/brew.md)
     - [brew](./mac/brew.md)
+    - [brewcn](./mac/brewcn.md)
     - [homebrew](./mac/homebrew.md)
     - [launchpad](./mac/launchpad.md)
 - [net](./net/net.md)
