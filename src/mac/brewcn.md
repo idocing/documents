@@ -1,6 +1,6 @@
 # homebrew
 
-## install official
+## install origin
 ```
 /bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
 ```
