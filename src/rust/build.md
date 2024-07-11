@@ -10,7 +10,7 @@ println!("cargo:rustc-link-search=native=./lib");
 println!("cargo:rustc-link-lib=dylib=xxx");
 ```
 
-> .cargo/config
+> .cargo/config.toml
 ```
 [build]
 rustflags = ["-L./lib", "-lxxx"]
