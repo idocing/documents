@@ -50,11 +50,15 @@ gcc *.o -o x
 ```
 -Wl,-Bdynamic
 ```
+- import library (output import library xxx.lib)
+```
+-Wl,--out-implib,xxx.lib
+```
 
 > example
 
 ```
--Wl,-Bstatic -lpgm -lxerces-c -Wl,-Bdynamic -libverbs -lcurl -Wl,--as-needed
+-Wl,-Bstatic -lpgm -lxerces-c -Wl,-Bdynamic -libverbs -lcurl -Wl,--as-needed -Wl,--out-implib,xxx.lib
 ```
 
 ## static libaray

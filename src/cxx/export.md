@@ -1,4 +1,4 @@
-# cxx
+# export
 
 ## build import library(dll & lib)
 
