@@ -1,13 +1,11 @@
 # export
 
-## build import library(dll & lib)
-
-### export function
+## export function
 ```
 extern "C" __declspec(dllexport) void xxx();
 ```
 
-### export class
+## export class
 ```
 class __declspec(dllexport) XXX {
     public:
