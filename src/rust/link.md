@@ -29,9 +29,8 @@ gcc -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.c
 
 ## build cxx
 ```
-# export function
 extern "C" __declspec(dllexport) void kkk();
 
-g++ -shared -o tool.so main.c
+g++ -shared -o tool.so main.cxx
 g++ -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.cxx
 ```

@@ -7611,10 +7611,9 @@ rustflags = [&quot;-L/path&quot;, &quot;-ltool.dll&quot;] #windows
 gcc -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.c
 </code></pre>
 <h2 id="build-cxx"><a class="header" href="#build-cxx">build cxx</a></h2>
-<pre><code># export function
-extern &quot;C&quot; __declspec(dllexport) void kkk();
+<pre><code>extern &quot;C&quot; __declspec(dllexport) void kkk();
 
-g++ -shared -o tool.so main.c
+g++ -shared -o tool.so main.cxx
 g++ -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.cxx
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pointer"><a class="header" href="#pointer">pointer</a></h1>
