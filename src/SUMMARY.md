@@ -7,6 +7,7 @@
 - [c](./c/gcc.md)
     - [gcc](./c/gcc.md)
     - [cmake](./c/cmake.md)
+    - [sleep](./c/sleep.md)
 - [cmake](./cmake/cmake.md)
     - [cmake](./cmake/cmake.md)
 - [crypto](./crypto/openssl.md)
