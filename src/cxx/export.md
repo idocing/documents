@@ -1,10 +1,5 @@
 # export
 
-## export function
-```
-extern "C" __declspec(dllexport) void xxx();
-```
-
 ## export class
 ```
 class __declspec(dllexport) XXX {
@@ -15,4 +10,9 @@ class __declspec(dllexport) XXX {
 
         void xxx();
 };
+```
+
+## export function
+```
+extern "C" __declspec(dllexport) void xxx();
 ```

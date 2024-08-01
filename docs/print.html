@@ -813,9 +813,6 @@ openssl asn1parse -i -in public.pem -strparse 16
 ],
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="export"><a class="header" href="#export">export</a></h1>
-<h2 id="export-function"><a class="header" href="#export-function">export function</a></h2>
-<pre><code>extern &quot;C&quot; __declspec(dllexport) void xxx();
-</code></pre>
 <h2 id="export-class"><a class="header" href="#export-class">export class</a></h2>
 <pre><code>class __declspec(dllexport) XXX {
     public:
@@ -826,10 +823,10 @@ openssl asn1parse -i -in public.pem -strparse 16
         void xxx();
 };
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="export-1"><a class="header" href="#export-1">export</a></h1>
-<h2 id="export-function-1"><a class="header" href="#export-function-1">export function</a></h2>
+<h2 id="export-function"><a class="header" href="#export-function">export function</a></h2>
 <pre><code>extern &quot;C&quot; __declspec(dllexport) void xxx();
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="export-1"><a class="header" href="#export-1">export</a></h1>
 <h2 id="export-class-1"><a class="header" href="#export-class-1">export class</a></h2>
 <pre><code>class __declspec(dllexport) XXX {
     public:
@@ -839,6 +836,9 @@ openssl asn1parse -i -in public.pem -strparse 16
 
         void xxx();
 };
+</code></pre>
+<h2 id="export-function-1"><a class="header" href="#export-function-1">export function</a></h2>
+<pre><code>extern &quot;C&quot; __declspec(dllexport) void xxx();
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="explain"><a class="header" href="#explain">explain</a></h1>
 <h2 id="example-1"><a class="header" href="#example-1">example</a></h2>
