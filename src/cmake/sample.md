@@ -1,4 +1,4 @@
-# cmake
+# sample
 
 ## project name 
 ```
