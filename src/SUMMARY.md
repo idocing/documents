@@ -125,6 +125,8 @@
     - [pem](./server/pem.md)
 - [ssh](./ssh/ssh.md)
     - [ssh](./ssh/ssh.md)
+- [sys](./sys/proxy.md)
+    - [proxy](./sys/proxy.md)
 - [vi](./vi/vi.md)
     - [vi](./vi/vi.md)
 - [vscode](./vscode/edit.md)
