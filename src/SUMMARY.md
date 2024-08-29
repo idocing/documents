@@ -142,4 +142,5 @@
     - [svg](./vue/svg.md)
 - [windows](./windows/install.md)
     - [install](./windows/install.md)
+    - [msi](./windows/msi.md)
 - [Readme](./README.md)
