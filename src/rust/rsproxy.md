@@ -12,7 +12,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ```
 
 ## step 3
-    > vi ~/.cargo/config  
+    > vi ~/.cargo/config.toml
 ```
 [source.crates-io]
 replace-with = "rsproxy"
