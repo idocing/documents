@@ -241,31 +241,31 @@
 <blockquote>
 <p>a. use attribute</p>
 </blockquote>
-<pre><code>#[link(name=&quot;tool&quot;, kind=&quot;dylib&quot;)]
-extern &quot;C&quot; {
-    #[link_name=&quot;kkk&quot;]
+<pre><code>#[link(name="tool", kind="dylib")]
+extern "C" {
+    #[link_name="kkk"]
     fn xxx();
 }
 </code></pre>
 <ul>
-<li>kind=&quot;dylib&quot; #default</li>
-<li>kind=&quot;static&quot;</li>
-<li>kind=&quot;framework&quot;</li>
-<li>kind=&quot;raw-dylib&quot;</li>
+<li>kind="dylib" #default</li>
+<li>kind="static"</li>
+<li>kind="framework"</li>
+<li>kind="raw-dylib"</li>
 </ul>
 <blockquote>
 <p>b. use link-arg (.cargo/config.toml)</p>
 </blockquote>
 <pre><code>[build]
-rustflags = [&quot;-L/path&quot;, &quot;-ltool&quot;] #linux
-rustflags = [&quot;-L/path&quot;, &quot;-ltool.dll&quot;] #windows
+rustflags = ["-L/path", "-ltool"] #linux
+rustflags = ["-L/path", "-ltool.dll"] #windows
 </code></pre>
 <h2 id="build-c"><a class="header" href="#build-c">build c</a></h2>
 <pre><code>gcc -shared -o tool.so main.c
 gcc -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.c
 </code></pre>
 <h2 id="build-cxx"><a class="header" href="#build-cxx">build cxx</a></h2>
-<pre><code>extern &quot;C&quot; __declspec(dllexport) void kkk();
+<pre><code>extern "C" __declspec(dllexport) void kkk();
 
 g++ -shared -o tool.so main.cxx
 g++ -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.cxx

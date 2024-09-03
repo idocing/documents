@@ -272,14 +272,14 @@ requireAll(require.context('@/static/icons/svg', false, /\.svg$/))
 </code></pre>
 <h2 id="srccomponentssvgsvgiconvue"><a class="header" href="#srccomponentssvgsvgiconvue">src/components/svg/SvgIcon.vue</a></h2>
 <pre><code>&lt;template&gt;
-    &lt;svg :class=&quot;svgClass&quot; aria-hidden=&quot;true&quot; v-on=&quot;$listeners&quot;&gt;
-        &lt;use :xlink:href=&quot;iconName&quot;&gt;&lt;/use&gt;
+    &lt;svg :class="svgClass" aria-hidden="true" v-on="$listeners"&gt;
+        &lt;use :xlink:href="iconName"&gt;&lt;/use&gt;
     &lt;/svg&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
     export default {
-        name: &quot;SvgIcon&quot;,
+        name: "SvgIcon",
         props: {
             iconClass: {
                 type: String,

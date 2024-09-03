@@ -266,7 +266,7 @@
 <p>@    跳转到 symbol（搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入</p>
 </blockquote>
 <blockquote>
-<p>@    根据分类跳转 symbol，查找属性或函数，也可以 Ctrl+Shift+O 后输入&quot; : &quot;进入</p>
+<p>@    根据分类跳转 symbol，查找属性或函数，也可以 Ctrl+Shift+O 后输入" : "进入</p>
 </blockquote>
 <blockquote>
 <p>#   根据名字查找 symbol，也可以 Ctrl+T</p>
@@ -371,7 +371,7 @@
 <pre><code>自动保存：File -&gt; AutoSave(中文界面下“文件”-&gt;“自动保存”) 或者 Ctrl+Shift+P，输入 auto
 </code></pre>
 <h2 id="三修改默认快捷键"><a class="header" href="#三修改默认快捷键">三、修改默认快捷键</a></h2>
-<p>打开默认键盘快捷方式设置：File -&gt; Preferences -&gt; Keyboard Shortcuts( 中文界面时：“文件”-&gt;&quot;首选项&quot;-&gt;&quot;键盘快捷方式&quot;)，或者：Alt+F -&gt; p -&gt; k -&gt; Enter，进入后如下图一所示。</p>
+<p>打开默认键盘快捷方式设置：File -&gt; Preferences -&gt; Keyboard Shortcuts( 中文界面时：“文件”-&gt;"首选项"-&gt;"键盘快捷方式")，或者：Alt+F -&gt; p -&gt; k -&gt; Enter，进入后如下图一所示。</p>
 <p>修改快捷键绑定方法一：直接在对应命令那一行点击，出现笔状图标，点击进入修改，如下图一所示：</p>
 <p><img src="../static/img/vs/vs3.png" alt="" /></p>
 <p>修改快捷键绑定方法二：点击搜索栏下侧的“ keybindings.json ”，进入编辑界面，如下图所示：</p>
@@ -379,10 +379,10 @@
 <p>编写对应规则有一定的方法，如下所示：</p>
 <pre><code>// 将键绑定放入此文件中以覆盖默认值
 [{
-    &quot;key&quot;: &quot;f8&quot;,
-    &quot;command&quot;: &quot;workbench.action.tasks.runTask&quot;,
-    &quot;args&quot;: &quot;build&quot;,
-    &quot;when&quot;: &quot;editorTextFocus&quot;
+    "key": "f8",
+    "command": "workbench.action.tasks.runTask",
+    "args": "build",
+    "when": "editorTextFocus"
 }
 ]
 
@@ -396,45 +396,45 @@ when    快捷键在何时生效，这里指的是编辑区
 
 保存完，你尝试按下F8，任务便顺利运行了。
 </code></pre>
-<p>自己的&quot; keybindings.json &quot;文件参考如下(谨慎使用)：</p>
+<p>自己的" keybindings.json "文件参考如下(谨慎使用)：</p>
 <pre><code>// Place your key bindings in this file to overwrite the defaults
 [
     // ctrl+space 被切换输入法快捷键占用
     {
-        &quot;key&quot;: &quot;ctrl+alt+space&quot;,
-        &quot;command&quot;: &quot;editor.action.triggerSuggest&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+alt+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus"
     },
     // ctrl+d 删除一行
     {
-        &quot;key&quot;: &quot;ctrl+d&quot;,
-        &quot;command&quot;: &quot;editor.action.deleteLines&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
     },
     // 与删除一行的快捷键互换
     {
-        &quot;key&quot;: &quot;ctrl+shift+k&quot;,
-        &quot;command&quot;: &quot;editor.action.addSelectionToNextFindMatch&quot;,
-        &quot;when&quot;: &quot;editorFocus&quot;
+        "key": "ctrl+shift+k",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
     },
     // ctrl+shift+/多行注释
     {
-        &quot;key&quot;:&quot;ctrl+shift+/&quot;,
-        &quot;command&quot;: &quot;editor.action.blockComment&quot;,
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key":"ctrl+shift+/",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus"
     },
     // 定制与 sublime 相同的大小写转换快捷键
     editor.action.transformToLowercase
     editor.action.transformToUppercase
     {
-        &quot;key&quot;: &quot;ctrl+k ctrl+u&quot;,
-        &quot;command&quot;: &quot;editor.action.transformToUppercase&quot;
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+k ctrl+u",
+        "command": "editor.action.transformToUppercase"
+        "when": "editorTextFocus"
     },
     {
-        &quot;key&quot;: &quot;ctrl+k ctrl+l&quot;,
-        &quot;command&quot;: &quot;editor.action.transformToLowercase&quot;
-        &quot;when&quot;: &quot;editorTextFocus&quot;
+        "key": "ctrl+k ctrl+l",
+        "command": "editor.action.transformToLowercase"
+        "when": "editorTextFocus"
     }
 ]
 </code></pre>

@@ -258,20 +258,20 @@ brew update
 # Already up-to-date.
 </code></pre>
 <h2 id="origin-install"><a class="header" href="#origin-install">origin install</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 </code></pre>
 <h2 id="change-source"><a class="header" href="#change-source">change source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 </code></pre>
 <h2 id="restore-source"><a class="header" href="#restore-source">restore source</a></h2>
-<pre><code>cd &quot;$(brew --repo)&quot;
+<pre><code>cd "$(brew --repo)"
 git remote set-url origin https://github.com/Homebrew/brew.git
  
-cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 </code></pre>
 

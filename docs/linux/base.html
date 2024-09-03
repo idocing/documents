@@ -242,7 +242,7 @@
 
 ADD debian-rootfs.tar.xz /
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="debian-base"><a class="header" href="#debian-base">debian base</a></h2>
 <pre><code>FROM irepoing/debian:10
@@ -251,7 +251,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 <h2 id="ubuntu-base"><a class="header" href="#ubuntu-base">ubuntu base</a></h2>
 <pre><code>FROM irepoing/ubuntu:20
@@ -262,7 +262,7 @@ RUN apt update -y &amp;&amp; apt install -y procps less curl wget telnet vim zip
     &amp;&amp; apt install -y tzdata &amp;&amp; \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &amp;&amp; apt autoremove &amp;&amp; apt autoclean &amp;&amp; apt clean
 
-CMD [&quot;bash&quot;]
+CMD ["bash"]
 </code></pre>
 
                     </main>

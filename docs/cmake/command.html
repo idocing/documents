@@ -346,7 +346,7 @@ This option may also be given as a single argument: -D&lt;var&gt;:&lt;type&gt;=&
 
 It's important to note that the order of -C and -D arguments is significant. They will be carried out in the order they are listed, with the last argument taking precedence over the previous ones. For example, if you specify -DCMAKE_BUILD_TYPE=Debug, followed by a -C argument with a file that calls:
 
-set(CMAKE_BUILD_TYPE &quot;Release&quot; CACHE STRING &quot;&quot; FORCE)
+set(CMAKE_BUILD_TYPE "Release" CACHE STRING "" FORCE)
 then the -C argument will take precedence, and CMAKE_BUILD_TYPE will be set to Release. However, if the -D argument comes after the -C argument, it will be set to Debug.
 
 If a set(... CACHE ...) call in the -C file does not use FORCE, and a -D argument sets the same variable, the -D argument will take precedence regardless of order because of the nature of non-FORCE set(... CACHE ...) calls.
@@ -530,13 +530,13 @@ Prints each line as a separate JSON document. Each document is separated by a ne
 
 JSON trace format
 {
-  &quot;file&quot;: &quot;/full/path/to/the/CMake/file.txt&quot;,
-  &quot;line&quot;: 0,
-  &quot;cmd&quot;: &quot;add_executable&quot;,
-  &quot;args&quot;: [&quot;foo&quot;, &quot;bar&quot;],
-  &quot;time&quot;: 1579512535.9687231,
-  &quot;frame&quot;: 2,
-  &quot;global_frame&quot;: 4
+  "file": "/full/path/to/the/CMake/file.txt",
+  "line": 0,
+  "cmd": "add_executable",
+  "args": ["foo", "bar"],
+  "time": 1579512535.9687231,
+  "frame": 2,
+  "global_frame": 4
 }
 The members are:
 
@@ -571,9 +571,9 @@ Additionally, the first JSON document outputted contains the version key for the
 
 JSON version format
 {
-  &quot;version&quot;: {
-    &quot;major&quot;: 1,
-    &quot;minor&quot;: 2
+  "version": {
+    "major": 1,
+    "minor": 2
   }
 }
 The members are:
@@ -639,11 +639,11 @@ The initialize response includes an additional field named cmakeVersion which sp
 
 Debugger initialize response
 {
-  &quot;cmakeVersion&quot;: {
-    &quot;major&quot;: 3,
-    &quot;minor&quot;: 27,
-    &quot;patch&quot;: 0,
-    &quot;full&quot;: &quot;3.27.0&quot;
+  "cmakeVersion": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0,
+    "full": "3.27.0"
   }
 }
 The members are:

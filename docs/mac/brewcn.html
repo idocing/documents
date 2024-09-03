@@ -238,7 +238,7 @@
 
                         <h1 id="homebrew"><a class="header" href="#homebrew">homebrew</a></h1>
 <h2 id="install-origin"><a class="header" href="#install-origin">install origin</a></h2>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)&quot;
+<pre><code>/bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
 </code></pre>
 <h2 id="install-aliyun"><a class="header" href="#install-aliyun">install aliyun</a></h2>
 <pre><code>git clone https://mirrors.aliyun.com/homebrew/install.git brew-install
@@ -252,27 +252,27 @@ rm -rf brew-install
 <pre><code># temporary config
 
 export HOMEBREW_INSTALL_FROM_API=1
-export HOMEBREW_API_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew-bottles/api&quot;
-export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/brew.git&quot;
-export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/homebrew-core.git&quot;
-export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew/homebrew-bottles&quot;
+export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
 brew update
 </code></pre>
 <pre><code># permanent config
 
 # zsh user
-echo 'export HOMEBREW_API_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew-bottles/api&quot;' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/brew.git&quot;' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/homebrew-core.git&quot;' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew/homebrew-bottles&quot;' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"' &gt;&gt; ~/.zshrc
 source ~/.zshrc
 brew update
 
 # bash user
-echo 'export HOMEBREW_API_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew-bottles/api&quot;' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/brew.git&quot;' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.aliyun.com/homebrew/homebrew-core.git&quot;' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.aliyun.com/homebrew/homebrew-bottles&quot;' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"' &gt;&gt; ~/.bash_profile
 source ~/.bash_profile
 brew update
 </code></pre>
@@ -288,17 +288,17 @@ brew tap -v --custom-remote --force-auto-update homebrew/command-not-found https
 </code></pre>
 <h2 id="restore-default-config"><a class="header" href="#restore-default-config">restore default config</a></h2>
 <blockquote>
-<p>edit ~/.zshrc or ~/.bash_profile env variable &quot;HOMEBREW&quot; if use permanent config</p>
+<p>edit ~/.zshrc or ~/.bash_profile env variable "HOMEBREW" if use permanent config</p>
 </blockquote>
 <pre><code>unset HOMEBREW_BREW_GIT_REMOTE
-git -C &quot;$(brew --repo)&quot; remote set-url origin https://github.com/Homebrew/brew
+git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew
 
 unset HOMEBREW_API_DOMAIN
 unset HOMEBREW_CORE_GIT_REMOTE
-BREW_TAPS=&quot;$(BREW_TAPS=&quot;$(brew tap 2&gt;/dev/null)&quot;; echo -n &quot;${BREW_TAPS//$'\n'/:}&quot;)&quot;
+BREW_TAPS="$(BREW_TAPS="$(brew tap 2&gt;/dev/null)"; echo -n "${BREW_TAPS//$'\n'/:}")"
 for tap in core cask{,-fonts,-versions} command-not-found services; do
-    if [[ &quot;:${BREW_TAPS}:&quot; == *&quot;:homebrew/${tap}:&quot;* ]]; then
-        brew tap --custom-remote &quot;homebrew/${tap}&quot; &quot;https://github.com/Homebrew/homebrew-${tap}&quot;
+    if [[ ":${BREW_TAPS}:" == *":homebrew/${tap}:"* ]]; then
+        brew tap --custom-remote "homebrew/${tap}" "https://github.com/Homebrew/homebrew-${tap}"
     fi
 done
 

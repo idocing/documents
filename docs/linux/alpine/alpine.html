@@ -290,9 +290,9 @@ apk search -v xxx
 <h3 id="set-service-etcinitdxxx"><a class="header" href="#set-service-etcinitdxxx">set service (/etc/init.d/xxx)</a></h3>
 <pre><code>#!/sbin/openrc-run
  
-name=&quot;actc&quot;
-command=&quot;/path/to/${name}&quot;
-#command_background=&quot;yes&quot;
+name="actc"
+command="/path/to/${name}"
+#command_background="yes"
  
 depend() {
 	after sshd
@@ -318,7 +318,7 @@ ln -s /lib/libc.musl-aarch64.so.1 /lib/ld-linux-aarch64.so.1
 ADD arm.tar.gz /
 ADD go.xxx.tar.gz /usr/local
 ENV PATH $PATH:/usr/local/go/bin
-CMD [&quot;/bin/sh&quot;]
+CMD ["/bin/sh"]
 </code></pre>
 
                     </main>
