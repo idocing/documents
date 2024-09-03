@@ -8908,17 +8908,16 @@ export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 <h2 id="step-3"><a class="header" href="#step-3">step 3</a></h2>
 <pre><code>&gt; vi ~/.cargo/config.toml
 </code></pre>
-<pre><code>[net]
-git-fetch-with-cli = true
-
+<pre><code>[source.crates-io]
+replace-with = 'rsproxy-sparse'
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
-
-[source.rsproxy]
-registry = "sparse+https://rsproxy.cn/index"
-
-[source.crates-io]
-replace-with = "rsproxy"
+[net]
+git-fetch-with-cli = true
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="triples"><a class="header" href="#triples">triples</a></h1>
 <h2 id="target-triples"><a class="header" href="#target-triples">target triples</a></h2>

@@ -14,15 +14,14 @@ curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ## step 3
     > vi ~/.cargo/config.toml
 ```
-[net]
-git-fetch-with-cli = true
-
+[source.crates-io]
+replace-with = 'rsproxy-sparse'
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
-
-[source.rsproxy]
-registry = "sparse+https://rsproxy.cn/index"
-
-[source.crates-io]
-replace-with = "rsproxy"
+[net]
+git-fetch-with-cli = true
 ```
