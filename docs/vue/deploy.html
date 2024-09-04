@@ -252,15 +252,15 @@
 <pre><code>FROM docker.io/itesting/alpine:caddy
 COPY dist /code/dist
 COPY Caddyfile /code/Caddyfile
-ENTRYPOINT ["caddy", "run", "--config", "/code/Caddyfile"]
+ENTRYPOINT [&quot;caddy&quot;, &quot;run&quot;, &quot;--config&quot;, &quot;/code/Caddyfile&quot;]
 </code></pre>
 <pre><code>FROM docker.io/itesting/npm:caddy
 COPY . /code
 WORKDIR /code
 RUN npm install
-RUN npm run build -- --dest="dist/stg" --mode="stg"
-RUN npm run build -- --dest="dist/prd" --mode="prd"
-ENTRYPOINT ["caddy", "run", "--config", "/code/Caddyfile"]
+RUN npm run build -- --dest=&quot;dist/stg&quot; --mode=&quot;stg&quot;
+RUN npm run build -- --dest=&quot;dist/prd&quot; --mode=&quot;prd&quot;
+ENTRYPOINT [&quot;caddy&quot;, &quot;run&quot;, &quot;--config&quot;, &quot;/code/Caddyfile&quot;]
 </code></pre>
 <h3 id="build-docker"><a class="header" href="#build-docker">build docker</a></h3>
 <pre><code>docker build -t vue-demo .

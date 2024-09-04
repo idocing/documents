@@ -243,7 +243,7 @@
 <pre><code>docker network create elk
 </code></pre>
 <ul>
-<li>run elasticsearch</li>
+<li>run elasticsearch </li>
 </ul>
 <pre><code>docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e discovery.type=single-node elastic/elasticsearch:7.0.0
 </code></pre>
@@ -260,27 +260,27 @@
 </ul>
 <pre><code>input {
     file {
-        path =&gt; "/mnt/logs/sys*.log"
-        type =&gt; "system"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/mnt/logs/sys*.log&quot;
+        type =&gt; &quot;system&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
     file {
-        path =&gt; "/mnt/logs/error*.log"
-        type =&gt; "error"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/mnt/logs/error*.log&quot;
+        type =&gt; &quot;error&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
 }
 output {
-    if [type] == "system" {
+    if [type] == &quot;system&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "system-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
         }
     }
-    if [type] == "error" {
+    if [type] == &quot;error&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "error-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
         }
     }
 }
@@ -301,7 +301,7 @@ output {
 <li>vi pipelines.yml</li>
 </ul>
 <pre><code>- pipeline.id: logstash-one
-  path.config: "/usr/share/logstash/config/*.conf"
+  path.config: &quot;/usr/share/logstash/config/*.conf&quot;
   pipeline.workers: 3
 </code></pre>
 <ul>
@@ -309,27 +309,27 @@ output {
 </ul>
 <pre><code>input {
     file {
-        path =&gt; "/var/logs/sys*.log"
-        type =&gt; "system"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/var/logs/sys*.log&quot;
+        type =&gt; &quot;system&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
     file {
-        path =&gt; "/var/logs/error*.log"
-        type =&gt; "error"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/var/logs/error*.log&quot;
+        type =&gt; &quot;error&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
 }
 output {
-    if [type] == "system" {
+    if [type] == &quot;system&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "system-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
         }
     }
-    if [type] == "error" {
+    if [type] == &quot;error&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "error-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
         }
     }
 }
@@ -352,27 +352,27 @@ docker load -i kibana.tar
 </ul>
 <pre><code>input {
     file {
-        path =&gt; "/mnt/logs/sys*.log"
-        type =&gt; "system"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/mnt/logs/sys*.log&quot;
+        type =&gt; &quot;system&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
     file {
-        path =&gt; "/mnt/logs/error*.log"
-        type =&gt; "error"
-        start_position =&gt; "beginning"
+        path =&gt; &quot;/mnt/logs/error*.log&quot;
+        type =&gt; &quot;error&quot;
+        start_position =&gt; &quot;beginning&quot;
     }
 }
 output {
-    if [type] == "system" {
+    if [type] == &quot;system&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "system-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;system-%{+YYYY.MM.dd}&quot;
         }
     }
-    if [type] == "error" {
+    if [type] == &quot;error&quot; {
         elasticsearch {
-            hosts =&gt; ["http://elasticsearch:9200"]
-            index =&gt; "error-%{+YYYY.MM.dd}"
+            hosts =&gt; [&quot;http://elasticsearch:9200&quot;]
+            index =&gt; &quot;error-%{+YYYY.MM.dd}&quot;
         }
     }
 }
@@ -380,7 +380,7 @@ output {
 <h2 id="43-run-docker"><a class="header" href="#43-run-docker">4.3 run docker</a></h2>
 <pre><code>docker network create elk
 
-docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elastic/elasticsearch:7.0.0
+docker run --name elasticsearch -d --net elk -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elastic/elasticsearch:7.0.0
 
 docker run --name kibana -dit --net elk --link elasticsearch:elasticsearch -p 5601:5601 elastic/kibana:7.0.0
 

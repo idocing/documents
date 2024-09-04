@@ -280,7 +280,7 @@ from
 	from
 		(
 		select
-			('"' || table_schema || '"."' || table_name || '"') as table_name
+			('&quot;' || table_schema || '&quot;.&quot;' || table_name || '&quot;') as table_name
 		from
 			information_schema.tables
 ) as all_tables

@@ -242,19 +242,19 @@
 <blockquote>
 <p>build.rs</p>
 </blockquote>
-<pre><code>println!("cargo:rustc-link-search=native=./lib");
-println!("cargo:rustc-link-lib=dylib=xxx");
+<pre><code>println!(&quot;cargo:rustc-link-search=native=./lib&quot;);
+println!(&quot;cargo:rustc-link-lib=dylib=xxx&quot;);
 </code></pre>
 <blockquote>
 <p>.cargo/config.toml</p>
 </blockquote>
 <pre><code>[build]
-rustflags = ["-L./lib", "-lxxx"]
+rustflags = [&quot;-L./lib&quot;, &quot;-lxxx&quot;]
 </code></pre>
 <h3 id="msvc"><a class="header" href="#msvc">msvc</a></h3>
 <blockquote>
-<p>the import library name should be "xxx.lib"<br />
-the dynamic library name should be "xxx.dll"</p>
+<p>the import library name should be &quot;xxx.lib&quot;<br />
+the dynamic library name should be &quot;xxx.dll&quot;</p>
 </blockquote>
 
                     </main>

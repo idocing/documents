@@ -251,20 +251,20 @@
 <p>A number of useful variables are automatically defined by CMake and are discussed in the cmake-variables manual. These variables begin with CMAKE_. Avoid this naming convention (and, ideally, establish your own) for variables specific to your project.</p>
 <p>All CMake variables are stored internally as strings although they may sometimes be interpreted as other types.</p>
 <p>Use the set command to set variable values. In its simplest form, the first argument to set is the name of the variable and the rest of the arguments are the values. Multiple value arguments are packed into a semicolon-separated list and stored in the variable as a string. For example:</p>
-<pre><code>set(Foo "")      # 1 quoted arg -&gt; value is ""
-set(Foo a)       # 1 unquoted arg -&gt; value is "a"
-set(Foo "a b c") # 1 quoted arg -&gt; value is "a b c"
-set(Foo a b c)   # 3 unquoted args -&gt; value is "a;b;c"
+<pre><code>set(Foo &quot;&quot;)      # 1 quoted arg -&gt; value is &quot;&quot;
+set(Foo a)       # 1 unquoted arg -&gt; value is &quot;a&quot;
+set(Foo &quot;a b c&quot;) # 1 quoted arg -&gt; value is &quot;a b c&quot;
+set(Foo a b c)   # 3 unquoted args -&gt; value is &quot;a;b;c&quot;
 </code></pre>
 <p>Variables may be referenced in command arguments using syntax ${VAR} where VAR is the variable name. If the named variable is not defined, the reference is replaced with an empty string; otherwise it is replaced by the value of the variable. Replacement is performed prior to the expansion of unquoted arguments, so variable values containing semicolons are split into zero-or-more arguments in place of the original unquoted argument. For example:</p>
-<pre><code>set(Foo a b c)    # 3 unquoted args -&gt; value is "a;b;c"
+<pre><code>set(Foo a b c)    # 3 unquoted args -&gt; value is &quot;a;b;c&quot;
 command(${Foo})   # unquoted arg replaced by a;b;c
                   # and expands to three arguments
-command("${Foo}") # quoted arg value is "a;b;c"
-set(Foo "")       # 1 quoted arg -&gt; value is empty string
+command(&quot;${Foo}&quot;) # quoted arg value is &quot;a;b;c&quot;
+set(Foo &quot;&quot;)       # 1 quoted arg -&gt; value is empty string
 command(${Foo})   # unquoted arg replaced by empty string
                   # and expands to zero arguments
-command("${Foo}") # quoted arg value is empty string
+command(&quot;${Foo}&quot;) # quoted arg value is empty string
 </code></pre>
 <p>System environment variables and Windows registry values can be accessed directly in CMake. To access system environment variables, use the syntax $ENV{VAR}. CMake can also reference registry entries in many commands using a syntax of the form [HKEY_CURRENT_USER\Software\path1\path2;key], where the paths are built from the registry tree and key.</p>
 <h2 id="variable-scope"><a class="header" href="#variable-scope">Variable Scope</a></h2>
@@ -321,10 +321,10 @@ include(file2.cmake)
 <p>A command consists of the command name, opening parenthesis, whitespace separated arguments, and a closing parenthesis. Each command is evaluated in the order that it appears in the CMakeLists file. See the <code>cmake-commands</code> manual for a full list of CMake commands.</p>
 <p>CMake is no longer case sensitive to command names, so where you see command, you could use COMMAND or Command instead. It is considered best practice to use lowercase commands. All whitespace (spaces, line feeds, tabs) is ignored except to separate arguments. Therefore, commands may span multiple lines as long as the command name and the opening parenthesis are on the same line.</p>
 <p>CMake command arguments are space separated and case sensitive. Command arguments may be either quoted or unquoted. A quoted argument starts and ends in a double quote (“) and always represents exactly one argument. Any double quotes contained inside the value must be escaped with a backslash. Consider using bracket arguments for arguments that require escaping, see the <code>cmake-language</code> manual. An unquoted argument starts in any character other than a double quote (later double quotes are literal) and is automatically expanded into zero-or-more arguments by separating on semicolons within the value. For example:</p>
-<pre><code>command("")          # 1 quoted argument
-command("a b c")     # 1 quoted argument
-command("a;b;c")     # 1 quoted argument
-command("a" "b" "c") # 3 quoted arguments
+<pre><code>command(&quot;&quot;)          # 1 quoted argument
+command(&quot;a b c&quot;)     # 1 quoted argument
+command(&quot;a;b;c&quot;)     # 1 quoted argument
+command(&quot;a&quot; &quot;b&quot; &quot;c&quot;) # 3 quoted arguments
 command(a b c)       # 3 unquoted arguments
 command(a;b;c)       # 1 unquoted argument expands to 3
 </code></pre>
@@ -376,7 +376,7 @@ endforeach()
 <p>The first argument of the foreach command is the name of the variable that will take on a different value with each iteration of the loop; the remaining arguments are the list of values over which to loop. In this example, the body of the foreach loop is just one CMake command, add_test. In the body of the foreach, each time the loop variable (tfile in this example) is referenced will be replaced with the current value from the list. In the first iteration, occurrences of ${tfile} will be replaced with TestAnisotropicDiffusion2D. In the next iteration, ${tfile} will be replaced with TestButterworthLowPass. The foreach loop will continue to loop until all of the arguments have been processed.</p>
 <p>It is worth mentioning that foreach loops can be nested, and that the loop variable is replaced prior to any other variable expansion. This means that in the body of a foreach loop, you can construct variable names using the loop variable. In the code below, the loop variable tfile is expanded, and then concatenated with _TEST_RESULT. The new variable name is then expanded and tested to see if it matches FAILED.</p>
 <pre><code>if(${${tfile}_TEST_RESULT} MATCHES FAILED)
-  message("Test ${tfile} failed.")
+  message(&quot;Test ${tfile} failed.&quot;)
 endif()
 </code></pre>
 <p>The while command provides looping based on a test condition. The format for the test expression in the while command is the same as it is for the if command, as described earlier. Consider the following example, which is used by CTest. Note that CTest updates the value of CTEST_ELAPSED_TIME internally.</p>
@@ -385,8 +385,8 @@ endif()
 #
 while(${CTEST_ELAPSED_TIME} LESS 36000)
   set(START_TIME ${CTEST_ELAPSED_TIME})
-  ctest_run_script("dash1_ParaView_vs71continuous.cmake")
-  ctest_run_script("dash1_cmake_vs71continuous.cmake")
+  ctest_run_script(&quot;dash1_ParaView_vs71continuous.cmake&quot;)
+  ctest_run_script(&quot;dash1_cmake_vs71continuous.cmake&quot;)
 endwhile()
 </code></pre>
 <h2 id="procedure-definitions"><a class="header" href="#procedure-definitions">Procedure Definitions</a></h2>
@@ -395,14 +395,14 @@ endwhile()
 <p>The function command defines a new function. The first argument is the name of the function to define; all additional arguments are formal parameters to the function.</p>
 <pre><code>function(DetermineTime _time)
   # pass the result up to whatever invoked this
-  set(${_time} "1:23:45" PARENT_SCOPE)
+  set(${_time} &quot;1:23:45&quot; PARENT_SCOPE)
 endfunction()
 
 # now use the function we just defined
 DetermineTime(current_time)
 
 if(DEFINED current_time)
-  message(STATUS "The time is now: ${current_time}")
+  message(STATUS &quot;The time is now: ${current_time}&quot;)
 endif()
 </code></pre>
 <p>Note that in this example, _time is used to pass the name of the return variable. The set command is invoked with the value of _time, which will be current_time. Finally, the set command uses the PARENT_SCOPE option to set the variable in the caller’s scope instead of the local scope.</p>
@@ -410,13 +410,13 @@ endif()
 <pre><code># define a simple macro
 macro(assert TEST COMMENT)
   if(NOT ${TEST})
-    message("Assertion failed: ${COMMENT}")
+    message(&quot;Assertion failed: ${COMMENT}&quot;)
   endif()
 endmacro()
 
 # use the macro
 find_library(FOO_LIB foo /usr/local/lib)
-assert(${FOO_LIB} "Unable to find library foo")
+assert(${FOO_LIB} &quot;Unable to find library foo&quot;)
 </code></pre>
 <p>The simple example above creates a macro called assert. The macro is defined into two arguments; the first is a value to test and the second is a comment to print out if the test fails. The body of the macro is a simple if command with a message command inside of it. The macro body ends when the endmacro command is found. The macro can be invoked simply by using its name as if it were a command. In the above example, if FOO_LIB was not found then a message would be displayed indicating the error condition.</p>
 <p>The macro command also supports defining macros that take variable argument lists. This can be useful if you want to define a macro that has optional arguments or multiple signatures. Variable arguments can be referenced using ARGC and ARGV0, ARGV1, etc., instead of the formal parameters. ARGV0 represents the first argument to the macro; ARGV1 represents the next, and so forth. You can also use a mixture of formal arguments and variable arguments, as shown in the example below.</p>
@@ -424,12 +424,12 @@ assert(${FOO_LIB} "Unable to find library foo")
 # (the formal arguments) plus an optional third argument
 macro(assert TEST COMMENT)
   if(NOT ${TEST})
-    message("Assertion failed: ${COMMENT}")
+    message(&quot;Assertion failed: ${COMMENT}&quot;)
 
     # if called with three arguments then also write the
     # message to a file specified as the third argument
     if(${ARGC} MATCHES 3)
-      file(APPEND ${ARGV2} "Assertion failed: ${COMMENT}")
+      file(APPEND ${ARGV2} &quot;Assertion failed: ${COMMENT}&quot;)
     endif()
 
   endif()
@@ -437,7 +437,7 @@ endmacro()
 
 # use the macro
 find_library(FOO_LIB foo /usr/local/lib)
-assert(${FOO_LIB} "Unable to find library foo")
+assert(${FOO_LIB} &quot;Unable to find library foo&quot;)
 </code></pre>
 <p>In this example, the two required arguments are TEST and COMMENT. These required arguments can be referenced by name, as they are in this example, or by referencing ARGV0 and ARGV1. If you want to process the arguments as a list, use the ARGV and ARGN variables. ARGV (as opposed to ARGV0, ARGV1, etc) is a list of all the arguments to the macro, while ARGN is a list of all the arguments after the formal arguments. Inside your macro, you can use the foreach command to iterate over ARGV or ARGN as desired.</p>
 <p>The return command returns from a function, directory or file. Note that a macro, unlike a function, is expanded in place and therefore cannot handle return.</p>

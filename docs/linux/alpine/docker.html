@@ -243,7 +243,7 @@
 <h2 id="build-docker"><a class="header" href="#build-docker">build docker</a></h2>
 <pre><code>FROM scratch
 ADD rootfs.tar.gz /
-CMD ["/bin/sh"]
+CMD [&quot;/bin/sh&quot;]
 </code></pre>
 <h3 id="change-source"><a class="header" href="#change-source">change source</a></h3>
 <pre><code>FROM alpine:3.10
@@ -267,7 +267,7 @@ RUN apt update \
 <h3 id="build-golang-env"><a class="header" href="#build-golang-env">build golang env</a></h3>
 <pre><code>FROM alpine:3.10
 RUN apk add --no-cache libc6-compat ca-certificates \
-    &amp;&amp; echo "hosts: files dns" &gt; /etc/nsswitch.conf
+    &amp;&amp; echo &quot;hosts: files dns&quot; &gt; /etc/nsswitch.conf
 ADD go.xxx.tar.gz /usr/local
 ENV PATH $PATH:/usr/local/go/bin
 </code></pre>

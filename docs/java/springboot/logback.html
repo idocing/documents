@@ -246,13 +246,13 @@
 <p>logging.config=classpath:logback-spring-dev.xml</p>
 <p>至于logback的xml文件内容如下：</p>
 <p>logback-spring-dev.xml 开发环境下，不需要输出到文件，只需要打印在控制台就行了。</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
 &lt;!-- ALL &lt; TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; OFF --&gt;
-&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
 
-    &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
         &lt;encoder&gt;
             &lt;pattern&gt;
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n
@@ -260,46 +260,46 @@
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
-    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
-    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
-    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
+    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
 
-    &lt;root level="debug"&gt;
-        &lt;appender-ref ref="STDOUT"/&gt;
+    &lt;root level=&quot;debug&quot;&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>
 <p>然后是 logback-spring-test.xml 和logback-spring-prod.xml，test环境与prod的只是文件位置不同所以只贴一份了，改下路径就行了，并且测试和生产是不需要控制台输出的，不然catalina.out文件就要爆炸了！</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
 &lt;!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL --&gt;
 &lt;!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 --&gt;
 &lt;!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 --&gt;
 &lt;!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 
 	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;
-&lt;configuration scan="true" scanPeriod="60 seconds" debug="false"&gt;
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
     &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
     &lt;!-- 定义日志文件 输入位置 --&gt;
-    &lt;property name="log_dir" value="/soft/apache-tomcat-8.5.30-ems/logs"/&gt;
+    &lt;property name=&quot;log_dir&quot; value=&quot;/soft/apache-tomcat-8.5.30-ems/logs&quot;/&gt;
     &lt;!-- 日志最大的历史 30天 --&gt;
-    &lt;property name="maxHistory" value="30"/&gt;
-    &lt;property name="maxFileSize" value="10MB"/&gt;
+    &lt;property name=&quot;maxHistory&quot; value=&quot;30&quot;/&gt;
+    &lt;property name=&quot;maxFileSize&quot; value=&quot;10MB&quot;/&gt;
     &lt;!-- ERROR级别日志 --&gt;
     &lt;!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 RollingFileAppender --&gt;
-    &lt;appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
+    &lt;appender name=&quot;ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
             &lt;level&gt;ERROR&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
         &lt;!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责出发滚动 --&gt;
-        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
 
             &lt;!--日志输出位置 可相对、和绝对路径 --&gt;
             &lt;fileNamePattern&gt;
@@ -307,20 +307,20 @@
             &lt;/fileNamePattern&gt;
             &lt;!-- 可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件假设设置每个月滚动，且&lt;maxHistory&gt;是6， 则只保存最近6个月的文件，删除之前的旧文件。注意，删除旧文件是，那些为了归档而创建的目录也会被删除 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
 
         &lt;/rollingPolicy&gt;
         &lt;!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志。--&gt;
-        &lt;!--&lt;rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"&gt;
+        &lt;!--&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.FixedWindowRollingPolicy&quot;&gt;
             &lt;fileNamePattern&gt;${log_dir}/%d{yyyy-MM-dd}/.log.zip&lt;/fileNamePattern&gt;
             &lt;minIndex&gt;1&lt;/minIndex&gt;
             &lt;maxIndex&gt;3&lt;/maxIndex&gt;
         &lt;/rollingPolicy&gt;--&gt;
         &lt;!-- 查看当前活动文件的大小，如果超过指定大小会告知RollingFileAppender 触发当前活动文件滚动--&gt;
         &lt;!--&lt;triggeringPolicy
-                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"&gt;
+                class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;
             &lt;maxFileSize&gt;5MB&lt;/maxFileSize&gt;
         &lt;/triggeringPolicy&gt;--&gt;
         &lt;encoder&gt;
@@ -329,21 +329,21 @@
     &lt;/appender&gt;
 
     &lt;!-- WARN级别日志 appender --&gt;
-    &lt;appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
+    &lt;appender name=&quot;WARN&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
         &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
-        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
             &lt;level&gt;WARN&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_warn.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -353,21 +353,21 @@
     &lt;/appender&gt;
 
     &lt;!-- INFO级别日志 appender --&gt;
-    &lt;appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
+    &lt;appender name=&quot;INFO&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
         &lt;!-- 过滤器，只记录INFO级别的日志 --&gt;
-        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
             &lt;level&gt;INFO&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_info.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -377,21 +377,21 @@
     &lt;/appender&gt;
 
     &lt;!-- DEBUG级别日志 appender --&gt;
-    &lt;appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
+    &lt;appender name=&quot;DEBUG&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
         &lt;!-- 过滤器，只记录DEBUG级别的日志 --&gt;
-        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
             &lt;level&gt;DEBUG&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_debug.%d{yyyy-MM-dd}.%i.log
             &lt;/fileNamePattern&gt;
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
-            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -401,14 +401,14 @@
     &lt;/appender&gt;
 
     &lt;!-- TRACE级别日志 appender --&gt;
-    &lt;appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;
+    &lt;appender name=&quot;TRACE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
         &lt;!-- 过滤器，只记录ERROR级别的日志 --&gt;
-        &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
             &lt;level&gt;TRACE&lt;/level&gt;
             &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
             &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
         &lt;/filter&gt;
-        &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
             &lt;!-- 按天回滚 daily --&gt;
             &lt;fileNamePattern&gt;
                 ${log_dir}/app_trace.%d{yyyy-MM-dd}.%i.log
@@ -416,7 +416,7 @@
             &lt;!-- 日志最大的历史 30天 --&gt;
             &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
 
-            &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
                 &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
             &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
         &lt;/rollingPolicy&gt;
@@ -425,23 +425,23 @@
         &lt;/encoder&gt;
     &lt;/appender&gt;
 
-    &lt;logger name="java.sql.PreparedStatement" value="DEBUG"/&gt;
-    &lt;logger name="java.sql.Connection" value="DEBUG"/&gt;
-    &lt;logger name="java.sql.Statement" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/&gt;
-    &lt;logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG"/&gt;
-    &lt;logger name="com.apache.ibatis" level="TRACE"/&gt;
+    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot; value=&quot;DEBUG&quot;/&gt;
+    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot;/&gt;
 
     &lt;!-- root级别 DEBUG --&gt;
-    &lt;root level="debug"&gt;
+    &lt;root level=&quot;debug&quot;&gt;
         &lt;!-- 文件输出 --&gt;
-        &lt;appender-ref ref="ERROR"/&gt;
-        &lt;appender-ref ref="INFO"/&gt;
-        &lt;appender-ref ref="WARN"/&gt;
-        &lt;appender-ref ref="DEBUG"/&gt;
-        &lt;appender-ref ref="TRACE"/&gt;
+        &lt;appender-ref ref=&quot;ERROR&quot;/&gt;
+        &lt;appender-ref ref=&quot;INFO&quot;/&gt;
+        &lt;appender-ref ref=&quot;WARN&quot;/&gt;
+        &lt;appender-ref ref=&quot;DEBUG&quot;/&gt;
+        &lt;appender-ref ref=&quot;TRACE&quot;/&gt;
     &lt;/root&gt;
 &lt;/configuration&gt;
 </code></pre>

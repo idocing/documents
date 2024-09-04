@@ -243,9 +243,9 @@ ENTRYPOINT指令给出容器启动后的默认行为，一般难以在启动容�
 <pre><code>#给出容器入口的后续命令参数
 docker run --entrypoint /bin/bash ...
 #给出容器的新Shell
-docker run --entrypoint="/bin/bash ..." ...
+docker run --entrypoint=&quot;/bin/bash ...&quot; ...
 #重置容器入口
-docker run -it --entrypoint="" mysql bash
+docker run -it --entrypoint=&quot;&quot; mysql bash
 </code></pre>
 <h2 id="2覆盖cmd指令"><a class="header" href="#2覆盖cmd指令">2、覆盖CMD指令</a></h2>
 <p>Dockerfile文件中的CMD指令，给出容器启动后默认执行的指令。</p>
@@ -256,11 +256,11 @@ docker run ... &lt;new_command&gt;
 <p>如果Dockerfile文件中还声明了ENTRYPOINT指令，则上述指令都将作为参数追加到ENTRYPOINT指令。</p>
 <h2 id="3覆盖expose指令"><a class="header" href="#3覆盖expose指令">3、覆盖EXPOSE指令</a></h2>
 <p>用以向容器所在主机保留端口。显然这是运行时容器的一个特性，所以docker run可以方便地覆盖该指令。示例如下：</p>
-<pre><code>docker run --expose="port_number:port_number"
+<pre><code>docker run --expose=&quot;port_number:port_number&quot;
 #打开指定范围的端口
 docker run -p port_number:port_number/tcp
 #链接到其他容器
-docker run --link="another_container_id"
+docker run --link=&quot;another_container_id&quot;
 #打开所有端口
 docker run -P
 </code></pre>
@@ -274,18 +274,18 @@ docker run -P
 </ul>
 <p>docker run可以方便地覆盖该指令。示例如下：</p>
 <pre><code>#设置新的环境变量key
-docker run -e "key=value" ...
+docker run -e &quot;key=value&quot; ...
 #覆盖HOSTNAME
 docker run -h ...
 docker run ubuntu /bin/bash -c export
 </code></pre>
-<pre><code>declare -x HOME="/"
-declare -x HOSTNAME="85bc26a0e200"
+<pre><code>declare -x HOME=&quot;/&quot;
+declare -x HOSTNAME=&quot;85bc26a0e200&quot;
 declare -x OLDPWD
-declare -x PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-declare -x PWD="/"
-declare -x SHLVL="1"
-declare -x deep="purple"
+declare -x PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+declare -x PWD=&quot;/&quot;
+declare -x SHLVL=&quot;1&quot;
+declare -x deep=&quot;purple&quot;
 </code></pre>
 <p>通过脚本，设置或覆盖环境变量</p>
 <h2 id="5覆盖volume指令"><a class="header" href="#5覆盖volume指令">5、覆盖VOLUME指令</a></h2>
@@ -296,8 +296,8 @@ docker run -volumes-from ...
 <h2 id="6覆盖user指令"><a class="header" href="#6覆盖user指令">6、覆盖USER指令</a></h2>
 <p>容器内部的默认用户是root(uid=0)。
 Dockerfile文件中可以通过USER指定其他用户为容器的默认用户。</p>
-<pre><code>docker run -u="" ...
-docker run --user="" ...
+<pre><code>docker run -u=&quot;&quot; ...
+docker run --user=&quot;&quot; ...
 </code></pre>
 <p>docker run支持-u如下形式：</p>
 <ul>
@@ -311,8 +311,8 @@ docker run --user="" ...
 <h2 id="7覆盖workdir指令"><a class="header" href="#7覆盖workdir指令">7、覆盖WORKDIR指令</a></h2>
 <p>WORKDIR用以为后续指令设置工作目录。如果设置的路径不存在，则创建该路径，即时在后续指令中根本未使用。
 在一个，可以存在多个WORKDIR。对于相对路径，后续指令继承前续指令。在WORKDIR中，可以引用前续已经定义的环境变量。</p>
-<pre><code>docker run -w="" ...
-docker run --workdir="" ...
+<pre><code>docker run -w=&quot;&quot; ...
+docker run --workdir=&quot;&quot; ...
 </code></pre>
 
                     </main>

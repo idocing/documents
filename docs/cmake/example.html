@@ -246,7 +246,7 @@
 <h2 id="var"><a class="header" href="#var">var</a></h2>
 <pre><code>set(FOO abc)
 command(${FOO}) //command(abc)
-command("${FOO}") //command("abc")
+command(&quot;${FOO}&quot;) //command(&quot;abc&quot;)
 </code></pre>
 <h2 id="flow-control"><a class="header" href="#flow-control">flow control</a></h2>
 <pre><code>if()...else()/elseif()...endif()
@@ -254,19 +254,19 @@ while()...endwhile()
 foreach()...endforeach()
 </code></pre>
 <h2 id="command-list"><a class="header" href="#command-list">command list</a></h2>
-<pre><code>include_directories("dir1" "dir2" ...) //-Idir1 -Idir2
-link_directories("dir1" "dir2")
-aux_source_directory("source-dir" variable)
+<pre><code>include_directories(&quot;dir1&quot; &quot;dir2&quot; ...) //-Idir1 -Idir2
+link_directories(&quot;dir1&quot; &quot;dir2&quot;)
+aux_source_directory(&quot;source-dir&quot; variable)
 add_executable()
 add_library()
 add_custom_target()
 add_dependencies(target1 t2 t3)
-add_definitions("-Wall -ansi")
+add_definitions(&quot;-Wall -ansi&quot;)
 target_link_libraries(target-name lib1 lib2 ...)
 link_libraries(lib1 lib2 ...)
 set_target_properties(...)
 message(...)
-install(files "f1" "f2" destination)
+install(files &quot;f1&quot; &quot;f2&quot; destination)
 set(variable value)
 list(append|insert|length|get|remove_item|remove_at|sort ...)
 string(toupper|tolower|length|substring|replace|regex ...)
@@ -278,7 +278,7 @@ find_library()
 find_program()
 find_package()
 exec_program(bin [work_dir] args &lt;..&gt; [output_variable var] [return_value var])
-option(option_var "description" [initial value])
+option(option_var &quot;description&quot; [initial value])
 </code></pre>
 <h2 id="variable"><a class="header" href="#variable">variable</a></h2>
 <h3 id="project-path"><a class="header" href="#project-path">project path</a></h3>
@@ -323,20 +323,20 @@ add_executable(c_demo ${SRC})
 </code></pre>
 <h1 id="cmake-1"><a class="header" href="#cmake-1">cmake</a></h1>
 <h2 id="include_directories"><a class="header" href="#include_directories">INCLUDE_DIRECTORIES</a></h2>
-<pre><code>include_directories("/xxx/include")
+<pre><code>include_directories(&quot;/xxx/include&quot;)
 export CPLUS_INCLUDE_PATH=CPLUS_INCLUDE_PATH:/xxx/include
 </code></pre>
 <h2 id="link_directories"><a class="header" href="#link_directories">LINK_DIRECTORIES</a></h2>
 <pre><code>link_directories(directory1 directory2 ...)
 </code></pre>
-<pre><code>LINK_DIRECTORIES("/xxx/lib")
+<pre><code>LINK_DIRECTORIES(&quot;/xxx/lib&quot;)
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/xxx/lib
 </code></pre>
 <h2 id="link_libraries"><a class="header" href="#link_libraries">LINK_LIBRARIES</a></h2>
-<pre><code>LINK_LIBRARIES("/xxx/lib/libeng.so")
+<pre><code>LINK_LIBRARIES(&quot;/xxx/lib/libeng.so&quot;)
 </code></pre>
 <p>or</p>
-<pre><code>LINK_LIBRARIES("/xxx/lib/libeng.so"　"/xxx/lib/libmx.so")
+<pre><code>LINK_LIBRARIES(&quot;/xxx/lib/libeng.so&quot;　&quot;/xxx/lib/libmx.so&quot;)
 </code></pre>
 <h2 id="target_link_libraries"><a class="header" href="#target_link_libraries">TARGET_LINK_LIBRARIES</a></h2>
 <pre><code>TARGET_LINK_LIBRARIES(targetlibrary1 &lt;debug | optimized&gt; library2 ..)
@@ -353,22 +353,22 @@ TARGET_LINK_LIBRARIES(myProject -leng)
 <h2 id="example"><a class="header" href="#example">example</a></h2>
 <pre><code>cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
  
-include_directories("/xxx/include")
+include_directories(&quot;/xxx/include&quot;)
  
 #directly link to the libraries.
-link_libraries("/xxx/lib/libeng.so")
-link_libraries("/xxx/lib/libmx.so")
+link_libraries(&quot;/xxx/lib/libeng.so&quot;)
+link_libraries(&quot;/xxx/lib/libmx.so&quot;)
  
 #equals to below
-link_libraries("/xxx/lib/libeng.so" "/xxx/lib/libmx.so")
+link_libraries(&quot;/xxx/lib/libeng.so&quot; &quot;/xxx/lib/libmx.so&quot;)
  
 add_executable(myProject main.cpp) 
 </code></pre>
 <pre><code>cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
  
-include_directories("/xxx/include")
+include_directories(&quot;/xxx/include&quot;)
 
-link_directories("/xxx/lib")
+link_directories(&quot;/xxx/lib&quot;)
  
 add_executable(myProject main.cpp)
  

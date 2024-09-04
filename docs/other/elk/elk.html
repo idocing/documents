@@ -407,7 +407,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: true
 node.data: true
-discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
+discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -422,7 +422,7 @@ http.port: 9200
 transport.tcp.port: 9300
 node.master: false
 node.data: true
-discovery.zen.ping.unicast.hosts: ["192.168.1.31:9300","192.168.1.32:9300"]
+discovery.zen.ping.unicast.hosts: [&quot;192.168.1.31:9300&quot;,&quot;192.168.1.32:9300&quot;]
 discovery.zen.minimum_master_nodes: 1
 </code></pre>
 <ul>
@@ -457,21 +457,21 @@ cd /opt/elk/elasticsearch-7.0.0
 </code></pre>
 <p>如果返回status=green表示正常</p>
 <pre><code>{
-  "cluster_name": "esc",
-  "status": "green",
-  "timed_out": false,
-  "number_of_nodes": 2,
-  "number_of_data_nodes": 2,
-  "active_primary_shards": 0,
-  "active_shards": 0,
-  "relocating_shards": 0,
-  "initializing_shards": 0,
-  "unassigned_shards": 0,
-  "delayed_unassigned_shards": 0,
-  "number_of_pending_tasks": 0,
-  "number_of_in_flight_fetch": 0,
-  "task_max_waiting_in_queue_millis": 0,
-  "active_shards_percent_as_number": 100.0
+  &quot;cluster_name&quot;: &quot;esc&quot;,
+  &quot;status&quot;: &quot;green&quot;,
+  &quot;timed_out&quot;: false,
+  &quot;number_of_nodes&quot;: 2,
+  &quot;number_of_data_nodes&quot;: 2,
+  &quot;active_primary_shards&quot;: 0,
+  &quot;active_shards&quot;: 0,
+  &quot;relocating_shards&quot;: 0,
+  &quot;initializing_shards&quot;: 0,
+  &quot;unassigned_shards&quot;: 0,
+  &quot;delayed_unassigned_shards&quot;: 0,
+  &quot;number_of_pending_tasks&quot;: 0,
+  &quot;number_of_in_flight_fetch&quot;: 0,
+  &quot;task_max_waiting_in_queue_millis&quot;: 0,
+  &quot;active_shards_percent_as_number&quot;: 100.0
 }
 </code></pre>
 <h1 id="四logstash-部署"><a class="header" href="#四logstash-部署">四、Logstash 部署</a></h1>
@@ -527,21 +527,21 @@ path.logs: /elk/logstash/logs
  
 input {
   redis {
-    data_type =&gt; "list"
-    key =&gt; "logstash"
-    host =&gt; "192.168.1.21"
+    data_type =&gt; &quot;list&quot;
+    key =&gt; &quot;logstash&quot;
+    host =&gt; &quot;192.168.1.21&quot;
     port =&gt; 6379
     threads =&gt; 5
-    codec =&gt; "json"
+    codec =&gt; &quot;json&quot;
   }
 }
 filter {
 }
 output {
   elasticsearch {
-    hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
-    index =&gt; "logstash-%{type}-%{+YYYY.MM.dd}"
-    document_type =&gt; "%{type}"
+    hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
+    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
+    document_type =&gt; &quot;%{type}&quot;
   }
   stdout {
   }
@@ -550,9 +550,9 @@ output {
 <p>该配置就是从redis中读取数据，然后写入指定的elasticsearch。
 Redis核心配置项说明：</p>
 <pre><code>配置项	说明
-data_type =&gt; "list"	数据类型为list
-key =&gt; "logstash"	缓存key为：logstash
-codec =&gt; "json"	数据格式为：json
+data_type =&gt; &quot;list&quot;	数据类型为list
+key =&gt; &quot;logstash&quot;	缓存key为：logstash
+codec =&gt; &quot;json&quot;	数据格式为：json
 </code></pre>
 <ul>
 <li>启动</li>
@@ -565,8 +565,8 @@ cd /opt/elk/logstash-7.0.0
 ./bin/logstash -f config/input-output.conf
 </code></pre>
 <p>启动成功后，在启动输出的最后一行会看到如下信息：</p>
-<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {"pipeline.id"=&gt;"main"}
-[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;["main"]}
+<pre><code>[INFO ][logstash.pipeline        ] Pipeline started {&quot;pipeline.id&quot;=&gt;&quot;main&quot;}
+[INFO ][logstash.agent           ] Pipelines running {:count=&gt;1, :pipelines=&gt;[&quot;main&quot;]}
 </code></pre>
 <h1 id="五kibana-部署"><a class="header" href="#五kibana-部署">五、Kibana 部署</a></h1>
 <h2 id="1准备工作-2"><a class="header" href="#1准备工作-2">1、准备工作</a></h2>
@@ -604,8 +604,8 @@ vi config/kibana.yml
  
 #增加以下内容
 server.port: 5601
-server.host: "192.168.1.21"
-elasticsearch.url: "http://192.168.1.31:9200" 
+server.host: &quot;192.168.1.21&quot;
+elasticsearch.url: &quot;http://192.168.1.31:9200&quot; 
 </code></pre>
 <ul>
 <li>启动</li>
@@ -628,14 +628,14 @@ cd /opt/elk/kibana-7.0.0
 </ul>
 <pre><code>#启动redis客户端
 #执行以下命令
-lpush logstash '{"host":"127.0.0.1","type":"logtest","message":"hello"}'
+lpush logstash '{&quot;host&quot;:&quot;127.0.0.1&quot;,&quot;type&quot;:&quot;logtest&quot;,&quot;message&quot;:&quot;hello&quot;}'
 </code></pre>
 <ul>
 <li>Java代码批量写入（引入Jedis）</li>
 </ul>
-<pre><code>Jedis jedis = new Jedis("192.168.1.21", 6379);
+<pre><code>Jedis jedis = new Jedis(&quot;192.168.1.21&quot;, 6379);
 for (int i = 0; i &lt; 1000; i++) {
-    jedis.lpush("logstash", "{\"host\":\"127.0.0.1\",\"type\":\"logtest\",\"message\":\"" + i + "\"}");
+    jedis.lpush(&quot;logstash&quot;, &quot;{\&quot;host\&quot;:\&quot;127.0.0.1\&quot;,\&quot;type\&quot;:\&quot;logtest\&quot;,\&quot;message\&quot;:\&quot;&quot; + i + &quot;\&quot;}&quot;);
 }
 </code></pre>
 <h2 id="2kibana使用"><a class="header" href="#2kibana使用">2、Kibana使用</a></h2>
@@ -653,7 +653,7 @@ tcp/udp：使用tcp或udp传输过来的日志
 </code></pre>
 <pre><code>path: 日志文件或目录的绝对路径，也可以是通配符的。
 type: 类型，自定义
-start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 "beginning"，logstash 进程就从头开始读取，类似 less +F 的形式运行。
+start_position: logstash 从什么位置开始读取文件数据，默认是结束位置，也就是说 logstash 进程会以类似 tail -F 的形式运行。如果你是要导入原有数据，把这个设定改成 &quot;beginning&quot;，logstash 进程就从头开始读取，类似 less +F 的形式运行。
 codec: codec配置，通过它可以更好更方便的与其他有自定义数据格式的运维产品共存，比如 graphite、fluent、netflow、collectd，以及使用 msgpack、json、edn 等通用数据格式的其他产品等。
 </code></pre>
 <ul>
@@ -662,25 +662,25 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
 <pre><code>input {
     file {
         #指定单一文件
-        path =&gt; "/data/es/logstash/files/test.log"
+        path =&gt; &quot;/data/es/logstash/files/test.log&quot;
         #指定数组文件
-        #path =&gt; ["/data/es/logstash/files/test-1.log","/data/es/logstash/files/test-2.log"]
+        #path =&gt; [&quot;/data/es/logstash/files/test-1.log&quot;,&quot;/data/es/logstash/files/test-2.log&quot;]
         #指定同级目录模糊匹配
-        #path =&gt; "/data/es/logstash/files/test*.log"
+        #path =&gt; &quot;/data/es/logstash/files/test*.log&quot;
         #指定多级目录模糊匹配
-        #path =&gt; "/data/es/logstash/files/**/test*.log"
+        #path =&gt; &quot;/data/es/logstash/files/**/test*.log&quot;
 
         #当存在多个文件的时候可使用type指定输入输出路径
-        type =&gt; "log_index"
+        type =&gt; &quot;log_index&quot;
         
         #可设置成begining或end，begining表示从头开始读取文件，end表示读取最新数据，可和ignore_older一起使用
         #begining只针对首次启动是否需要读取所有的历史数据，而当文件修改了之后，同样会自动增量更新新数据
-        start_position =&gt; "beginning"
+        start_position =&gt; &quot;beginning&quot;
 
         #设置输入规则
         codec =&gt; multiline {
             #利用正则匹配规则，匹配每一行开始的位置，这里匹配每一行开始的位置为数字
-            pattern =&gt; "^[0-9]"
+            pattern =&gt; &quot;^[0-9]&quot;
      
             #true表示不匹配正则表达式，false为匹配正则表达式，默认false
             #如果不匹配，则会结合what参数，进行合并操作
@@ -688,7 +688,7 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
             
             #what可设置previous和next，previous则表示将所有不匹配的数据都合并到上一个正则事件
             #而next则相反，将所有的不匹配的数据都合并到下一个正则事件
-            what =&gt; "previous"
+            what =&gt; &quot;previous&quot;
  
             #表示当多长时间没有新的数据，最后一个正则匹配积累的多行数据都归属为最后一个事件，这里的10表示10秒
             #auto_flush_interval =&gt; 10
@@ -696,22 +696,22 @@ codec: codec配置，通过它可以更好更方便的与其他有自定义数�
     }
     tcp {
         port =&gt; 8888
-        mode =&gt; "server"
+        mode =&gt; &quot;server&quot;
         ssl_enable =&gt; false
     }
 }
 filter {
     grok {
         match =&gt; {
-            "message" =&gt; "%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \"(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \"%{DATA:referrer}\" \"%{DATA:agent}\""
+            &quot;message&quot; =&gt; &quot;%{IPORHOST:clientip} - - \[%{HTTPDATE:request_time}\] \&quot;(?:%{WORD:method} %{URIPATH:url}(?:%{URIPARAM:params})?(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:status} (?:%{NUMBER:bytes:int}|-) \&quot;%{DATA:referrer}\&quot; \&quot;%{DATA:agent}\&quot;&quot;
         }
     }
     ruby{
-        init =&gt; "@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']"
-        code =&gt; "
+        init =&gt; &quot;@kname = ['client','servername','url','status','time','size','upstream','upstreamstatus','upstreamtime','referer','xff','useragent']&quot;
+        code =&gt; &quot;
             new_event = LogStash::Event.new(Hash[@kname.zip(event.get('message').split('|'))])
             new_event.remove('@timestamp')
-            event.append(new_event)"
+            event.append(new_event)&quot;
     }
 }
 output {
@@ -721,38 +721,38 @@ output {
     }
 
     #输出到elasticsearch
-    if [type] == "log_index" {
+    if [type] == &quot;log_index&quot; {
         elasticsearch {
-            hosts =&gt; ["192.168.1.31:9200","192.168.1.32:9200"]
+            hosts =&gt; [&quot;192.168.1.31:9200&quot;,&quot;192.168.1.32:9200&quot;]
             
             #以当前的日期作为index和type
-            #index =&gt; "log-%{+YYYY.MM.dd}"
-            index =&gt; "%{type}-%{+YYYY.MM.dd}"
-            document_type =&gt; "%{type}-%{+YYYY.MM.dd}"
+            #index =&gt; &quot;log-%{+YYYY.MM.dd}&quot;
+            index =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
+            document_type =&gt; &quot;%{type}-%{+YYYY.MM.dd}&quot;
             
             #覆盖模板
             #template_overwrite =&gt; true
-            #template =&gt; "/elk/es/logstash/template/logstash.json"
+            #template =&gt; &quot;/elk/es/logstash/template/logstash.json&quot;
         }
     }
 
     #输出到文件
-    if [type] == "log_file" {
+    if [type] == &quot;log_file&quot; {
         file {
-            path =&gt; "/elk/logstash/logs/website-%{+YYYY.MM.dd}.log"
+            path =&gt; &quot;/elk/logstash/logs/website-%{+YYYY.MM.dd}.log&quot;
             flush_interval =&gt; 0
         }
     }
 
     #输出到Redis
-    if [type] == "log_redis" {
+    if [type] == &quot;log_redis&quot; {
         redis {
-            host =&gt; "192.168.11.5"
+            host =&gt; &quot;192.168.11.5&quot;
             port =&gt; 7890
             db =&gt; 1
-            password =&gt; "123456"
-            data_type =&gt; "channel"
-            key =&gt; "/wefintek/education/website/logs/website-log"
+            password =&gt; &quot;123456&quot;
+            data_type =&gt; &quot;channel&quot;
+            key =&gt; &quot;/wefintek/education/website/logs/website-log&quot;
         }
     }
 }

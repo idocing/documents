@@ -285,7 +285,7 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=0 /go/src/github.com/sparkdevo/href-counter/app .
-CMD ["./app"]
+CMD [&quot;./app&quot;]
 </code></pre>
 <p>这段代码引用自《Dockerfile 中的 multi-stage》一文，其中的 COPY 命令通过指定 --from=0 参数，把前一阶段构建的产物拷贝到了当前的镜像中。</p>
 <h2 id="add-命令还可以干其它事情"><a class="header" href="#add-命令还可以干其它事情">ADD 命令还可以干其它事情</a></h2>

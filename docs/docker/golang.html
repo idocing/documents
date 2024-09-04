@@ -248,7 +248,7 @@ RUN apk add --no-cache tzdata &amp;&amp; \
     apk del tzdata
 
 RUN apk add --no-cache libc6-compat ca-certificates &amp;&amp; \
-    echo "hosts: files dns" &gt; /etc/nsswitch.conf
+    echo &quot;hosts: files dns&quot; &gt; /etc/nsswitch.conf
     
 ADD go1.16.10.linux-amd64.tar.gz /usr/local
 

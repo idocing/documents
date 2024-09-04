@@ -239,8 +239,8 @@
                         <h1 id="fmtprintf"><a class="header" href="#fmtprintf">fmt.printf</a></h1>
 <pre><code>package main
 
-import "fmt"
-import "os"
+import &quot;fmt&quot;
+import &quot;os&quot;
 
 type point struct {
 	x, y int
@@ -249,53 +249,53 @@ type point struct {
 func main() {
 	p := point{1, 2}
 	//输出结构体的一个实例
-	fmt.Printf("%v\n", p) //{1 2}
+	fmt.Printf(&quot;%v\n&quot;, p) //{1 2}
 	//输出实例将包括字段名
-	fmt.Printf("%+v\n", p) //{x:1 y:2}
+	fmt.Printf(&quot;%+v\n&quot;, p) //{x:1 y:2}
 	//输出实例的语法表示
-	fmt.Printf("%#v\n", p) //main.point{x:1, y:2}
+	fmt.Printf(&quot;%#v\n&quot;, p) //main.point{x:1, y:2}
 	//输出值的类型
-	fmt.Printf("%T\n", p) //main.point
+	fmt.Printf(&quot;%T\n&quot;, p) //main.point
 	//输出布尔值
-	fmt.Printf("%t\n", true) //true
+	fmt.Printf(&quot;%t\n&quot;, true) //true
 	//输出二进制
-	fmt.Printf("%b\n", 14) //1110
+	fmt.Printf(&quot;%b\n&quot;, 14) //1110
     //输出八进制
-	fmt.Printf("%o\n", 32) //40
+	fmt.Printf(&quot;%o\n&quot;, 32) //40
 	//输出十进制
-	fmt.Printf("%d\n", 123) //123
+	fmt.Printf(&quot;%d\n&quot;, 123) //123
 	//输出十六进制
-	fmt.Printf("%x\n", 456) //1c8
+	fmt.Printf(&quot;%x\n&quot;, 456) //1c8
 	//输出字符
-	fmt.Printf("%c\n", 33) //!
+	fmt.Printf(&quot;%c\n&quot;, 33) //!
 	//输出字符串
-	fmt.Printf("%s\n", "\"string\"") //"string"
+	fmt.Printf(&quot;%s\n&quot;, &quot;\&quot;string\&quot;&quot;) //&quot;string&quot;
 	//输出浮点数
-	fmt.Printf("%f\n", 78.9) //78.900000
+	fmt.Printf(&quot;%f\n&quot;, 78.9) //78.900000
 	//输出科学记数法形式
-	fmt.Printf("%e\n", 123400000.0) //1.234000e+08
-	fmt.Printf("%E\n", 123400000.0) //1.234000E+08
+	fmt.Printf(&quot;%e\n&quot;, 123400000.0) //1.234000e+08
+	fmt.Printf(&quot;%E\n&quot;, 123400000.0) //1.234000E+08
 	//输出带双引号形式
-	fmt.Printf("%q\n", "\"string\"") //"\"string\""
+	fmt.Printf(&quot;%q\n&quot;, &quot;\&quot;string\&quot;&quot;) //&quot;\&quot;string\&quot;&quot;
 	//输出十六进制的字符串形式
-	fmt.Printf("%x\n", "hex this") //6865782074686973
+	fmt.Printf(&quot;%x\n&quot;, &quot;hex this&quot;) //6865782074686973
 	//输出指针
-	fmt.Printf("%p\n", &amp;p) //0xc000080010
+	fmt.Printf(&quot;%p\n&quot;, &amp;p) //0xc000080010
 	//输出带宽度的十进制形式
-	fmt.Printf("|%6d|%6d|\n", 12, 345) //|    12|   345|
+	fmt.Printf(&quot;|%6d|%6d|\n&quot;, 12, 345) //|    12|   345|
 	//输出带宽度精度的浮点数形式
-	fmt.Printf("|%6.2f|%6.2f|\n", 1.2, 3.45) //|  1.20|  3.45|
+	fmt.Printf(&quot;|%6.2f|%6.2f|\n&quot;, 1.2, 3.45) //|  1.20|  3.45|
 	//输出带宽度精度左对齐的浮点数形式
-	fmt.Printf("|%-6.2f|%-6.2f|\n", 1.2, 3.45) //|1.20  |3.45  |
+	fmt.Printf(&quot;|%-6.2f|%-6.2f|\n&quot;, 1.2, 3.45) //|1.20  |3.45  |
 	//输出带宽度的字符串形式
-	fmt.Printf("|%6s|%6s|\n", "foo", "b") //|   foo|     b|
+	fmt.Printf(&quot;|%6s|%6s|\n&quot;, &quot;foo&quot;, &quot;b&quot;) //|   foo|     b|
 	//输出带宽度左对齐的字符串形式
-	fmt.Printf("|%-6s|%-6s|\n", "foo", "b") //|foo   |b     |
+	fmt.Printf(&quot;|%-6s|%-6s|\n&quot;, &quot;foo&quot;, &quot;b&quot;) //|foo   |b     |
 	//返回指定形式的值
-	s := fmt.Sprintf("a %s", "string")
+	s := fmt.Sprintf(&quot;a %s&quot;, &quot;string&quot;)
 	fmt.Println(s) //a string
 	//重定向指定形式的值
-	fmt.Fprintf(os.Stderr, "an %s\n", "error") //an error
+	fmt.Fprintf(os.Stderr, &quot;an %s\n&quot;, &quot;error&quot;) //an error
 }
 </code></pre>
 

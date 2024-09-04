@@ -269,27 +269,27 @@
 </ul>
 <pre><code>package main
 
-import "fmt"
+import &quot;fmt&quot;
 
 func test(test map[string]string) {
     // test:0xc000078150
-	fmt.Printf("test:%p\n", test)
+	fmt.Printf(&quot;test:%p\n&quot;, test)
 	// &amp;test:0xc000098028
-	fmt.Printf("&amp;test:%p\n", &amp;test)
+	fmt.Printf(&quot;&amp;test:%p\n&quot;, &amp;test)
 }
 
 func main() {
 	a := 10
 	// a:%!p(int=10)
-	fmt.Printf("a:%p\n", a)
+	fmt.Printf(&quot;a:%p\n&quot;, a)
 	// &amp;a:0xc000096010
-	fmt.Printf("&amp;a:%p\n", &amp;a)
+	fmt.Printf(&quot;&amp;a:%p\n&quot;, &amp;a)
 
 	b := map[string]string{}
 	// b:0xc000078150
-	fmt.Printf("b:%p\n", b)
+	fmt.Printf(&quot;b:%p\n&quot;, b)
 	// &amp;b:0xc000098020
-	fmt.Printf("&amp;b:%p\n", &amp;b)
+	fmt.Printf(&quot;&amp;b:%p\n&quot;, &amp;b)
 	test(b)
 }
 </code></pre>

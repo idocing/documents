@@ -238,12 +238,12 @@
 
                         <h1 id="homebrew"><a class="header" href="#homebrew">homebrew</a></h1>
 <h2 id="set-env"><a class="header" href="#set-env">set env</a></h2>
-<pre><code>export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+<pre><code>export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;
+export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;
+export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;
 </code></pre>
 <h2 id="install-brew"><a class="header" href="#install-brew">install brew</a></h2>
-<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
 </code></pre>
 <h2 id="install-brew-cask"><a class="header" href="#install-brew-cask">install brew cask</a></h2>
 <pre><code>brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
@@ -259,21 +259,21 @@ brew config
 echo $SHELL
 
 # bash user
-echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' &gt;&gt; ~/.bash_profile
-echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;' &gt;&gt; ~/.bash_profile
+echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;' &gt;&gt; ~/.bash_profile
 
 # zsh user
-echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' &gt;&gt; ~/.zshrc
-echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/brew.git&quot;' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;' &gt;&gt; ~/.zshrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;' &gt;&gt; ~/.zshrc
 
 # echo env
 cat ~/.bash_profile
 cat ~/.zshrc
 </code></pre>
 <h2 id="uninstall-brew"><a class="header" href="#uninstall-brew">uninstall brew</a></h2>
-<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)&quot;
 </code></pre>
 <h2 id="brew-command"><a class="header" href="#brew-command">brew command</a></h2>
 <pre><code># install xxx
