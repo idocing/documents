@@ -17,6 +17,9 @@ curl --proto "=https" --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 [net]
 git-fetch-with-cli = true
 
+[cargo-new]
+vcs = "none"
+
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
 
