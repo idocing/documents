@@ -117,6 +117,7 @@
     - [link](./rust/link.md)
     - [pointer](./rust/pointer.md)
     - [rsproxy](./rust/rsproxy.md)
+    - [rustup](./rust/rustup.md)
     - [triples](./rust/triples.md)
 - [server](./server/ca.md)
     - [ca](./server/ca.md)
