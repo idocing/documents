@@ -8,7 +8,7 @@ export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 
 ## step 2
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
+curl --proto "=https" --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ```
 
 ## step 3
