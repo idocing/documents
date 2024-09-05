@@ -92,6 +92,7 @@
     - [ssh](./linux/ssh.md)
     - [sshd](./linux/sshd.md)
     - [ubuntu](./linux/ubuntu.md)
+    - [user](./linux/user.md)
 - [mac](./mac/brew.md)
     - [brew](./mac/brew.md)
     - [brewcn](./mac/brewcn.md)
