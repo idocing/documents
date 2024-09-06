@@ -262,12 +262,19 @@
 &lt;/distributionManagement&gt;
 </code></pre>
 <h4 id="22-skip-test"><a class="header" href="#22-skip-test">2.2 skip test</a></h4>
+<pre><code>mvn -DskipTests clean package
+mvn -Dmaven.test.skip=true clean package
+</code></pre>
+<blockquote>
+<p>or</p>
+</blockquote>
 <pre><code>&lt;properties&gt;
     &lt;maven.test.skip&gt;true&lt;/maven.test.skip&gt;
 &lt;/properties&gt;
 </code></pre>
 <h4 id="23-build-sub-module"><a class="header" href="#23-build-sub-module">2.3 build sub module</a></h4>
 <pre><code>mvn -am -pl sub1/sub2/sub3 clean package
+mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
 </code></pre>
 
                     </main>

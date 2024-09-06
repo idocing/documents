@@ -32,6 +32,11 @@
 
 #### 2.2 skip test
 ```
+mvn -DskipTests clean package
+mvn -Dmaven.test.skip=true clean package
+```
+> or
+```
 <properties>
     <maven.test.skip>true</maven.test.skip>
 </properties>
@@ -40,4 +45,5 @@
 #### 2.3 build sub module
 ```
 mvn -am -pl sub1/sub2/sub3 clean package
+mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
 ```
