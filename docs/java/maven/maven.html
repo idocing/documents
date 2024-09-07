@@ -273,8 +273,9 @@ mvn -Dmaven.test.skip=true clean package
 &lt;/properties&gt;
 </code></pre>
 <h4 id="23-build-sub-module"><a class="header" href="#23-build-sub-module">2.3 build sub module</a></h4>
-<pre><code>mvn -am -pl sub1/sub2/sub3 clean package
-mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
+<pre><code>mvn -am -pl sub1/sub2/sub3 clean install
+mvn -am -pl sub3 clean package
+mvn -Drevision=1.0.0-snapshot -o -pl :sub3 clean package
 </code></pre>
 
                     </main>

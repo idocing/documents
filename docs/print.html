@@ -4734,8 +4734,9 @@ mvn -Dmaven.test.skip=true clean package
 &lt;/properties&gt;
 </code></pre>
 <h4 id="23-build-sub-module"><a class="header" href="#23-build-sub-module">2.3 build sub module</a></h4>
-<pre><code>mvn -am -pl sub1/sub2/sub3 clean package
-mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
+<pre><code>mvn -am -pl sub1/sub2/sub3 clean install
+mvn -am -pl sub3 clean package
+mvn -Drevision=1.0.0-snapshot -o -pl :sub3 clean package
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="maven-1"><a class="header" href="#maven-1">maven</a></h1>
 <h2 id="deploy-1"><a class="header" href="#deploy-1">deploy</a></h2>
@@ -4774,8 +4775,9 @@ mvn -Dmaven.test.skip=true clean package
 &lt;/properties&gt;
 </code></pre>
 <h4 id="23-build-sub-module-1"><a class="header" href="#23-build-sub-module-1">2.3 build sub module</a></h4>
-<pre><code>mvn -am -pl sub1/sub2/sub3 clean package
-mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
+<pre><code>mvn -am -pl sub1/sub2/sub3 clean install
+mvn -am -pl sub3 clean package
+mvn -Drevision=1.0.0-snapshot -o -pl :sub3 clean package
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="springboot-logback"><a class="header" href="#springboot-logback">springboot logback</a></h1>
 <p>springboot默认的日志文件是不会自动按天分割的，所以生产环境的日志文件越来越大，很不利于排错。查了很多资料最终配置如下，可以完美按天按错误等级分割日志文件，配置如下。</p>
