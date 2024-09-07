@@ -44,6 +44,7 @@ mvn -Dmaven.test.skip=true clean package
 
 #### 2.3 build sub module
 ```
-mvn -am -pl sub1/sub2/sub3 clean package
-mvn -Drevision=1.0.0-snapshot -am -pl :sub-artifact clean install
+mvn -am -pl sub1/sub2/sub3 clean install
+mvn -am -pl sub3 clean package
+mvn -Drevision=1.0.0-snapshot -o -pl :sub3 clean package
 ```
