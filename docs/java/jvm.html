@@ -238,17 +238,20 @@
 
                         <h1 id="jvm"><a class="header" href="#jvm">jvm</a></h1>
 <h2 id="get-jvm-info"><a class="header" href="#get-jvm-info">get jvm info</a></h2>
-<pre><code>jinfo -flags &lt;pid&gt;
+<pre><code>jinfo -h
+jinfo -flags &lt;pid&gt;
 </code></pre>
 <h2 id="get-jvm-state"><a class="header" href="#get-jvm-state">get jvm state</a></h2>
-<pre><code>jstat -options
+<pre><code>jstat -h
 jstat -gc &lt;pid&gt;
 </code></pre>
 <h2 id="get-jvm-stack"><a class="header" href="#get-jvm-stack">get jvm stack</a></h2>
-<pre><code>jstack &lt;pid&gt;
+<pre><code>jstack -h
+jstack &lt;pid&gt;
 </code></pre>
 <h2 id="get-jvm-dump-file"><a class="header" href="#get-jvm-dump-file">get jvm dump file</a></h2>
-<pre><code>jmap -dump:&lt;live,&gt;format=b,file=out.dump &lt;pid&gt;
+<pre><code>jmap -h
+jmap -dump:&lt;live,&gt;format=b,file=out.dump &lt;pid&gt;
 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp
 </code></pre>
 
