@@ -4692,9 +4692,11 @@ make -f makefile.gcc CPPFLAGS=-std=c++11 SHARED=1 BUILD=release UNICODE=1
 ${SRC_ROOT}/lib/gcc_dll
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jvm"><a class="header" href="#jvm">jvm</a></h1>
+<h2 id="get-thread-list"><a class="header" href="#get-thread-list">get thread list</a></h2>
+<pre><code>jstack &lt;pid&gt;
+</code></pre>
 <h2 id="get-dump-file"><a class="header" href="#get-dump-file">get dump file</a></h2>
-<pre><code>jmap -dump&lt;:live&gt;,format=b,file=out.dump pid
-
+<pre><code>jmap -dump&lt;:live&gt;,format=b,file=out.dump &lt;pid&gt;
 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="maven"><a class="header" href="#maven">maven</a></h1>

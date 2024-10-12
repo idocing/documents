@@ -237,9 +237,11 @@
                         <div class="sidetoc"><nav class="pagetoc"></nav></div>
 
                         <h1 id="jvm"><a class="header" href="#jvm">jvm</a></h1>
+<h2 id="get-thread-list"><a class="header" href="#get-thread-list">get thread list</a></h2>
+<pre><code>jstack &lt;pid&gt;
+</code></pre>
 <h2 id="get-dump-file"><a class="header" href="#get-dump-file">get dump file</a></h2>
-<pre><code>jmap -dump&lt;:live&gt;,format=b,file=out.dump pid
-
+<pre><code>jmap -dump&lt;:live&gt;,format=b,file=out.dump &lt;pid&gt;
 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp
 </code></pre>
 
