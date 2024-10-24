@@ -143,6 +143,7 @@
     - [deploy](./vue/deploy.md)
     - [svg](./vue/svg.md)
 - [windows](./windows/install.md)
+    - [env](./windows/env.md)
     - [install](./windows/install.md)
     - [msi](./windows/msi.md)
     - [proxy](./windows/proxy.md)
