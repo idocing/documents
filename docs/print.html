@@ -10249,10 +10249,10 @@ oobe\bypassnro
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="proxy"><a class="header" href="#proxy">proxy</a></h1>
 <h2 id="http-proxy-2"><a class="header" href="#http-proxy-2">http proxy</a></h2>
-<pre><code>no_proxy=xxx.com,yyy.com,zzz.xxx.com
-all_proxy=127.0.0.1:8080
-http_proxy=127.0.0.1:8080
-https_proxy=127.0.0.1:8080
+<pre><code>no_proxy=xxx.com,yyy.com,*.zzz.com
+all_proxy=127.0.0.1:8080;127.0.0.1:9090
+http_proxy=127.0.0.1:8080;http://127.0.0.1:9090
+https_proxy=http://www.xxx.com;https://www.yyy.com
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reg"><a class="header" href="#reg">reg</a></h1>
 <h2 id="get-all-key"><a class="header" href="#get-all-key">get all key</a></h2>
