@@ -118,6 +118,7 @@
     - [env](./rust/env.md)
     - [link](./rust/link.md)
     - [pointer](./rust/pointer.md)
+    - [registry](./rust/registry.md)
     - [rsproxy](./rust/rsproxy.md)
     - [rustup](./rust/rustup.md)
     - [triples](./rust/triples.md)

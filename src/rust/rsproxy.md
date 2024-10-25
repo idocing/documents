@@ -2,8 +2,8 @@
 
 ## step 1
 ```
-export RUSTUP_DIST_SERVER=https://rsproxy.cn
 export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
+export RUSTUP_DIST_SERVER=https://rsproxy.cn
 ```
 
 ## step 2
@@ -19,6 +19,9 @@ git-fetch-with-cli = true
 
 [cargo-new]
 vcs = "none"
+
+[registries.zero]
+index = "https://github.com/rust-lang/crates.io-index"
 
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
