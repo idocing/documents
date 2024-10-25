@@ -148,4 +148,5 @@
     - [install](./windows/install.md)
     - [msi](./windows/msi.md)
     - [proxy](./windows/proxy.md)
+    - [reg](./windows/reg.md)
 - [Readme](./README.md)
