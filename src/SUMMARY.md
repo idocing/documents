@@ -114,6 +114,7 @@
     - [env](./react/env.md)
 - [rust](./rust/build.md)
     - [build](./rust/build.md)
+    - [crates](./rust/crates.md)
     - [env](./rust/env.md)
     - [link](./rust/link.md)
     - [pointer](./rust/pointer.md)
