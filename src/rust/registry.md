@@ -1,5 +1,10 @@
 # registry
 
+## index
+```
+https://index.crates.io
+```
+
 ## registries
 ```
 [registries]
