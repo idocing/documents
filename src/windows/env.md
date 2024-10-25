@@ -25,13 +25,18 @@ setx key ""
 setx /m key val
 ```
 
-## del env by reg
+## handle env by reg
+
 > user env
 ```
-reg delete "HKCU\Environment" /F /V key
+reg query "HKCU\Environment" /v VariableName
+reg add "HKCU\Environment" /f /v VariableName /t REG_SZ /d "NewValue"
+reg delete "HKCU\Environment" /f /v VariableName
 ```
 
 > machine env
 ```
-reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /F /V key
+reg query "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v VariableName
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /f /v VariableName /t REG_SZ /d "NewValue"
+reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /f /v VariableName
 ```
