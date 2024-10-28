@@ -152,4 +152,5 @@
     - [msi](./windows/msi.md)
     - [proxy](./windows/proxy.md)
     - [reg](./windows/reg.md)
+    - [service](./windows/service.md)
 - [Readme](./README.md)
