@@ -32,7 +32,7 @@ sc delete <ServiceName>
 
 ## sc failure
 ```
-sc failure <ServiceName> reset= 0 actions= restart/5000
+sc failure <ServiceName> reset= 0 actions= restart/0
 ```
 
 ## sc change type
