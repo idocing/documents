@@ -30,6 +30,11 @@ sc stop <ServiceName>
 sc delete <ServiceName>
 ```
 
+## sc failure
+```
+sc failure <ServiceName> reset= 0 actions= restart/5000
+```
+
 ## sc change type
 - auto
 - demand
