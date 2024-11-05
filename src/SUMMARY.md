@@ -115,6 +115,7 @@
 - [rust](./rust/build.md)
     - [build](./rust/build.md)
     - [cargo](./rust/cargo.md)
+    - [cfg](./rust/cfg.md)
     - [crates](./rust/crates.md)
     - [env](./rust/env.md)
     - [link](./rust/link.md)
