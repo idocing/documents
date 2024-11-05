@@ -64,6 +64,7 @@
     - [vscode](./go/vscode.md)
 - [install](./install/alpine.md)
     - [alpine](./install/alpine.md)
+    - [inno](./install/inno.md)
     - [lang](./install/lang.md)
     - [linux](./install/linux.md)
     - [opencv](./install/opencv.md)
