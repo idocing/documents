@@ -9422,33 +9422,41 @@ g++ -shared -Wl,--out-implib,tool.dll.lib -o tool.dll main.cxx
 <pre><code>https://index.crates.io
 </code></pre>
 <h2 id="registries"><a class="header" href="#registries">registries</a></h2>
-<pre><code>[registries]
-zero = { index = &quot;https://github.com/rust-lang/crates.io-index&quot; }
-ustc = { index = &quot;https://mirrors.ustc.edu.cn/crates.io-index&quot; }
-rsproxy = { index = &quot;https://rsproxy.cn/crates.io-index&quot; }
+<pre><code class="language-toml">[registries.crates-io]
+index = &quot;https://github.com/rust-lang/crates.io-index&quot;
+
+[registries.rsproxy]
+index = &quot;https://rsproxy.cn/crates.io-index&quot;
+
+[registry]
+default = &quot;rsproxy&quot;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rsproxy"><a class="header" href="#rsproxy">rsproxy</a></h1>
 <h2 id="step-1"><a class="header" href="#step-1">step 1</a></h2>
-<pre><code>export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
+<pre><code class="language-shell">export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 export RUSTUP_DIST_SERVER=https://rsproxy.cn
 </code></pre>
 <h2 id="step-2"><a class="header" href="#step-2">step 2</a></h2>
-<pre><code>curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
+<pre><code class="language-shell">curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 </code></pre>
 <h2 id="step-3"><a class="header" href="#step-3">step 3</a></h2>
-<pre><code>&gt; vi ~/.cargo/config.toml
-</code></pre>
-<pre><code>[net]
+<blockquote>
+<p>vi ~/.cargo/config.toml</p>
+</blockquote>
+<pre><code class="language-toml">[net]
 git-fetch-with-cli = true
 
 [cargo-new]
 vcs = &quot;none&quot;
 
-[registries.zero]
+[registries.crates-io]
 index = &quot;https://github.com/rust-lang/crates.io-index&quot;
 
 [registries.rsproxy]
 index = &quot;https://rsproxy.cn/crates.io-index&quot;
+
+[registry]
+default = &quot;rsproxy&quot;
 
 [source.rsproxy]
 registry = &quot;https://rsproxy.cn/crates.io-index&quot;

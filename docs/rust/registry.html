@@ -241,10 +241,14 @@
 <pre><code>https://index.crates.io
 </code></pre>
 <h2 id="registries"><a class="header" href="#registries">registries</a></h2>
-<pre><code>[registries]
-zero = { index = &quot;https://github.com/rust-lang/crates.io-index&quot; }
-ustc = { index = &quot;https://mirrors.ustc.edu.cn/crates.io-index&quot; }
-rsproxy = { index = &quot;https://rsproxy.cn/crates.io-index&quot; }
+<pre><code class="language-toml">[registries.crates-io]
+index = &quot;https://github.com/rust-lang/crates.io-index&quot;
+
+[registries.rsproxy]
+index = &quot;https://rsproxy.cn/crates.io-index&quot;
+
+[registry]
+default = &quot;rsproxy&quot;
 </code></pre>
 
                     </main>
