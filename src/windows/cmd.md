@@ -25,6 +25,11 @@ query process
 query session
 ```
 
+### query termserver
+```
+query termserver
+```
+
 ### query user
 ```
 query user
