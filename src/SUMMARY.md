@@ -21,6 +21,7 @@
     - [export](./cxx/export.md)
 - [db](./db/explain.md)
     - [explain](./db/explain.md)
+    - [lock](./db/lock.md)
     - [mysql](./db/mysql.md)
     - [pg_function](./db/pg_function.md)
     - [pg_locks](./db/pg_locks.md)
