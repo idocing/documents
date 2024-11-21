@@ -125,6 +125,7 @@
     - [rsproxy](./rust/rsproxy.md)
     - [rustup](./rust/rustup.md)
     - [triples](./rust/triples.md)
+    - [vendor](./rust/vendor.md)
 - [server](./server/ca.md)
     - [ca](./server/ca.md)
     - [caddy](./server/caddy.md)
