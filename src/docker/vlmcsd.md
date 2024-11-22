@@ -17,7 +17,7 @@ docker run -d -p 1688:1688 --restart=always --name vlmcsd ipacking/vlmcsd:1.0.0
 ## To view docker log
 Now vlmcsd process send logs to docker.
 ```
- docker logs vlmcsd (change 'vlmcsd' with the docker's name)
+docker logs vlmcsd (change 'vlmcsd' with the docker's name)
 ```
 
 ## Client

@@ -41,6 +41,7 @@
     - [manifest](./docker/manifest.md)
     - [mysql](./docker/mysql.md)
     - [other](./docker/other.md)
+    - [postgresql](./docker/postgresql.md)
     - [qemu](./docker/qemu.md)
     - [recover](./docker/recover.md)
     - [redis](./docker/redis.md)
