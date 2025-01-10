@@ -2196,7 +2196,7 @@ Unique  (cost=12223.09..12339.76 rows=4667 width=4)
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="lock"><a class="header" href="#lock">lock</a></h1>
 <h2 id="optimistic-lock"><a class="header" href="#optimistic-lock">optimistic lock</a></h2>
-<pre><code>create table if not exists users (
+<pre><code class="language-sql">create table if not exists users (
     id bigserial primary key,
     name varchar not null,
     version int not null default 0
@@ -2204,7 +2204,7 @@ Unique  (cost=12223.09..12339.76 rows=4667 width=4)
 
 insert into users (name) values ('zhangsan'), ('lisi');
 </code></pre>
-<pre><code>update users
+<pre><code class="language-sql">update users
 set name = 'wangwu', version = version + 1
 where id = 1 and version = 0;
 </code></pre>
@@ -2339,7 +2339,7 @@ mysql&gt;\q
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pg-function"><a class="header" href="#pg-function">pg function</a></h1>
 <h2 id="do-for-loop"><a class="header" href="#do-for-loop">do for loop</a></h2>
-<pre><code>DO 
+<pre><code class="language-sql">DO 
 $$
 DECLARE 
 r RECORD;
@@ -2351,7 +2351,7 @@ END;
 $$;
 </code></pre>
 <h2 id="function"><a class="header" href="#function">function</a></h2>
-<pre><code>CREATE OR REPLACE FUNCTION test()
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION test()
 RETURNS void
 AS
 $$
@@ -2601,7 +2601,7 @@ alter table &lt;tbname&gt; owner to &lt;uname&gt;;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="recursive"><a class="header" href="#recursive">recursive</a></h1>
 <h2 id="ddl"><a class="header" href="#ddl">ddl</a></h2>
-<pre><code>create table if not exists dept (
+<pre><code class="language-sql">create table if not exists dept (
     id bigint,
     name varchar,
     pid bigint default 0,
@@ -2609,7 +2609,7 @@ alter table &lt;tbname&gt; owner to &lt;uname&gt;;
 )
 </code></pre>
 <h2 id="dml"><a class="header" href="#dml">dml</a></h2>
-<pre><code>insert into dept values
+<pre><code class="language-sql">insert into dept values
 (1, 'dept1', 0, 1),
 (2, 'dept2', 0, 1),
 (3, 'dept11', 1, 2),
@@ -2621,7 +2621,7 @@ alter table &lt;tbname&gt; owner to &lt;uname&gt;;
 (9, 'dept11111', 7, 5);
 </code></pre>
 <h2 id="downward"><a class="header" href="#downward">downward</a></h2>
-<pre><code>with recursive
+<pre><code class="language-sql">with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level
     from dept d1
@@ -2635,7 +2635,7 @@ dd as (
 select id, pid, name, level from dd;
 </code></pre>
 <h2 id="upward"><a class="header" href="#upward">upward</a></h2>
-<pre><code>with recursive
+<pre><code class="language-sql">with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level
     from dept d1
@@ -2650,7 +2650,7 @@ select id, pid, name, level from dd;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="uuid"><a class="header" href="#uuid">uuid</a></h1>
 <h2 id="postgres-uuid"><a class="header" href="#postgres-uuid">postgres uuid</a></h2>
-<pre><code>CREATE EXTENSION &quot;uuid-ossp&quot;;
+<pre><code class="language-sql">CREATE EXTENSION &quot;uuid-ossp&quot;;
 
 CREATE TABLE IF NOT EXISTS user_info (
     id uuid DEFAULT uuid_generate_v4(),

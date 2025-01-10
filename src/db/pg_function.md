@@ -1,7 +1,7 @@
 # pg function
 
 ## do for loop
-```
+```sql
 DO 
 $$
 DECLARE 
@@ -15,7 +15,7 @@ $$;
 ```
 
 ## function
-```
+```sql
 CREATE OR REPLACE FUNCTION test()
 RETURNS void
 AS

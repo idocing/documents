@@ -1,7 +1,7 @@
 # uuid
 
 ## postgres uuid
-```
+```sql
 CREATE EXTENSION "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS user_info (

@@ -1,7 +1,7 @@
 # recursive
 
 ## ddl
-```
+```sql
 create table if not exists dept (
     id bigint,
     name varchar,
@@ -11,7 +11,7 @@ create table if not exists dept (
 ```
 
 ## dml
-```
+```sql
 insert into dept values
 (1, 'dept1', 0, 1),
 (2, 'dept2', 0, 1),
@@ -25,7 +25,7 @@ insert into dept values
 ```
 
 ## downward
-```
+```sql
 with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level
@@ -41,7 +41,7 @@ select id, pid, name, level from dd;
 ```
 
 ## upward
-```
+```sql
 with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level

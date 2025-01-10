@@ -238,7 +238,7 @@
 
                         <h1 id="recursive"><a class="header" href="#recursive">recursive</a></h1>
 <h2 id="ddl"><a class="header" href="#ddl">ddl</a></h2>
-<pre><code>create table if not exists dept (
+<pre><code class="language-sql">create table if not exists dept (
     id bigint,
     name varchar,
     pid bigint default 0,
@@ -246,7 +246,7 @@
 )
 </code></pre>
 <h2 id="dml"><a class="header" href="#dml">dml</a></h2>
-<pre><code>insert into dept values
+<pre><code class="language-sql">insert into dept values
 (1, 'dept1', 0, 1),
 (2, 'dept2', 0, 1),
 (3, 'dept11', 1, 2),
@@ -258,7 +258,7 @@
 (9, 'dept11111', 7, 5);
 </code></pre>
 <h2 id="downward"><a class="header" href="#downward">downward</a></h2>
-<pre><code>with recursive
+<pre><code class="language-sql">with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level
     from dept d1
@@ -272,7 +272,7 @@ dd as (
 select id, pid, name, level from dd;
 </code></pre>
 <h2 id="upward"><a class="header" href="#upward">upward</a></h2>
-<pre><code>with recursive
+<pre><code class="language-sql">with recursive
 dd as (
     select d1.id, d1.pid, d1.name, d1.level
     from dept d1

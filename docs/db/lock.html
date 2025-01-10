@@ -238,7 +238,7 @@
 
                         <h1 id="lock"><a class="header" href="#lock">lock</a></h1>
 <h2 id="optimistic-lock"><a class="header" href="#optimistic-lock">optimistic lock</a></h2>
-<pre><code>create table if not exists users (
+<pre><code class="language-sql">create table if not exists users (
     id bigserial primary key,
     name varchar not null,
     version int not null default 0
@@ -246,7 +246,7 @@
 
 insert into users (name) values ('zhangsan'), ('lisi');
 </code></pre>
-<pre><code>update users
+<pre><code class="language-sql">update users
 set name = 'wangwu', version = version + 1
 where id = 1 and version = 0;
 </code></pre>

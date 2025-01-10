@@ -1,7 +1,7 @@
 # lock
 
 ## optimistic lock
-```
+```sql
 create table if not exists users (
     id bigserial primary key,
     name varchar not null,
@@ -11,7 +11,7 @@ create table if not exists users (
 insert into users (name) values ('zhangsan'), ('lisi');
 ```
 
-```
+```sql
 update users
 set name = 'wangwu', version = version + 1
 where id = 1 and version = 0;
