@@ -2,8 +2,8 @@
 
 ## step 1
 ```shell
-export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 export RUSTUP_DIST_SERVER=https://rsproxy.cn
+export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 ```
 
 ## step 2
