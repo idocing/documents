@@ -31,3 +31,9 @@ Discussion:
 
     The 'install' command is an alias for 'rustup update <toolchain>'.
 ```
+
+## rustup env
+```
+export RUSTUP_DIST_SERVER=https://static.rust-lang.org
+export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
+```
