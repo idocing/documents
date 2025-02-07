@@ -14,3 +14,8 @@ export HTTP_PROXY=http://user:password@xxx.com
 ```
 export HTTPS_PROXY=http://user:password@xxx.com
 ```
+
+## all proxy
+```
+export ALL_PROXY=http://user:password@xxx.com
+```
