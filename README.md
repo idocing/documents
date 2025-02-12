@@ -10,7 +10,6 @@ cargo install mdbook
 mdbook init
 ```
 
-
 ## mdbook build
 ```
 mdbook build
