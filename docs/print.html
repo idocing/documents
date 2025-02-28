@@ -9444,8 +9444,13 @@ default = "rsproxy"
 <pre><code class="language-shell">export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
 export RUSTUP_DIST_SERVER=https://rsproxy.cn
 </code></pre>
+<pre><code class="language-shell">export RUSTUP_UPDATE_ROOT=https://mirrors.aliyun.com/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.aliyun.com/rustup
+</code></pre>
 <h2 id="step-2"><a class="header" href="#step-2">step 2</a></h2>
 <pre><code class="language-shell">curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
+</code></pre>
+<pre><code class="language-shell">curl --proto '=https' --tlsv1.2 -sSf https://mirrors.aliyun.com/repo/rust/rustup-init.sh | sh
 </code></pre>
 <h2 id="step-3"><a class="header" href="#step-3">step 3</a></h2>
 <blockquote>
@@ -9474,6 +9479,11 @@ registry = "https://rsproxy.cn/crates.io-index"
 
 [source.rsproxy-sparse]
 registry = "sparse+https://rsproxy.cn/index/"
+</code></pre>
+<pre><code class="language-toml">[source.crates-io]
+replace-with = 'aliyun'
+[source.aliyun]
+registry = "sparse+https://mirrors.aliyun.com/crates.io-index/"
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rustup"><a class="header" href="#rustup">rustup</a></h1>
 <h2 id="install-rustup-online"><a class="header" href="#install-rustup-online">install rustup online</a></h2>
