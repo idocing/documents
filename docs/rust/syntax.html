@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>opencv</title>
+        <title>syntax</title>
 
 
         <!-- Custom HTML head -->
@@ -236,52 +236,43 @@
                         <!-- Page table of contents -->
                         <div class="sidetoc"><nav class="pagetoc"></nav></div>
 
-                        <h2 id="install-dep"><a class="header" href="#install-dep">install dep</a></h2>
-<pre><code>apt install cmake make gcc g++ pkg-config
-</code></pre>
-<h2 id="install-opencv"><a class="header" href="#install-opencv">install opencv</a></h2>
-<pre><code>cmake -D CMAKE_BUILD_TYPE=RELEASE \
-      -D WITH_IPP=OFF \
-      -D WITH_OPENGL=OFF \
-      -D WITH_QT=OFF \
-      -D BUILD_EXAMPLES=OFF \
-      -D BUILD_TESTS=OFF \
-      -D BUILD_PERF_TESTS=OFF  \
-      -D BUILD_opencv_java=OFF \
-      -D BUILD_opencv_python=OFF \
-      -D BUILD_opencv_python2=OFF \
-      -D BUILD_opencv_python3=OFF \
-      -D OPENCV_GENERATE_PKGCONFIG=ON \
-      -D OPENCV_ENABLE_NONFREE=ON \
-      -D OPENCV_EXTRA_MODULES_PATH=/usr/local/opencv_contrib/modules \
-      -D CMAKE_INSTALL_PREFIX=/usr/local/opencv ..
-make
-make install
-ldconfig
-</code></pre>
-<h2 id="set-env"><a class="header" href="#set-env">set env</a></h2>
-<pre><code>echo "export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig" &gt;&gt; ~/.bashrc
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/opencv/lib" &gt;&gt; ~/.bashrc
-source ~/.bashrc
-</code></pre>
-<h2 id="make-java-env-jar--so"><a class="header" href="#make-java-env-jar--so">make java env (jar &amp; so)</a></h2>
-<pre><code>cmake -D CMAKE_BUILD_TYPE=RELEASE \
-      -D BUILD_SHARED_LIBS=OFF \
-      -D BUILD_FAT_JAVA_LIB=ON \
-      -D CMAKE_INSTALL_PREFIX=/usr/local/opencv ..
-make
-make install
-</code></pre>
+                        <h1 id="syntax"><a class="header" href="#syntax">syntax</a></h1>
+<h2 id="fully-qualified-syntax"><a class="header" href="#fully-qualified-syntax">fully qualified syntax</a></h2>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>&lt;Type as Trait&gt;::function(receiver_if_method, next_arg, ...);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">trait Animal {
+    fn baby_name() -&gt; String;
+}
+
+struct Dog;
+
+impl Dog {
+    fn baby_name() -&gt; String {
+        String::from("Spot")
+    }
+}
+
+impl Animal for Dog {
+    fn baby_name() -&gt; String {
+        String::from("puppy")
+    }
+}
+
+fn main() {
+    println!("A baby dog is called a {}", &lt;Dog as Animal&gt;::baby_name());
+}</code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../install/linux.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../rust/rustup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../install/wxWidgets.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rust/triples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -291,11 +282,11 @@ make install
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../install/linux.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../rust/rustup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../install/wxWidgets.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rust/triples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -127,6 +127,7 @@
     - [registry](./rust/registry.md)
     - [rsproxy](./rust/rsproxy.md)
     - [rustup](./rust/rustup.md)
+    - [syntax](./rust/syntax.md)
     - [triples](./rust/triples.md)
     - [vendor](./rust/vendor.md)
 - [server](./server/ca.md)
