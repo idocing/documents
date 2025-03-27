@@ -240,12 +240,19 @@
 <h2 id="index"><a class="header" href="#index">index</a></h2>
 <pre><code>https://index.crates.io
 </code></pre>
-<h2 id="registries"><a class="header" href="#registries">registries</a></h2>
+<h2 id="default-registries"><a class="header" href="#default-registries">default registries</a></h2>
 <pre><code class="language-toml">[registries.crates-io]
 index = "https://github.com/rust-lang/crates.io-index"
+protocol = "sparse"
+token = "xxx"
 
-[registries.rsproxy]
+[registry]
+default = "crates-io"
+</code></pre>
+<h2 id="other-registries"><a class="header" href="#other-registries">other registries</a></h2>
+<pre><code class="language-toml">[registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
+token = "xxx"
 
 [registry]
 default = "rsproxy"
