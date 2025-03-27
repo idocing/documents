@@ -9521,16 +9521,22 @@ registry = "https://github.com/rust-lang/crates.io-index"
 </code></pre>
 <h2 id="other-5"><a class="header" href="#other-5">other</a></h2>
 <pre><code class="language-toml">[source.crates-io]
-replace-with = "rsproxy"
+replace-with = "vendor"
+
+[source.vendor]
+directory = "/path/vendor"
 
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
 
-[source.local]
-directory = "vendor"
+[source.localreg]
+local-registry = "/path/localreg"
 
 [source.remote]
 git = "https://github.com/remote"
+branch = "dev"
+tag = "v1.0.0"
+rev = "abc001"
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="syntax"><a class="header" href="#syntax">syntax</a></h1>
 <h2 id="fully-qualified-syntax"><a class="header" href="#fully-qualified-syntax">fully qualified syntax</a></h2>
