@@ -17,8 +17,8 @@ directory = "/path/vendor"
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
 
-[source.localreg]
-local-registry = "/path/localreg"
+[source.local]
+local-registry = "/path/local"
 
 [source.remote]
 git = "https://github.com/remote"
