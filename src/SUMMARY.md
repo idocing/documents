@@ -4,6 +4,8 @@
     - [nn](./ai/nn.md)
 - [algorithm](./algorithm/algorithm.md)
     - [algorithm](./algorithm/algorithm.md)
+- [browser](./browser/edge.md)
+    - [edge](./browser/edge.md)
 - [c](./c/gcc.md)
     - [gcc](./c/gcc.md)
     - [sleep](./c/sleep.md)
