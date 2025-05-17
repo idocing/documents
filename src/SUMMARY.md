@@ -105,6 +105,8 @@
     - [launchpad](./mac/launchpad.md)
 - [net](./net/net.md)
     - [net](./net/net.md)
+- [node](./node/npm.md)
+    - [npm](./node/npm.md)
 - [other](./other/elk/elk.md)
     - [elk](./other/elk/elk.md)
         - [elk](./other/elk/elk.md)
