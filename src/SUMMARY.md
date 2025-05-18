@@ -133,6 +133,7 @@
     - [rustup](./rust/rustup.md)
     - [source](./rust/source.md)
     - [syntax](./rust/syntax.md)
+    - [test](./rust/test.md)
     - [triples](./rust/triples.md)
     - [vendor](./rust/vendor.md)
 - [server](./server/ca.md)
