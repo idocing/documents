@@ -5,7 +5,7 @@ multilingual = false
 src = "src"
 
 [build]
-build-dir = "docs"
+build-dir = "book"
 
 [output.html]
 default-theme = "light"
